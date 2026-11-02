@@ -1,0 +1,927 @@
+{
+ "_source": "NYUAD Bulletin (most recent) + Political Science Courses \u2014 Spring 2027 (J. Jensen, 26 Oct 2026)",
+ "courses": [
+  {
+   "code": "ACS-UH 1610X",
+   "title": "Feminism and Islamism in the Middle East and North Africa",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "ACS-UH 2614X",
+   "title": "Colonization of Palestine",
+   "tags": [
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "BUSOR-UH 1011",
+   "title": "Foundations of Leadership",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "BUSOR-UH 2004",
+   "title": "Data Analytics: Business",
+   "tags": [
+    "methods"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1078EQ",
+   "title": "Inclusive Data Literacy",
+   "tags": [
+    "methods"
+   ]
+  },
+  {
+   "code": "CS-UH 2219E",
+   "title": "Computational Social Science",
+   "tags": [
+    "methods"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1015",
+   "title": "Legitimacy",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1094",
+   "title": "Space Diplomacy",
+   "tags": [
+    "area-old",
+    "iafp"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1129",
+   "title": "Environment & Politics",
+   "tags": [
+    "area-old",
+    "iafp"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1131",
+   "title": "Gender & Governance",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "ECON-UH 1112",
+   "title": "Introduction to Macroeconomics",
+   "tags": [
+    "macro",
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 1701",
+   "title": "Economics of Gender",
+   "tags": [
+    "breadth-old",
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2010",
+   "title": "Intermediate Microeconomics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2020",
+   "title": "Data Analysis: Economics",
+   "tags": [
+    "methods",
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2030",
+   "title": "Intermediate Macroeconomics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2310EQ",
+   "title": "Behavioral Economics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2320E",
+   "title": "Experimental Economics",
+   "tags": [
+    "breadth-old",
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2410",
+   "title": "Development Economics",
+   "tags": [
+    "breadth-old",
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2411",
+   "title": "Technology and Economic Development: Markets and Networks",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2451X",
+   "title": "Economic History of the Middle East",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2510",
+   "title": "Foundations of Financial Markets",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2512",
+   "title": "FinTech Innovation: Finance, Technology, Regulation",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2514",
+   "title": "Economics of Sovereign Wealth Funds",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2610",
+   "title": "International Economics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2710",
+   "title": "Labor Economics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2711",
+   "title": "Health Economics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 2922",
+   "title": "Industrial Organization",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3010",
+   "title": "Economics of Imperfect Markets",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3030",
+   "title": "Economic Growth",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3210",
+   "title": "Quantitative Methods and Program Evaluation",
+   "tags": [
+    "methods",
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3300",
+   "title": "Topics in Behavioral and Experimental Economics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3320",
+   "title": "Applied Forecasting: From Linear Models to Data Mining and Deep Learning",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3400",
+   "title": "Topics in Development and Economic History",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3511X",
+   "title": "Islamic Economics and Finance",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3513",
+   "title": "Advanced Investments",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3520",
+   "title": "Corporate Finance",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3521",
+   "title": "Asset Pricing and Derivatives",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3600",
+   "title": "Topics in International and Macroeconomics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3630",
+   "title": "Public Economics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3900",
+   "title": "Topics in Economic Theory",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3910",
+   "title": "Advanced Microeconomics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3912",
+   "title": "Economics of Networks",
+   "tags": [
+    "methods",
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3913",
+   "title": "Market Design",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3940",
+   "title": "Advanced Macroeconomics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 3950",
+   "title": "Topics in Financial Econometrics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 4000",
+   "title": "Economic Policy",
+   "tags": [
+    "breadth-old",
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 4005",
+   "title": "Advanced Mathematics for Economists",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "ECON-UH 4210",
+   "title": "Advanced Econometrics",
+   "tags": [
+    "econ-elective"
+   ]
+  },
+  {
+   "code": "HIST-UH 1105",
+   "title": "Africa in the World",
+   "tags": [
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "HIST-UH 1110",
+   "title": "Colonial Latin America and the Atlantic World",
+   "tags": [
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "HIST-UH 1131",
+   "title": "Southeast Asia in the World",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "HIST-UH 2010",
+   "title": "History and Globalization",
+   "tags": [
+    "speh"
+   ]
+  },
+  {
+   "code": "HIST-UH 2121",
+   "title": "Genocide in a Global Perspective",
+   "tags": [
+    "area-old",
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "LAW-UH 2011",
+   "title": "Constitutional and Administrative Law",
+   "tags": [
+    "area-old",
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "LAW-UH 2114",
+   "title": "Climate Change Law and Policy",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "LAW-UH 2124",
+   "title": "Human Rights Law",
+   "tags": [
+    "area-old",
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "LAW-UH 2129",
+   "title": "Mooting",
+   "tags": [
+    "area-old",
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "LAW-UH 2132",
+   "title": "Vis Moot Topics",
+   "tags": [
+    "area-old",
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "LAW-UH 2133",
+   "title": "Vis Moot Part II: International Arbitration Competition",
+   "tags": [
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "LAW-UH 3503",
+   "title": "European Union Law",
+   "tags": [
+    "area-old",
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "MATH-UH 1013Q",
+   "title": "Calculus with Applications to Economics",
+   "tags": [
+    "calc"
+   ]
+  },
+  {
+   "code": "PEACE-UH 1011",
+   "title": "Foundations of Peace: Economic and Political Perspectives",
+   "tags": [
+    "breadth-old",
+    "iafp"
+   ]
+  },
+  {
+   "code": "POL-UA 700",
+   "title": "International Politics (NYU New York)",
+   "tags": [
+    "iip",
+    "ptp-sub",
+    "intro-old",
+    "study-away-equiv"
+   ]
+  },
+  {
+   "code": "POL-UA 9700",
+   "title": "International Politics (study away)",
+   "tags": [
+    "iip",
+    "ptp-sub",
+    "intro-old",
+    "study-away-equiv"
+   ],
+   "note": "Study-away equivalent of Intro to International Politics. Confirm on the PS study-away pathway."
+  },
+  {
+   "code": "POLSC-UH 1111",
+   "title": "Introduction to Comparative Politics (ICP)",
+   "tags": [
+    "icp",
+    "ptp-sub",
+    "intro-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 1112",
+   "title": "Introduction to International Politics (IIP)",
+   "tags": [
+    "iip",
+    "ptp-sub",
+    "intro-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 1113",
+   "title": "Introduction to Political Theory",
+   "tags": [
+    "intro-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 1114",
+   "title": "War on Terrorism",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 1115",
+   "title": "Political Thinking in Practice (PTP)",
+   "tags": [
+    "ptp",
+    "intro-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2211",
+   "title": "Data Analysis",
+   "tags": [
+    "methods",
+    "data-analysis"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2212",
+   "title": "Research Design and Causality",
+   "tags": [
+    "methods",
+    "rdc"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2310",
+   "title": "Political Psychology",
+   "tags": [
+    "area-old",
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2311",
+   "title": "Political Economy of Institutions",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2312",
+   "title": "Political Economy of Development",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2317",
+   "title": "Identity and Culture in Politics",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2326",
+   "title": "Politics and Finance",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2410X",
+   "title": "Comparative Politics of the Middle East",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2411",
+   "title": "Politics, Social Change & Development in South Asia",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2412",
+   "title": "Power and Politics in America",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2414",
+   "title": "African Politics",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2421X",
+   "title": "Political Economy of the Middle East",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2422X",
+   "title": "North African Politics",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2423",
+   "title": "Media and Politics",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2426",
+   "title": "Comparative Politics of Industrialized Democracies",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2429",
+   "title": "Latin American Politics",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2511",
+   "title": "International Organizations",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2517Q",
+   "title": "Modeling Politics and International Relations",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2519",
+   "title": "Nuclear Politics",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 2910",
+   "title": "Business, Politics, and Society",
+   "tags": [
+    "area-old",
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 3212",
+   "title": "Qualitative Methods in Middle East Politics",
+   "tags": [
+    "methods"
+   ]
+  },
+  {
+   "code": "POLSC-UH 3313",
+   "title": "Making and Breaking Elections",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 3413",
+   "title": "Foreign Policy Analysis",
+   "tags": [
+    "area-old",
+    "iafp"
+   ]
+  },
+  {
+   "code": "POLSC-UH 3510",
+   "title": "Money in Global Politics: Politics of global trade, finance, and development.",
+   "tags": [
+    "area-old",
+    "iafp"
+   ]
+  },
+  {
+   "code": "POLSC-UH 3512",
+   "title": "Civil Wars and International Intervention",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "POLSC-UH 4000",
+   "title": "Capstone Seminar",
+   "tags": [
+    "capstone"
+   ]
+  },
+  {
+   "code": "POLSC-UH 4001",
+   "title": "Capstone Project",
+   "tags": [
+    "capstone"
+   ]
+  },
+  {
+   "code": "POLSC-UH NEW-CHP",
+   "title": "Chinese Politics (NEW, 2000-level)",
+   "tags": [
+    "area-old",
+    "new"
+   ],
+   "level": 2000
+  },
+  {
+   "code": "POLSC-UH NEW-FOD",
+   "title": "The Future of Diplomacy (in the Gulf) (NEW, 2000-level)",
+   "tags": [
+    "area-old",
+    "iafp",
+    "new"
+   ],
+   "level": 2000
+  },
+  {
+   "code": "POLSC-UH NEW-GDO",
+   "title": "Global Dis(order) (NEW, 2000-level)",
+   "tags": [
+    "area-old",
+    "iafp",
+    "new"
+   ],
+   "level": 2000
+  },
+  {
+   "code": "POLSC-UH NEW-IRT",
+   "title": "International Relations Theories (NEW, 3000-level)",
+   "tags": [
+    "area-old",
+    "iafp",
+    "new"
+   ],
+   "level": 3000
+  },
+  {
+   "code": "POLSC-UH NEW-PWP",
+   "title": "The Psychology of War and Peace (NEW, 3000-level)",
+   "tags": [
+    "area-old",
+    "iafp",
+    "new"
+   ],
+   "level": 3000
+  },
+  {
+   "code": "PSYCH-UH 3619EQ",
+   "title": "Lab in Psychology of Economic Inequality",
+   "tags": [
+    "area-old",
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 1010Q",
+   "title": "Statistics for the Social and Behavioral Sciences",
+   "tags": [
+    "stats"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 1011",
+   "title": "Global Economic, Political and Social Development (GEPS)",
+   "tags": [
+    "speh",
+    "geps"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 1111",
+   "title": "Markets",
+   "tags": [
+    "markets"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 1112",
+   "title": "Introduction to Political Thinking (IPT)",
+   "tags": [
+    "ipt"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 1310",
+   "title": "Foundations of Modern Social Thought",
+   "tags": [
+    "spet"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 1314",
+   "title": "Sociological Theory",
+   "tags": [
+    "spet"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 2211",
+   "title": "Survey Research",
+   "tags": [
+    "methods"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 2212",
+   "title": "Research Design & Causality in Social Science",
+   "tags": [
+    "methods",
+    "rdc"
+   ],
+   "alias_of": "POLSC-UH 2212"
+  },
+  {
+   "code": "SOCSC-UH 2213",
+   "title": "Textual Analysis for the Social Sciences",
+   "tags": [
+    "methods"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 2214",
+   "title": "Applied Data Science",
+   "tags": [
+    "methods"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 3210",
+   "title": "Advanced Game Theory",
+   "tags": [
+    "methods"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 3220",
+   "title": "Econometrics",
+   "tags": [
+    "methods",
+    "area-old"
+   ]
+  },
+  {
+   "code": "SRPP-UH 1818",
+   "title": "Gender, Policy and Politics",
+   "tags": [
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "SRPP-UH 2211",
+   "title": "Ethnographic Field Research",
+   "tags": [
+    "methods"
+   ]
+  },
+  {
+   "code": "SRPP-UH 2214",
+   "title": "Interview Methods",
+   "tags": [
+    "methods"
+   ]
+  },
+  {
+   "code": "SRPP-UH 2412X",
+   "title": "Islamist Social Movements in the Middle East",
+   "tags": [
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "SRPP-UH 2418",
+   "title": "Politics and Society",
+   "tags": [
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "SRPP-UH 2611",
+   "title": "Social Policy",
+   "tags": [
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "SRPP-UH 2612X",
+   "title": "State Formation: The Case of the United Arab Emirates",
+   "tags": [
+    "area-old"
+   ]
+  },
+  {
+   "code": "SRPP-UH 2614X",
+   "title": "Women and Work in the Gulf",
+   "tags": [
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "SRPP-UH 2619",
+   "title": "Leadership and Diplomacy",
+   "tags": [
+    "breadth-old"
+   ]
+  },
+  {
+   "code": "SRPP-UH 3214",
+   "title": "Social Networks",
+   "tags": [
+    "methods"
+   ]
+  }
+ ]
+}

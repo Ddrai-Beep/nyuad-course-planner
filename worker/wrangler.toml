@@ -1,0 +1,11 @@
+name = "nyuad-course-planner"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://ddrai-beep.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nyuad-planner-votes"
+database_id = "REPLACE_WITH_ID"

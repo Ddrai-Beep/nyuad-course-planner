@@ -1,0 +1,14 @@
+{
+  "Spring 2027": {
+    "_source": "Political Science Courses — Spring 2027 (J. Jensen, 26 Oct 2026). Only PS-relevant courses are listed; check Albert for everything else.",
+    "courses": [
+      "POLSC-UH NEW-IRT", "POLSC-UH NEW-PWP", "POLSC-UH 3413", "POLSC-UH 3510",
+      "POLSC-UH NEW-GDO", "POLSC-UH NEW-FOD", "POLSC-UH NEW-CHP",
+      "POLSC-UH 2211", "POLSC-UH 1115", "SOCSC-UH 1112",
+      "CSTS-UH 1094", "CSTS-UH 1129", "PEACE-UH 1011", "ECON-UH 2410", "LAW-UH 3503",
+      "CDAD-UH 1078EQ", "ECON-UH 2020", "SOCSC-UH 2211", "SOCSC-UH 2214", "SOCSC-UH 3220", "SRPP-UH 2211", "SRPP-UH 2214",
+      "SOCSC-UH 1011", "HIST-UH 2010", "SOCSC-UH 1310", "SOCSC-UH 1314", "SOCSC-UH 1010Q"
+    ],
+    "notOffered": { "POLSC-UH 2212": "Research Design and Causality is not offered in Spring 2027." }
+  }
+}

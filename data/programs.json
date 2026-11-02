@@ -1,0 +1,116 @@
+{
+  "_source": "Political Science: NYUAD Bulletin + 'Political Science Courses — Spring 2027' (Jeffrey Jensen, 26 Oct 2026). Economics minor + Core: NYUAD Bulletin (most recent).",
+  "registrationTerm": "Spring 2027",
+  "graduation": {
+    "credits": 128,
+    "gpa": 2.0
+  },
+  "major": {
+    "name": "Political Science (BA)",
+    "contact": "Jeffrey Jensen · jlj237@nyu.edu",
+    "tracks": [
+      {
+        "id": "new",
+        "name": "New bulletin",
+        "short": "No concentration",
+        "blurb": "The standard major after this year's reform.",
+        "requirements": [
+          { "id": "speh", "group": "Foundation", "label": "SPEH (GEPS or History & Globalization)", "count": 1, "any": [{ "tags": ["speh"] }] },
+          { "id": "spet", "group": "Foundation", "label": "SPET (Social, Political & Economic Thought)", "count": 1, "any": [{ "tags": ["spet"] }] },
+          { "id": "stats", "group": "Foundation", "label": "Statistics for the Social & Behavioral Sciences", "count": 1, "any": [{ "tags": ["stats"] }] },
+          { "id": "ipt", "group": "Intro", "label": "Introduction to Political Thinking (IPT)", "count": 1, "any": [{ "tags": ["ipt"] }] },
+          { "id": "ptp", "group": "Intro", "label": "Political Thinking in Practice (PTP)", "count": 1, "any": [{ "tags": ["ptp", "ptp-sub"] }], "note": "ICP or IIP taken earlier can stand in for PTP." },
+          { "id": "methods", "group": "Methods", "label": "Methods course", "count": 1, "any": [{ "tags": ["methods"] }] },
+          { "id": "pol3000", "group": "Electives", "label": "3000-level POLSC-UH course", "count": 1, "any": [{ "subject": ["POLSC"], "campus": ["UH"], "minLevel": 3000, "maxLevel": 3999 }] },
+          { "id": "pol2000", "group": "Electives", "label": "2000+ POL course", "count": 1, "any": [{ "subject": ["POLSC", "POL"], "minLevel": 2000, "maxLevel": 3999 }] },
+          { "id": "polelec", "group": "Electives", "label": "Major elective (any POL course)", "count": 2, "any": [{ "subject": ["POLSC", "POL"], "maxLevel": 3999 }], "note": "Non-POL electives (e.g. CSTS-UH 1094) only count as general electives on this track." },
+          { "id": "capstone", "group": "Capstone", "label": "Capstone", "count": 2, "any": [{ "tags": ["capstone"] }] }
+        ]
+      },
+      {
+        "id": "iafp",
+        "name": "New bulletin",
+        "short": "IAFP concentration",
+        "blurb": "International Affairs & Foreign Policy.",
+        "requirements": [
+          { "id": "speh", "group": "Foundation", "label": "SPEH (GEPS or History & Globalization)", "count": 1, "any": [{ "tags": ["speh"] }] },
+          { "id": "spet", "group": "Foundation", "label": "SPET (Social, Political & Economic Thought)", "count": 1, "any": [{ "tags": ["spet"] }] },
+          { "id": "stats", "group": "Foundation", "label": "Statistics for the Social & Behavioral Sciences", "count": 1, "any": [{ "tags": ["stats"] }] },
+          { "id": "ipt", "group": "Intro", "label": "Introduction to Political Thinking (IPT)", "count": 1, "any": [{ "tags": ["ipt"] }] },
+          { "id": "ptp", "group": "Intro", "label": "Political Thinking in Practice (PTP)", "count": 1, "any": [{ "tags": ["ptp", "ptp-sub"] }], "note": "ICP or IIP taken earlier can stand in for PTP." },
+          { "id": "methods", "group": "Methods", "label": "Methods course", "count": 1, "any": [{ "tags": ["methods"] }] },
+          { "id": "iafp3000", "group": "IAFP", "label": "3000-level IAFP-designated POLSC-UH", "count": 1, "all": [{ "tags": ["iafp"] }, { "subject": ["POLSC"], "campus": ["UH"], "minLevel": 3000, "maxLevel": 3999 }] },
+          { "id": "iafp", "group": "IAFP", "label": "IAFP-designated elective", "count": 3, "any": [{ "tags": ["iafp"] }], "note": "Only courses Jensen's Spring 2027 guide marks as IAFP are tagged so far. Ask him for the full IAFP list." },
+          { "id": "noniafp", "group": "IAFP", "label": "Non-IAFP 2000+ POL course", "count": 1, "all": [{ "subject": ["POLSC", "POL"], "minLevel": 2000, "maxLevel": 3999 }], "not": [{ "tags": ["iafp"] }] },
+          { "id": "capstone", "group": "Capstone", "label": "Capstone", "count": 2, "any": [{ "tags": ["capstone"] }] }
+        ]
+      },
+      {
+        "id": "dp",
+        "name": "New bulletin",
+        "short": "Data & Politics concentration",
+        "blurb": "Methods-heavy track. Academic capstone required.",
+        "requirements": [
+          { "id": "speh", "group": "Foundation", "label": "SPEH (GEPS or History & Globalization)", "count": 1, "any": [{ "tags": ["speh"] }] },
+          { "id": "spet", "group": "Foundation", "label": "SPET (Social, Political & Economic Thought)", "count": 1, "any": [{ "tags": ["spet"] }] },
+          { "id": "stats", "group": "Foundation", "label": "Statistics for the Social & Behavioral Sciences", "count": 1, "any": [{ "tags": ["stats"] }] },
+          { "id": "ipt", "group": "Intro", "label": "Introduction to Political Thinking (IPT)", "count": 1, "any": [{ "tags": ["ipt"] }] },
+          { "id": "ptp", "group": "Intro", "label": "Political Thinking in Practice (PTP)", "count": 1, "any": [{ "tags": ["ptp", "ptp-sub"] }], "note": "ICP or IIP taken earlier can stand in for PTP." },
+          { "id": "da", "group": "Methods", "label": "POLSC-UH 2211 Data Analysis", "count": 1, "any": [{ "tags": ["data-analysis"] }] },
+          { "id": "rdc", "group": "Methods", "label": "POLSC-UH 2212 Research Design & Causality", "count": 1, "any": [{ "tags": ["rdc"] }], "note": "Not offered Spring 2027." },
+          { "id": "methods", "group": "Methods", "label": "Additional methods course", "count": 2, "any": [{ "tags": ["methods"] }] },
+          { "id": "pol2000", "group": "Electives", "label": "2000+ POL course", "count": 1, "all": [{ "subject": ["POLSC", "POL"], "minLevel": 2000, "maxLevel": 3999 }], "not": [{ "tags": ["methods"] }] },
+          { "id": "pol3000", "group": "Electives", "label": "Non-methods 3000-level POLSC-UH", "count": 1, "all": [{ "subject": ["POLSC"], "campus": ["UH"], "minLevel": 3000, "maxLevel": 3999 }], "not": [{ "tags": ["methods"] }] },
+          { "id": "capstone", "group": "Capstone", "label": "Capstone (academic)", "count": 2, "any": [{ "tags": ["capstone"] }] }
+        ]
+      },
+      {
+        "id": "old",
+        "name": "Old bulletin",
+        "short": "Pre-reform requirements",
+        "blurb": "Available to current 2nd & 3rd years.",
+        "requirements": [
+          { "id": "speh", "group": "Foundation", "label": "SPEH (GEPS or History & Globalization)", "count": 1, "any": [{ "tags": ["speh"] }] },
+          { "id": "spet", "group": "Foundation", "label": "SPET (Social, Political & Economic Thought)", "count": 1, "any": [{ "tags": ["spet"] }] },
+          { "id": "stats", "group": "Foundation", "label": "Statistics for the Social & Behavioral Sciences", "count": 1, "any": [{ "tags": ["stats"] }] },
+          { "id": "ipt", "group": "Intro", "label": "Introduction to Political Thinking (IPT)", "count": 1, "any": [{ "tags": ["ipt"] }] },
+          { "id": "introelec", "group": "Intro", "label": "Intro elective", "count": 2, "any": [{ "tags": ["intro-old"] }, { "subject": ["POLSC"], "campus": ["UH"], "minLevel": 2000, "maxLevel": 3999 }], "note": "ICP, IIP and Intro to Political Theory are no longer offered: take PTP + any other 2000+ POLSC-UH." },
+          { "id": "methods", "group": "Methods", "label": "Methods course", "count": 2, "any": [{ "tags": ["methods"] }] },
+          { "id": "area", "group": "Electives", "label": "Area elective", "count": 2, "any": [{ "tags": ["area-old"] }] },
+          { "id": "breadth", "group": "Electives", "label": "Breadth elective", "count": 2, "any": [{ "tags": ["breadth-old", "area-old"] }], "note": "Any area elective can also count as breadth." },
+          { "id": "capstone", "group": "Capstone", "label": "Capstone", "count": 2, "any": [{ "tags": ["capstone"] }] }
+        ]
+      }
+    ]
+  },
+  "minor": {
+    "name": "Economics (Minor)",
+    "requirements": [
+      { "id": "stats", "group": "Foundation", "label": "Statistics for the Social & Behavioral Sciences", "count": 1, "any": [{ "tags": ["stats"] }] },
+      { "id": "geps", "group": "Foundation", "label": "GEPS or Introduction to Macroeconomics", "count": 1, "any": [{ "tags": ["geps", "macro"] }] },
+      { "id": "markets", "group": "Foundation", "label": "Markets", "count": 1, "any": [{ "tags": ["markets"] }], "note": "Placed out of Markets? You need one extra economics elective." },
+      { "id": "econelec", "group": "Electives", "label": "Economics elective (ECON-UH/UA/UB/SHU)", "count": 2, "all": [{ "subject": ["ECON"] }], "not": [{ "tags": ["macro"] }], "note": "8 credits of ECON-subject courses. DS-, MATH- or BUSOR- courses don't count." }
+    ]
+  },
+  "core": {
+    "name": "Core Curriculum & Gen Ed",
+    "requirements": [
+      { "id": "fyws", "group": "Core", "label": "First-Year Writing Seminar", "count": 1, "any": [{ "fyws": true }] },
+      { "id": "ccol", "group": "Core", "label": "Core Colloquium (14-week, Fall/Spring)", "count": 1, "any": [{ "ccol": "term" }] },
+      { "id": "field", "group": "Core", "label": "Field Colloquium (J-Term)", "count": 2, "any": [{ "ccol": "field" }] },
+      { "id": "cadt", "group": "Core Competencies", "label": "Arts, Design & Technology (CADT)", "count": 1, "any": [{ "coreCat": "CADT" }] },
+      { "id": "ccea", "group": "Core Competencies", "label": "Cultural Exploration & Analysis (CCEA)", "count": 1, "any": [{ "coreCat": "CCEA" }] },
+      { "id": "cdad", "group": "Core Competencies", "label": "Data & Discovery (CDAD)", "count": 1, "any": [{ "coreCat": "CDAD" }] },
+      { "id": "csts", "group": "Core Competencies", "label": "Structures of Thought & Society (CSTS)", "count": 1, "any": [{ "coreCat": "CSTS" }] }
+    ]
+  },
+  "gened": {
+    "name": "Gen Ed attributes",
+    "requirements": [
+      { "id": "x", "group": "Gen Ed", "label": "Islamic Studies (X)", "count": 1, "any": [{ "attr": "X" }], "note": "X/E/Q can double-count with Core, major or minor." },
+      { "id": "e", "group": "Gen Ed", "label": "Experimental Inquiry (E)", "count": 1, "any": [{ "attr": "E" }] },
+      { "id": "q", "group": "Gen Ed", "label": "Quantitative Reasoning (Q)", "count": 1, "any": [{ "attr": "Q" }] },
+      { "id": "pe", "group": "Gen Ed", "label": "Physical Education (non-credit)", "count": 2, "any": [{ "pe": true }] }
+    ]
+  }
+}

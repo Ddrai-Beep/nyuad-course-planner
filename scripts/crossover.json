@@ -1,0 +1,478 @@
+{
+ "econ": [
+  [
+   "ECON-UH 1112",
+   "Introduction to Macroeconomics"
+  ],
+  [
+   "ECON-UH 1701",
+   "Economics of Gender"
+  ],
+  [
+   "ECON-UH 2010",
+   "Intermediate Microeconomics"
+  ],
+  [
+   "ECON-UH 2020",
+   "Data Analysis: Economics"
+  ],
+  [
+   "ECON-UH 2030",
+   "Intermediate Macroeconomics"
+  ],
+  [
+   "ECON-UH 2310EQ",
+   "Behavioral Economics"
+  ],
+  [
+   "ECON-UH 2320E",
+   "Experimental Economics"
+  ],
+  [
+   "ECON-UH 2410",
+   "Development Economics"
+  ],
+  [
+   "ECON-UH 2411",
+   "Technology and Economic Development: Markets and Networks"
+  ],
+  [
+   "ECON-UH 2451X",
+   "Economic History of the Middle East"
+  ],
+  [
+   "ECON-UH 2510",
+   "Foundations of Financial Markets"
+  ],
+  [
+   "ECON-UH 2512",
+   "FinTech Innovation: Finance, Technology, Regulation"
+  ],
+  [
+   "ECON-UH 2514",
+   "Economics of Sovereign Wealth Funds"
+  ],
+  [
+   "ECON-UH 2610",
+   "International Economics"
+  ],
+  [
+   "ECON-UH 2710",
+   "Labor Economics"
+  ],
+  [
+   "ECON-UH 2711",
+   "Health Economics"
+  ],
+  [
+   "ECON-UH 2922",
+   "Industrial Organization"
+  ],
+  [
+   "ECON-UH 3010",
+   "Economics of Imperfect Markets"
+  ],
+  [
+   "ECON-UH 3030",
+   "Economic Growth"
+  ],
+  [
+   "ECON-UH 3210",
+   "Quantitative Methods and Program Evaluation"
+  ],
+  [
+   "ECON-UH 3300",
+   "Topics in Behavioral and Experimental Economics"
+  ],
+  [
+   "ECON-UH 3320",
+   "Applied Forecasting: From Linear Models to Data Mining and Deep Learning"
+  ],
+  [
+   "ECON-UH 3400",
+   "Topics in Development and Economic History"
+  ],
+  [
+   "ECON-UH 3511X",
+   "Islamic Economics and Finance"
+  ],
+  [
+   "ECON-UH 3513",
+   "Advanced Investments"
+  ],
+  [
+   "ECON-UH 3520",
+   "Corporate Finance"
+  ],
+  [
+   "ECON-UH 3521",
+   "Asset Pricing and Derivatives"
+  ],
+  [
+   "ECON-UH 3600",
+   "Topics in International and Macroeconomics"
+  ],
+  [
+   "ECON-UH 3630",
+   "Public Economics"
+  ],
+  [
+   "ECON-UH 3900",
+   "Topics in Economic Theory"
+  ],
+  [
+   "ECON-UH 3910",
+   "Advanced Microeconomics"
+  ],
+  [
+   "ECON-UH 3912",
+   "Economics of Networks"
+  ],
+  [
+   "ECON-UH 3913",
+   "Market Design"
+  ],
+  [
+   "ECON-UH 3940",
+   "Advanced Macroeconomics"
+  ],
+  [
+   "ECON-UH 3950",
+   "Topics in Financial Econometrics"
+  ],
+  [
+   "ECON-UH 4000",
+   "Economic Policy"
+  ],
+  [
+   "ECON-UH 4005",
+   "Advanced Mathematics for Economists"
+  ],
+  [
+   "ECON-UH 4210",
+   "Advanced Econometrics"
+  ]
+ ],
+ "methods": [
+  [
+   "BUSOR-UH 2004",
+   "Data Analytics: Business"
+  ],
+  [
+   "CDAD-UH 1078EQ",
+   "Inclusive Data Literacy"
+  ],
+  [
+   "CS-UH 2219E",
+   "Computational Social Science"
+  ],
+  [
+   "ECON-UH 2020",
+   "Data Analysis: Economics"
+  ],
+  [
+   "POLSC-UH 2211",
+   "Data Analysis"
+  ],
+  [
+   "POLSC-UH 3212",
+   "Qualitative Methods in Middle East Politics"
+  ],
+  [
+   "SOCSC-UH 2211",
+   "Survey Research"
+  ],
+  [
+   "SOCSC-UH 2212",
+   "Research Design & Causality in Social Science"
+  ],
+  [
+   "SOCSC-UH 2213",
+   "Textual Analysis for the Social Sciences"
+  ],
+  [
+   "SOCSC-UH 2214",
+   "Applied Data Science"
+  ],
+  [
+   "SOCSC-UH 3210",
+   "Advanced Game Theory"
+  ],
+  [
+   "SRPP-UH 2214",
+   "Interview Methods"
+  ],
+  [
+   "SRPP-UH 3214",
+   "Social Networks"
+  ],
+  [
+   "ECON-UH 3210",
+   "Quantitative Methods and Program Evaluation"
+  ],
+  [
+   "ECON-UH 3912",
+   "Economics of Networks"
+  ]
+ ],
+ "area": [
+  [
+   "ACS-UH 1610X",
+   "Feminism and Islamism in the Middle East and North Africa"
+  ],
+  [
+   "BUSOR-UH 1011",
+   "Foundations of Leadership"
+  ],
+  [
+   "CSTS-UH 1015",
+   "Legitimacy"
+  ],
+  [
+   "CSTS-UH 1094",
+   "Space Diplomacy"
+  ],
+  [
+   "CSTS-UH 1129",
+   "Environment & Politics"
+  ],
+  [
+   "CSTS-UH 1131",
+   "Gender & Governance"
+  ],
+  [
+   "HIST-UH 1131",
+   "Southeast Asia in the World"
+  ],
+  [
+   "HIST-UH 2121",
+   "Genocide in a Global Perspective"
+  ],
+  [
+   "LAW-UH 2011",
+   "Constitutional and Administrative Law"
+  ],
+  [
+   "LAW-UH 2124",
+   "Human Rights Law"
+  ],
+  [
+   "LAW-UH 2114",
+   "Climate Change Law and Policy"
+  ],
+  [
+   "LAW-UH 2129",
+   "Mooting"
+  ],
+  [
+   "LAW-UH 2132",
+   "Vis Moot Topics"
+  ],
+  [
+   "LAW-UH 3503",
+   "European Union Law"
+  ],
+  [
+   "POLSC-UH 1114",
+   "War on Terrorism"
+  ],
+  [
+   "POLSC-UH 2310",
+   "Political Psychology"
+  ],
+  [
+   "POLSC-UH 2311",
+   "Political Economy of Institutions"
+  ],
+  [
+   "POLSC-UH 2312",
+   "Political Economy of Development"
+  ],
+  [
+   "POLSC-UH 2317",
+   "Identity and Culture in Politics"
+  ],
+  [
+   "POLSC-UH 2326",
+   "Politics and Finance"
+  ],
+  [
+   "POLSC-UH 2410X",
+   "Comparative Politics of the Middle East"
+  ],
+  [
+   "POLSC-UH 2411",
+   "Politics, Social Change & Development in South Asia"
+  ],
+  [
+   "POLSC-UH 2412",
+   "Power and Politics in America"
+  ],
+  [
+   "POLSC-UH 2414",
+   "African Politics"
+  ],
+  [
+   "POLSC-UH 2421X",
+   "Political Economy of the Middle East"
+  ],
+  [
+   "POLSC-UH 2422X",
+   "North African Politics"
+  ],
+  [
+   "POLSC-UH 2423",
+   "Media and Politics"
+  ],
+  [
+   "POLSC-UH 2426",
+   "Comparative Politics of Industrialized Democracies"
+  ],
+  [
+   "POLSC-UH 2429",
+   "Latin American Politics"
+  ],
+  [
+   "POLSC-UH 2511",
+   "International Organizations"
+  ],
+  [
+   "POLSC-UH 2517Q",
+   "Modeling Politics and International Relations"
+  ],
+  [
+   "POLSC-UH 2519",
+   "Nuclear Politics"
+  ],
+  [
+   "POLSC-UH 2910",
+   "Business, Politics, and Society"
+  ],
+  [
+   "POLSC-UH 3313",
+   "Making and Breaking Elections"
+  ],
+  [
+   "POLSC-UH 3413",
+   "Foreign Policy Analysis"
+  ],
+  [
+   "POLSC-UH 3510",
+   "Money in Global Politics: Politics of global trade, finance, and development."
+  ],
+  [
+   "POLSC-UH 3512",
+   "Civil Wars and International Intervention"
+  ],
+  [
+   "PSYCH-UH 3619EQ",
+   "Lab in Psychology of Economic Inequality"
+  ],
+  [
+   "SOCSC-UH 3220",
+   "Econometrics"
+  ],
+  [
+   "SRPP-UH 2612X",
+   "State Formation: The Case of the United Arab Emirates"
+  ]
+ ],
+ "breadth": [
+  [
+   "ACS-UH 2614X",
+   "Colonization of Palestine"
+  ],
+  [
+   "ECON-UH 1701",
+   "Economics of Gender"
+  ],
+  [
+   "ECON-UH 2320E",
+   "Experimental Economics"
+  ],
+  [
+   "ECON-UH 2410",
+   "Development Economics"
+  ],
+  [
+   "ECON-UH 4000",
+   "Economic Policy"
+  ],
+  [
+   "HIST-UH 1105",
+   "Africa in the World"
+  ],
+  [
+   "HIST-UH 1110",
+   "Colonial Latin America and the Atlantic World"
+  ],
+  [
+   "HIST-UH 2121",
+   "Genocide in a Global Perspective"
+  ],
+  [
+   "LAW-UH 2011",
+   "Constitutional and Administrative Law"
+  ],
+  [
+   "LAW-UH 2124",
+   "Human Rights Law"
+  ],
+  [
+   "LAW-UH 2133",
+   "Vis Moot Part II: International Arbitration Competition"
+  ],
+  [
+   "LAW-UH 2129",
+   "Mooting"
+  ],
+  [
+   "LAW-UH 2132",
+   "Vis Moot Topics"
+  ],
+  [
+   "LAW-UH 3503",
+   "European Union Law"
+  ],
+  [
+   "PEACE-UH 1011",
+   "Foundations of Peace: Economic and Political Perspectives"
+  ],
+  [
+   "POLSC-UH 2310",
+   "Political Psychology"
+  ],
+  [
+   "PSYCH-UH 3619EQ",
+   "Lab in Psychology of Economic Inequality"
+  ],
+  [
+   "SRPP-UH 1818",
+   "Gender, Policy and Politics"
+  ],
+  [
+   "SRPP-UH 2412X",
+   "Islamist Social Movements in the Middle East"
+  ],
+  [
+   "SRPP-UH 2418",
+   "Politics and Society"
+  ],
+  [
+   "SRPP-UH 2611",
+   "Social Policy"
+  ],
+  [
+   "SRPP-UH 2614X",
+   "Women and Work in the Gulf"
+  ],
+  [
+   "SRPP-UH 2619",
+   "Leadership and Diplomacy"
+  ],
+  [
+   "POLSC-UH 2910",
+   "Business, Politics, and Society"
+  ]
+ ]
+}

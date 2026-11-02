@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYUAD Course Planner</title>
+  <meta name="description" content="Upload your NYUAD 4-year plan, see what's left for your major, minor and Core, and build your registration list.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%2357068c'/><path d='M9 16.5l4.5 4.5L23 11.5' stroke='white' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" defer></script>
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="./"><span class="brand-mark">✓</span> NYUAD Course Planner</a>
+      <span class="topbar-meta" id="topbar-meta"></span>
+    </div>
+  </header>
+  <main class="wrap" id="app" aria-live="polite">
+    <p class="muted">Loading…</p>
+  </main>
+  <footer class="wrap footer">
+    <p>Requirements come from the NYUAD Bulletin and the Political Science <em>Spring 2027</em> guide (J. Jensen, 26 Oct 2026). This is an unofficial tool, so confirm with your advisor and in Albert before you register.</p>
+  </footer>
+</body>
+</html>
