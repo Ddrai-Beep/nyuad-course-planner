@@ -1,7 +1,7 @@
 """Builds the non-PS majors + Art History minor into data/programs.json, and writes
 scripts/majors_courses.json (code -> title) for build_catalog.py.
 
-Source: NYU Abu Dhabi Bulletin 2026-27 (bulletins.nyu.edu/undergraduate/abu-dhabi/programs/<program>/),
+Source: NYU Abu Dhabi Bulletin 2026-27 program pages, plus the course inventory's "AD Curriculum Attributes" for category lists the program pages leave out (bulletins.nyu.edu/undergraduate/abu-dhabi/programs/<program>/),
 read 3 Nov 2026. Theater: NYUAD Theater major "Courses" page (the Bulletin page has no table).
 Where the Bulletin lists no course codes for a category, the rule matches by subject/level and says so in a note.
 
@@ -12,6 +12,9 @@ import json, re, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROG = os.path.join(ROOT, 'data', 'programs.json')
 TITLES = {}  # code -> title, for the catalog
+# Course titles scraped from the Bulletin course inventory (bulletins.nyu.edu/undergraduate/abu-dhabi/courses/), 3 Nov 2026
+BT = {re.sub(r'[A-Z]+$', '', k): v for k, v in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'bulletin_titles.json'))).items()}
+def bt(code): return BT.get(re.sub(r'[A-Z]+$', '', code.strip().upper()), '')
 
 
 def norm(code):
@@ -24,9 +27,9 @@ def codes(*cs):
     for c in cs:
         if isinstance(c, tuple):
             c, t = c
-            TITLES.setdefault(norm(c), t)
+            TITLES[norm(c)] = TITLES.get(norm(c)) or t or bt(c)
         else:
-            TITLES.setdefault(norm(c), TITLES.get(norm(c), ''))
+            TITLES[norm(c)] = TITLES.get(norm(c)) or bt(c)
         out.append(norm(c))
     return out
 
@@ -48,6 +51,7 @@ def R(id, group, label, *, count=1, any=None, all=None, not_=None, note=None, cr
 
 def one(id, group, code, title, **kw):
     """A single named course."""
+    title = title or bt(code)
     return R(id, group, f'{norm(code)} {title}'.strip(), any=[{'codes': codes((code, title))}], **kw)
 
 
@@ -257,7 +261,7 @@ M.append(major('bos', 'Business, Organizations and Society (BA)', 'business', [t
 ])], note='BOS also needs any approved minor except Economics or Business Studies (or a second major other than Economics).', source=B))
 
 # ---------- Film and New Media ----------
-FILM_ELEC = C('ARTH-UH 1510', 'CADT-UH 1052', *lst('CCEA-UH', '1062 1078X 1085 1090 1092 1113 1138 1139'), 'CSTS-UH 1099',
+FILM_ELEC = C('ARTH-UH 1510', 'CADT-UH 1026', 'CCEA-UH 1010', 'FILMM-UH 1516', 'FILMM-UH 2515', 'IM-UH 2111', 'THEAT-UH 1522', 'CADT-UH 1052', *lst('CCEA-UH', '1062 1078X 1085 1090 1092 1113 1138 1139'), 'CSTS-UH 1099',
               *lst('FILMM-UH', '1012 1513 1514 1517 1910 1911 1912 2510 2513 3110 3511 3512'), 'IM-UH 1010', *lst('LITCW-UH', '1506 2315X 3317 3501'),
               'MUSIC-UH 2418', *lst('THEAT-UH', '1011 1110 1129 2115'))
 M.append(major('film', 'Film and New Media (BA)', 'film', [track('film', 'Standard', [
@@ -266,20 +270,29 @@ M.append(major('film', 'Film and New Media (BA)', 'film', [track('film', 'Standa
     one('d', 'Required', 'FILMM-UH 1510', 'Techniques for Safety and Production', credits=2),
     either('e', 'Required', [('FILMM-UH 3110', 'Archives, Methods, Screens'), ('FILMM-UH 3511', 'Cinematic Expression: Methods, Sketches')]),
     R('elec', 'Electives', 'Film and New Media elective', count=6, any=[FILM_ELEC]),
-    R('breadth', 'Electives', 'Breadth elective from another arts major', any=[SUBJ('ARTH', 'IM', 'MUSIC', 'THEAT')],
+    R('breadth', 'Electives', 'Breadth elective from another arts major', any=[SUBJ('ARTH', 'IM', 'MUSIC', 'THEAT'), C('PHIL-UH 2416', 'THEAT-UH 1519')],
       note='From another arts program: Art and Art History, Interactive Media, Music or Theater.'),
     *capstone('FILMM-UH', 4000, 4001),
 ])], note='The program recommends counting no more than two courses taken away from Abu Dhabi toward the major.', source=B))
 
 # ---------- History ----------
+HIST_REG = C('ACS-UH 2615X', *lst('HIST-UH', '1105 1110 1119 1125X 1127 1131'), 'AW-UH 1114', 'AW-UH 1120X')
+HIST_GLOB = C('CCEA-UH 1090', 'CCEA-UH 1094X', 'CSTS-UH 1088', 'CSTS-UH 1126', 'HERST-UH 1100', *lst('HIST-UH', '1127 2113 2116 2117X 2121 2122X 2123 2710'), 'LITCW-UH 2315X', 'MUSIC-UH 1004')
+HIST_ZONES = {
+    'Asia-Pacific': C('CADT-UH 1063', 'CSTS-UH 1126', 'HIST-UH 3110', 'HIST-UH 3112'),
+    'Atlantic World': C('CSTS-UH 1151', *lst('HIST-UH', '2710 3312 3315')),
+    'Indian Ocean': C('ACS-UH 1412X', 'ARTH-UH 1116', 'ARTH-UH 2131', 'CSTS-UH 1052X', 'CSTS-UH 1125X', 'HERST-UH 1501', *lst('HIST-UH', '1125X 3315 3513X'), 'AW-UH 1113X', 'AW-UH 1120X'),
+    'Mediterranean, Black & Caspian Sea Worlds': C(*lst('ACS-UH', '1012X 1410X 1412X 2410X 2417 2419X 2614X'), 'CCEA-UH 1114X', 'CSTS-UH 1052X', 'CSTS-UH 1059X', 'CSTS-UH 1151',
+                                                  'ECON-UH 2451X', *lst('HIST-UH', '1126X 2710 3717'), *lst('AW-UH', '1113X 1115X 1118 1120X')),
+}
 M.append(major('hist', 'History (BA)', 'history', [track('hist', 'Standard', [
     one('glob', 'Required', 'HIST-UH 2010', 'History and Globalization'), one('writing', 'Required', 'HIST-UH 3010', 'Writing History'),
-    R('h1', 'Electives', '1000-level Regional Perspectives on World History', count=2, all=[SUBJ('HIST', maxLevel=1999)]),
-    R('h2', 'Electives', '2000-level Global Thematic course', all=[SUBJ('HIST', minLevel=2000, maxLevel=2999)]),
-    R('h3', 'Electives', '3000-level Major Topics course', count=4, all=[SUBJ('HIST', minLevel=3000, maxLevel=3999)],
+    R('h1', 'Electives', 'Regional Perspectives on World History', count=2, any=[HIST_REG]),
+    R('h2', 'Electives', 'Global Thematic course', any=[HIST_GLOB]),
+    R('h3', 'Electives', 'Major Topics course (zone elective)', count=4, any=list(HIST_ZONES.values()),
       note='The four 3000-level courses must cover at least three of: Asia-Pacific; Atlantic World; Indian Ocean; Mediterranean, Black & Caspian Sea Worlds. At least one of the seven electives must be pre-1800.'),
     *capstone('HIST-UH', 4000, 4001),
-])], note='The Bulletin doesn\'t list elective codes, so I match HIST courses by level. Cross-listed courses: set "Counts toward" under "Your plan".', source=B))
+])], note='Elective lists come from the Bulletin course inventory\'s curriculum attributes. The zone rule (four Major Topics courses across three zones) isn\'t checked automatically.', source=B))
 
 # ---------- Psychology ----------
 PS_CP = ['PSYCH-UH 2216', 'PSYCH-UH 2217', 'PSYCH-UH 2218', 'PSYCH-UH 2410', 'PSYCH-UH 2411', 'PSYCH-UH 2412']
@@ -312,20 +325,28 @@ M.append(major('law', 'Legal Studies (BA)', 'legal', [track('law', 'Standard', [
     either('d', 'Required', [('LAW-UH 1013', 'Business Law'), ('LAW-UH 1014', 'Commercial Law')]),
     one('e', 'Required', 'LAW-UH 3010', 'Legal Ethics and Professional Responsibility'),
     either('f', 'Required', [('LAW-UH 2010', 'Legal Institutions'), ('LAW-UH 2011', 'Constitutional and Administrative Law'), ('LAW-UH 2123', 'Public International Law')]),
-    R('elec', 'Electives', 'Legal Studies elective', count=4, any=[{'tags': ['law-req', 'law-elec']}, SUBJ('LAW')]),
+    R('elec', 'Electives', 'Legal Studies elective', count=4, any=[C('BUSOR-UH 2113', 'CCEA-UH 1011', *lst('CSTS-UH', '1061 1074 1076 1077 1097 1125X 1149'), 'ECON-UH 2512', 'ECON-UH 3511X',
+        'HERST-UH 1502', 'HIST-UH 2121', *lst('LAW-UH', '1110 1114 2011 2112 2114 2119 2122X 2123 2124 2126X 2127 2128 2129 2131 2132 2133 2134 2135 2136 2137 2138 2139 2500 2501 3101 3102 3103 3500 3501 3503'),
+        'MUSIC-UH 2662', 'PHIL-UH 1117', 'PHIL-UH 2614', 'SRPP-UH 1816', 'SRPP-UH 2414', 'ENVR-UH 1312')]),
     *capstone('LAW-UH', 4000, 4001),
 ])], note='Optional London track: the Bulletin recommends LAW-UH 1014, 2011, 1110, 2500, 2501, 3500, 3501 and 3503.', source=B))
 
 # ---------- Philosophy ----------
-PHIL_NOTE = 'The Bulletin doesn\'t publish the category lists. Check the course\'s attributes in Albert, then set "Counts toward" under "Your plan".'
+PHIL_INTRO = C('CSTS-UH 1060', 'CSTS-UH 1061', 'CSTS-UH 1097', *lst('PHIL-UH', '1101 1110 1115 1117 1118 1120'))
+PHIL_HIST = C(*lst('PHIL-UH', '2210 2211X 2212 2222 2223 2224'))
+PHIL_THEO = C(*lst('PHIL-UH', '2410 2411 2412 2414 2415 2416 2417 2910'))
+PHIL_PRAC = C(*lst('PHIL-UH', '2610 2611 2614 2615 2616'), 'SOCSC-UH 1311')
+PHIL_SEM = C(*lst('PHIL-UH', '3210 3410 3610'))
+PHIL_OTHER = C('PHIL-UH 2810', 'PHIL-UH 3000', 'THEAT-UH 1522')
 M.append(major('phil', 'Philosophy (BA)', 'philosophy', [track('phil', 'Standard', [
-    R('intro', 'Required', 'Introductory elective', any=[{'tags': ['phil-intro']}, SUBJ('PHIL', maxLevel=1999)], not_=[C('PHIL-UH 1810')]),
+    R('intro', 'Required', 'Introductory elective', any=[PHIL_INTRO]),
     one('logic', 'Required', 'PHIL-UH 1810', 'Introduction to Logic'),
-    R('history', 'Required', 'History of Philosophy elective', all=[SUBJ('PHIL', minLevel=2000)], note=PHIL_NOTE),
-    R('theory', 'Required', 'Theoretical Philosophy elective', all=[SUBJ('PHIL', minLevel=2000)]),
-    R('practical', 'Required', 'Practical Philosophy elective', all=[SUBJ('PHIL', minLevel=2000)]),
-    R('seminar', 'Required', 'Advanced Seminar', all=[SUBJ('PHIL', minLevel=3000, maxLevel=3999)]),
-    R('more', 'Electives', 'Additional Philosophy course', count=2, all=[SUBJ('PHIL')], note='No more than two introductory electives count toward the major.'),
+    R('history', 'Required', 'History of Philosophy elective', any=[PHIL_HIST]),
+    R('theory', 'Required', 'Theoretical Philosophy elective', any=[PHIL_THEO]),
+    R('practical', 'Required', 'Practical Philosophy elective', any=[PHIL_PRAC]),
+    R('seminar', 'Required', 'Advanced Seminar', any=[PHIL_SEM]),
+    R('more', 'Electives', 'Additional Philosophy course', count=2, any=[PHIL_INTRO, PHIL_HIST, PHIL_THEO, PHIL_PRAC, PHIL_SEM, PHIL_OTHER],
+      note='No more than two introductory electives count toward the major.'),
     *capstone('PHIL-UH', 4000, 4001, 'Capstone Project', 'Capstone Project'),
 ])], source=B))
 
@@ -439,29 +460,45 @@ M.append(major('phys', 'Physics (BS)', 'physics', [
 ], note='Grades of C or better are required in the physics components of Foundations of Science.', source=B))
 
 # ---------- Biology ----------
+BIO_ELEC = C(*lst('BIOL-UH', '2113 2114 3114 3116 3117 3118 3121 3122 3124 3125 3130 3215'), *lst('CHEM-UH', '3020 3021 3022'), 'ENGR-UH 3130', 'ENGR-UH 3810')
+BIO_LAB = C(*lst('BIOL-UH', '3101 3211 3213 3218 3220'), 'PSYCH-UH 3617')
 BIO_REQ = [('BIOL-UH 2010', 'Human Physiology'), ('CHEM-UH 2010', 'Organic Chemistry 1'), ('BIOL-UH 3120', 'Biostatistics')]
-M.append(major('bio', 'Biology (BS)', 'biology', [track('bio', 'Standard', fos(['1-2', '3-4', '5-6']) + math_core('calc', 'mvc') + [
+bio_base = fos(['1-2', '3-4', '5-6']) + math_core('calc', 'mvc') + [
     *[one(f'r{i}', 'Required', c, t, **({'credits': 5} if c.startswith('CHEM') else {})) for i, (c, t) in enumerate(BIO_REQ)],
-    R('elec', 'Electives', 'Biology elective', count=4, all=[SUBJ('BIOL', minLevel=2000)], not_=[C(*[c for c, _ in BIO_REQ]), C('BIOL-UH 3090', 'BIOL-UH 4001', 'BIOL-UH 4002')]),
-    one('seminar', 'Required', 'BIOL-UH 3090', 'Research Seminar in Biology', credits=2),
-    *capstone('BIOL-UH', 4001, 4002, 'Capstone Project in Biology 1', 'Capstone Project in Biology 2'),
-])], note='Grades of C or better are required in the biology components of Foundations of Science. Specializations (Brain and Cognitive Science, Biophysics) aren\'t modelled yet.', source=B))
+    one('seminar', 'Required', 'BIOL-UH 3090', 'Research Seminar in Biology', credits=2)]
+bio_cap = capstone('BIOL-UH', 4001, 4002, 'Capstone Project in Biology 1', 'Capstone Project in Biology 2')
+M.append(major('bio', 'Biology (BS)', 'biology', [
+    track('bio', 'Standard', bio_base + [R('elec', 'Electives', 'Biology elective', count=4, any=[BIO_ELEC])] + bio_cap),
+    track('bio-bcs', 'Brain and Cognitive Science', bio_base + [
+        one('b1', 'Specialization', 'BIOL-UH 3101', ''), one('b2', 'Specialization', 'BIOL-UH 3117', ''),
+        one('b3', 'Specialization', 'PSYCH-UH 1001', 'Introduction to Psychology'),
+        either('b4', 'Specialization', [('PSYCH-UH 2410', bt('PSYCH-UH 2410')), ('PSYCH-UH 2412', bt('PSYCH-UH 2412'))]),
+        R('lab', 'Specialization', 'Biology lab elective', any=[BIO_LAB])] + bio_cap),
+], note='Grades of C or better are required in the biology components of Foundations of Science. The Biophysics specialization isn\'t modelled yet.', source=B))
 
 # ---------- Chemistry ----------
-M.append(major('chem', 'Chemistry (BS)', 'chemistry', [track('chem', 'Standard', fos(['1-2', '3-4', '5-6']) + math_core('calc', 'mvc') + [
+# Lists from the course inventory attributes ("Chemistry: Common Required", "Chemistry Major: Chemical Sciences Required", ...)
+chem_common = fos(['1-2', '3-4', '5-6']) + math_core('calc', 'mvc') + [
     one('oc1', 'Required', 'CHEM-UH 2010', 'Organic Chemistry 1', credits=5), one('oc2', 'Required', 'CHEM-UH 3010', 'Organic Chemistry 2'),
     one('oc2l', 'Required', 'CHEM-UH 3050', 'Organic Chemistry 2 Lab', credits=1),
     one('pc1', 'Required', 'CHEM-UH 3011', 'Physical Chemistry: Thermodynamics and Kinetics'),
-    one('pc1l', 'Required', 'CHEM-UH 3012', 'Physical Chemistry Laboratory: Thermodynamics and Kinetics', credits=2),
-    one('pc2', 'Required', 'CHEM-UH 3013', 'Physical Chemistry: Quantum Mechanics and Spectroscopy'),
-    one('pc2l', 'Required', 'CHEM-UH 3014', 'Physical Chemistry Laboratory: Quantum Mechanics and Spectroscopy', credits=2),
-    one('inorg', 'Required', 'CHEM-UH 3015', 'Inorganic Chemistry'), one('anal', 'Required', 'CHEM-UH 3016', 'Analytical Chemistry'),
-    R('biochem', 'Required', 'Biochemistry: Molecular Structure and Function, or Biochemistry: Metabolism', all=[SUBJ('CHEM', minLevel=3000)],
-      note='The Bulletin page doesn\'t give these course numbers. Set "Counts toward" under "Your plan" once you know the code.'),
-    R('elec', 'Electives', 'Chemistry elective', all=[SUBJ('CHEM', minLevel=3000)], note='Enough to reach 56 major credits. Check the track (Chemical Sciences or Medical Sciences) with your mentor.'),
-    one('seminar', 'Required', 'CHEM-UH 3090', 'Research Seminar in Chemistry', credits=2),
-    *capstone('CHEM-UH', 4001, 4002, 'Capstone Project in Chemistry 1', 'Capstone Project in Chemistry 2'),
-])], note='The Bulletin page for Chemistry is incomplete (no elective list or track tables). Treat this one as a rough guide.', source=B))
+    one('inorg', 'Required', 'CHEM-UH 3015', 'Inorganic Chemistry'),
+    one('biochem', 'Required', 'CHEM-UH 3020', ''),
+    one('seminar', 'Required', 'CHEM-UH 3090', 'Research Seminar in Chemistry', credits=2)]
+chem_cap = capstone('CHEM-UH', 4001, 4002, 'Capstone Project in Chemistry 1', 'Capstone Project in Chemistry 2')
+M.append(major('chem', 'Chemistry (BS)', 'chemistry', [
+    track('chem-cs', 'Chemical Sciences', chem_common + [
+        one('pc1l', 'Chemical Sciences', 'CHEM-UH 3012', 'Physical Chemistry Laboratory: Thermodynamics and Kinetics', credits=2),
+        one('pc2', 'Chemical Sciences', 'CHEM-UH 3013', 'Physical Chemistry: Quantum Mechanics and Spectroscopy'),
+        one('pc2l', 'Chemical Sciences', 'CHEM-UH 3014', 'Physical Chemistry Laboratory: Quantum Mechanics and Spectroscopy', credits=2),
+        one('anal', 'Chemical Sciences', 'CHEM-UH 3016', 'Analytical Chemistry'),
+        R('elec', 'Chemical Sciences', 'Chemical Sciences elective', any=[C(*lst('CHEM-UH', '2201 3021 3022 3201 4212'))], note='Enough to reach 56 major credits.')] + chem_cap),
+    track('chem-ms', 'Medical Sciences', chem_common + [
+        R('lec', 'Medical Sciences', 'Medical Sciences lecture elective', count=2, any=[C(*lst('CHEM-UH', '2201 3021 3201 4212'))],
+          note='The Bulletin program page doesn\'t give counts for this track; two lecture and two lab electives fill the 56-credit minimum. Confirm with your mentor.'),
+        R('lab', 'Medical Sciences', 'Medical Sciences lab elective', count=2, credits=2, any=[C('BIOL-UH 3213', *lst('CHEM-UH', '3012 3014 3016 3022'))],
+          note='Optional extras the Bulletin lists for this track: BIOL-UH 2114, 3116, 3120, MATH-UH 2011, PHIL-UH 1118 (Bioethics), PSYCH-UH 2210, 3620.')] + chem_cap),
+], note='Track lists come from the Bulletin course inventory; the program page itself is incomplete.', source=B))
 
 # ---------- Engineering ----------
 def eng_major(id, name, match, designated, required, electives, note=''):
@@ -513,8 +550,8 @@ M.append(eng_major('elec', 'Electrical Engineering (BS)', 'electrical', [
 M.append(eng_major('geng', 'General Engineering (BS)', 'general engineering', [
     one('em', DES, *EM_ENG), *math_core('calc', 'mvc', 'la'), either('ode', DES, [ODE, DIFFEQ_ENG]), one('prob', DES, *PROB_ENG, credits=2),
     either('cs', DES, [('CS-UH 1002', 'Discrete Mathematics'), ('ENGR-UH 2027', 'Introduction to Data Analysis for Engineers')], credits=2)],
-    [], [R('elec', 'Engineering electives', 'Engineering elective', count=10, credits=3.9, all=[SUBJ('ENGR', minLevel=2000)],
-           not_=[C(*lst('ENGR-UH', '2010 2011 2012 2013 2017 2019 2027 2710 4011 4020'))],
+    [], [R('elec', 'Engineering electives', 'Engineering elective', count=10, credits=3.9, any=[C('CS-UH 2010', 'CS-UH 3211',
+           *lst('ENGR-UH', '1801 2028 2112 2113 2210 2211 2212 2311 2410 2510 2610 2810 2811 2812 3111 3210 3230 3331 3332 3410 3411 3412 3413 3414 3420 3430 3431 3432 3510 3511 3512 3520 3530 3610 3611 3613 3620 3710 3720 3730 3751 3810 3813 4112 4141 4142 4143 4160 4230 4320 4330 4423 4424 4431 4433 4434 4436 4460 4560 4610 4620 4701 4710 4712 4760 4810'))],
            note='At least 39 credits from the Engineering electives list. Optional themes: Cyber Security, Robotics, Urban Systems, Environmental Sustainability, BioMedical and Health Systems.')]))
 M.append(eng_major('bioe', 'Bioengineering (BS)', 'bioengineering',
     [*fos(['3-4'], counts=[5], credits=1.6), one('bchem', DES, 'CHEM-UH 3101', '', credits=2),
@@ -547,12 +584,14 @@ M.append(major('music', 'Music (BA)', 'music', [
 ], note='Ensembles, individual and group instruction, MUSIC-UH 1410 and 1420 are 2 credits.', source=B))
 
 # ---------- Theater ----------
+TH_AP = C('CADT-UH 1077', 'CADT-UH 1092', 'IM-UH 2322', 'IM-UH 3115', *lst('THEAT-UH', '1110 1111 1112 1115 1121 1122 1126 1127 1128 1129 1131 1522 1523 2110 2111 2112 2115'))
+TH_HTC = C('CADT-UH 1078', *lst('CCEA-UH', '1001 1055 1056 1090'), 'LAW-UH 2131', 'MUSIC-UH 1713', *lst('THEAT-UH', '1512 1519 1520 1521 1522 1523'))
 M.append(major('theat', 'Theater (BA)', 'theat', [track('theat', 'Standard', [
     one('make', 'Required', 'THEAT-UH 1010', 'Making Theater'), one('think', 'Required', 'THEAT-UH 1011', 'Thinking Theater'),
     one('seminar', 'Required', 'THEAT-UH 3090', 'Capstone Seminar'),
-    R('ap', 'Electives', 'Arts Practice elective', all=[SUBJ('THEAT')], note='Category lists aren\'t published with codes; check the course attributes in Albert.'),
-    R('htc', 'Electives', 'History, Theory, Criticism elective', all=[SUBJ('THEAT')]),
-    R('more', 'Electives', 'Additional Theater elective', count=4, all=[SUBJ('THEAT')]),
+    R('ap', 'Electives', 'Arts Practice elective', any=[TH_AP]),
+    R('htc', 'Electives', 'History, Theory, Criticism elective', any=[TH_HTC]),
+    R('more', 'Electives', 'Additional Theater elective', count=4, any=[TH_AP, TH_HTC, SUBJ('THEAT')]),
     R('arts', 'Electives', 'Elective from another arts program', any=[SUBJ('ARTH', 'FILMM', 'IM', 'MUSIC')]),
     one('cap1', 'Capstone', 'THEAT-UH 4001', 'Capstone Project A'), one('cap2', 'Capstone', 'THEAT-UH 4002', 'Capstone Project B'),
 ])], source='NYUAD Theater major "Courses" page (the Bulletin page has no requirements table)'))

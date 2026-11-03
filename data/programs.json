@@ -2982,6 +2982,12 @@
         {
          "codes": [
           "ARTH-UH 1510",
+          "CADT-UH 1026",
+          "CCEA-UH 1010",
+          "FILMM-UH 1516",
+          "FILMM-UH 2515",
+          "IM-UH 2111",
+          "THEAT-UH 1522",
           "CADT-UH 1052",
           "CCEA-UH 1062",
           "CCEA-UH 1078X",
@@ -3031,6 +3037,12 @@
           "MUSIC",
           "THEAT"
          ]
+        },
+        {
+         "codes": [
+          "PHIL-UH 2416",
+          "THEAT-UH 1519"
+         ]
         }
        ],
        "note": "From another arts program: Art and Art History, Interactive Media, Music or Theater."
@@ -3070,7 +3082,7 @@
    "name": "History (BA)",
    "match": "history",
    "contact": "",
-   "trackNote": "The Bulletin doesn't list elective codes, so I match HIST courses by level. Cross-listed courses: set \"Counts toward\" under \"Your plan\".",
+   "trackNote": "Elective lists come from the Bulletin course inventory's curriculum attributes. The zone rule (four Major Topics courses across three zones) isn't checked automatically.",
    "source": "NYUAD Bulletin 2026–27",
    "tracks": [
     {
@@ -3108,44 +3120,110 @@
       {
        "id": "h1",
        "group": "Electives",
-       "label": "1000-level Regional Perspectives on World History",
+       "label": "Regional Perspectives on World History",
        "count": 2,
-       "all": [
+       "any": [
         {
-         "subject": [
-          "HIST"
-         ],
-         "maxLevel": 1999
+         "codes": [
+          "ACS-UH 2615X",
+          "HIST-UH 1105",
+          "HIST-UH 1110",
+          "HIST-UH 1119",
+          "HIST-UH 1125X",
+          "HIST-UH 1127",
+          "HIST-UH 1131",
+          "AW-UH 1114",
+          "AW-UH 1120X"
+         ]
         }
        ]
       },
       {
        "id": "h2",
        "group": "Electives",
-       "label": "2000-level Global Thematic course",
+       "label": "Global Thematic course",
        "count": 1,
-       "all": [
+       "any": [
         {
-         "subject": [
-          "HIST"
-         ],
-         "minLevel": 2000,
-         "maxLevel": 2999
+         "codes": [
+          "CCEA-UH 1090",
+          "CCEA-UH 1094X",
+          "CSTS-UH 1088",
+          "CSTS-UH 1126",
+          "HERST-UH 1100",
+          "HIST-UH 1127",
+          "HIST-UH 2113",
+          "HIST-UH 2116",
+          "HIST-UH 2117X",
+          "HIST-UH 2121",
+          "HIST-UH 2122X",
+          "HIST-UH 2123",
+          "HIST-UH 2710",
+          "LITCW-UH 2315X",
+          "MUSIC-UH 1004"
+         ]
         }
        ]
       },
       {
        "id": "h3",
        "group": "Electives",
-       "label": "3000-level Major Topics course",
+       "label": "Major Topics course (zone elective)",
        "count": 4,
-       "all": [
+       "any": [
         {
-         "subject": [
-          "HIST"
-         ],
-         "minLevel": 3000,
-         "maxLevel": 3999
+         "codes": [
+          "CADT-UH 1063",
+          "CSTS-UH 1126",
+          "HIST-UH 3110",
+          "HIST-UH 3112"
+         ]
+        },
+        {
+         "codes": [
+          "CSTS-UH 1151",
+          "HIST-UH 2710",
+          "HIST-UH 3312",
+          "HIST-UH 3315"
+         ]
+        },
+        {
+         "codes": [
+          "ACS-UH 1412X",
+          "ARTH-UH 1116",
+          "ARTH-UH 2131",
+          "CSTS-UH 1052X",
+          "CSTS-UH 1125X",
+          "HERST-UH 1501",
+          "HIST-UH 1125X",
+          "HIST-UH 3315",
+          "HIST-UH 3513X",
+          "AW-UH 1113X",
+          "AW-UH 1120X"
+         ]
+        },
+        {
+         "codes": [
+          "ACS-UH 1012X",
+          "ACS-UH 1410X",
+          "ACS-UH 1412X",
+          "ACS-UH 2410X",
+          "ACS-UH 2417",
+          "ACS-UH 2419X",
+          "ACS-UH 2614X",
+          "CCEA-UH 1114X",
+          "CSTS-UH 1052X",
+          "CSTS-UH 1059X",
+          "CSTS-UH 1151",
+          "ECON-UH 2451X",
+          "HIST-UH 1126X",
+          "HIST-UH 2710",
+          "HIST-UH 3717",
+          "AW-UH 1113X",
+          "AW-UH 1115X",
+          "AW-UH 1118",
+          "AW-UH 1120X"
+         ]
         }
        ],
        "note": "The four 3000-level courses must cover at least three of: Asia-Pacific; Atlantic World; Indian Ocean; Mediterranean, Black & Caspian Sea Worlds. At least one of the seven electives must be pre-1800."
@@ -3645,14 +3723,56 @@
        "count": 4,
        "any": [
         {
-         "tags": [
-          "law-req",
-          "law-elec"
-         ]
-        },
-        {
-         "subject": [
-          "LAW"
+         "codes": [
+          "BUSOR-UH 2113",
+          "CCEA-UH 1011",
+          "CSTS-UH 1061",
+          "CSTS-UH 1074",
+          "CSTS-UH 1076",
+          "CSTS-UH 1077",
+          "CSTS-UH 1097",
+          "CSTS-UH 1125X",
+          "CSTS-UH 1149",
+          "ECON-UH 2512",
+          "ECON-UH 3511X",
+          "HERST-UH 1502",
+          "HIST-UH 2121",
+          "LAW-UH 1110",
+          "LAW-UH 1114",
+          "LAW-UH 2011",
+          "LAW-UH 2112",
+          "LAW-UH 2114",
+          "LAW-UH 2119",
+          "LAW-UH 2122X",
+          "LAW-UH 2123",
+          "LAW-UH 2124",
+          "LAW-UH 2126X",
+          "LAW-UH 2127",
+          "LAW-UH 2128",
+          "LAW-UH 2129",
+          "LAW-UH 2131",
+          "LAW-UH 2132",
+          "LAW-UH 2133",
+          "LAW-UH 2134",
+          "LAW-UH 2135",
+          "LAW-UH 2136",
+          "LAW-UH 2137",
+          "LAW-UH 2138",
+          "LAW-UH 2139",
+          "LAW-UH 2500",
+          "LAW-UH 2501",
+          "LAW-UH 3101",
+          "LAW-UH 3102",
+          "LAW-UH 3103",
+          "LAW-UH 3500",
+          "LAW-UH 3501",
+          "LAW-UH 3503",
+          "MUSIC-UH 2662",
+          "PHIL-UH 1117",
+          "PHIL-UH 2614",
+          "SRPP-UH 1816",
+          "SRPP-UH 2414",
+          "ENVR-UH 1312"
          ]
         }
        ]
@@ -3708,21 +3828,16 @@
        "count": 1,
        "any": [
         {
-         "tags": [
-          "phil-intro"
-         ]
-        },
-        {
-         "subject": [
-          "PHIL"
-         ],
-         "maxLevel": 1999
-        }
-       ],
-       "not": [
-        {
          "codes": [
-          "PHIL-UH 1810"
+          "CSTS-UH 1060",
+          "CSTS-UH 1061",
+          "CSTS-UH 1097",
+          "PHIL-UH 1101",
+          "PHIL-UH 1110",
+          "PHIL-UH 1115",
+          "PHIL-UH 1117",
+          "PHIL-UH 1118",
+          "PHIL-UH 1120"
          ]
         }
        ]
@@ -3745,27 +3860,36 @@
        "group": "Required",
        "label": "History of Philosophy elective",
        "count": 1,
-       "all": [
+       "any": [
         {
-         "subject": [
-          "PHIL"
-         ],
-         "minLevel": 2000
+         "codes": [
+          "PHIL-UH 2210",
+          "PHIL-UH 2211X",
+          "PHIL-UH 2212",
+          "PHIL-UH 2222",
+          "PHIL-UH 2223",
+          "PHIL-UH 2224"
+         ]
         }
-       ],
-       "note": "The Bulletin doesn't publish the category lists. Check the course's attributes in Albert, then set \"Counts toward\" under \"Your plan\"."
+       ]
       },
       {
        "id": "theory",
        "group": "Required",
        "label": "Theoretical Philosophy elective",
        "count": 1,
-       "all": [
+       "any": [
         {
-         "subject": [
-          "PHIL"
-         ],
-         "minLevel": 2000
+         "codes": [
+          "PHIL-UH 2410",
+          "PHIL-UH 2411",
+          "PHIL-UH 2412",
+          "PHIL-UH 2414",
+          "PHIL-UH 2415",
+          "PHIL-UH 2416",
+          "PHIL-UH 2417",
+          "PHIL-UH 2910"
+         ]
         }
        ]
       },
@@ -3774,12 +3898,16 @@
        "group": "Required",
        "label": "Practical Philosophy elective",
        "count": 1,
-       "all": [
+       "any": [
         {
-         "subject": [
-          "PHIL"
-         ],
-         "minLevel": 2000
+         "codes": [
+          "PHIL-UH 2610",
+          "PHIL-UH 2611",
+          "PHIL-UH 2614",
+          "PHIL-UH 2615",
+          "PHIL-UH 2616",
+          "SOCSC-UH 1311"
+         ]
         }
        ]
       },
@@ -3788,13 +3916,13 @@
        "group": "Required",
        "label": "Advanced Seminar",
        "count": 1,
-       "all": [
+       "any": [
         {
-         "subject": [
-          "PHIL"
-         ],
-         "minLevel": 3000,
-         "maxLevel": 3999
+         "codes": [
+          "PHIL-UH 3210",
+          "PHIL-UH 3410",
+          "PHIL-UH 3610"
+         ]
         }
        ]
       },
@@ -3803,10 +3931,64 @@
        "group": "Electives",
        "label": "Additional Philosophy course",
        "count": 2,
-       "all": [
+       "any": [
         {
-         "subject": [
-          "PHIL"
+         "codes": [
+          "CSTS-UH 1060",
+          "CSTS-UH 1061",
+          "CSTS-UH 1097",
+          "PHIL-UH 1101",
+          "PHIL-UH 1110",
+          "PHIL-UH 1115",
+          "PHIL-UH 1117",
+          "PHIL-UH 1118",
+          "PHIL-UH 1120"
+         ]
+        },
+        {
+         "codes": [
+          "PHIL-UH 2210",
+          "PHIL-UH 2211X",
+          "PHIL-UH 2212",
+          "PHIL-UH 2222",
+          "PHIL-UH 2223",
+          "PHIL-UH 2224"
+         ]
+        },
+        {
+         "codes": [
+          "PHIL-UH 2410",
+          "PHIL-UH 2411",
+          "PHIL-UH 2412",
+          "PHIL-UH 2414",
+          "PHIL-UH 2415",
+          "PHIL-UH 2416",
+          "PHIL-UH 2417",
+          "PHIL-UH 2910"
+         ]
+        },
+        {
+         "codes": [
+          "PHIL-UH 2610",
+          "PHIL-UH 2611",
+          "PHIL-UH 2614",
+          "PHIL-UH 2615",
+          "PHIL-UH 2616",
+          "SOCSC-UH 1311"
+         ]
+        },
+        {
+         "codes": [
+          "PHIL-UH 3210",
+          "PHIL-UH 3410",
+          "PHIL-UH 3610"
+         ]
+        },
+        {
+         "codes": [
+          "PHIL-UH 2810",
+          "PHIL-UH 3000",
+          "THEAT-UH 1522"
          ]
         }
        ],
@@ -6339,7 +6521,7 @@
    "name": "Biology (BS)",
    "match": "biology",
    "contact": "",
-   "trackNote": "Grades of C or better are required in the biology components of Foundations of Science. Specializations (Brain and Cognitive Science, Biophysics) aren't modelled yet.",
+   "trackNote": "Grades of C or better are required in the biology components of Foundations of Science. The Biophysics specialization isn't modelled yet.",
    "source": "NYUAD Bulletin 2026–27",
    "tracks": [
     {
@@ -6464,31 +6646,193 @@
        ]
       },
       {
+       "id": "seminar",
+       "group": "Required",
+       "label": "BIOL-UH 3090 Research Seminar in Biology",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "BIOL-UH 3090"
+         ]
+        }
+       ],
+       "credits": 2
+      },
+      {
        "id": "elec",
        "group": "Electives",
        "label": "Biology elective",
        "count": 4,
-       "all": [
+       "any": [
+        {
+         "codes": [
+          "BIOL-UH 2113",
+          "BIOL-UH 2114",
+          "BIOL-UH 3114",
+          "BIOL-UH 3116",
+          "BIOL-UH 3117",
+          "BIOL-UH 3118",
+          "BIOL-UH 3121",
+          "BIOL-UH 3122",
+          "BIOL-UH 3124",
+          "BIOL-UH 3125",
+          "BIOL-UH 3130",
+          "BIOL-UH 3215",
+          "CHEM-UH 3020",
+          "CHEM-UH 3021",
+          "CHEM-UH 3022",
+          "ENGR-UH 3130",
+          "ENGR-UH 3810"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "cap1",
+       "group": "Capstone",
+       "label": "BIOL-UH 4001 Capstone Project in Biology 1",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "BIOL-UH 4001"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "cap2",
+       "group": "Capstone",
+       "label": "BIOL-UH 4002 Capstone Project in Biology 2",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "BIOL-UH 4002"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bio-bcs",
+     "name": "2026–27 Bulletin",
+     "short": "Brain and Cognitive Science",
+     "blurb": "",
+     "requirements": [
+      {
+       "id": "fos12",
+       "group": "Foundations of Science",
+       "label": "Foundations of Science 1-2 component",
+       "count": 5,
+       "any": [
         {
          "subject": [
-          "BIOL"
+          "SCIEN"
          ],
-         "minLevel": 2000
+         "minNum": 1100,
+         "maxNum": 1299
         }
        ],
-       "not": [
+       "note": "Lectures and labs count separately. If your plan lists Foundations of Science as one row, use \"I've already done this\" for the rest.",
+       "credits": 1.9
+      },
+      {
+       "id": "fos34",
+       "group": "Foundations of Science",
+       "label": "Foundations of Science 3-4 component",
+       "count": 5,
+       "any": [
+        {
+         "subject": [
+          "SCIEN"
+         ],
+         "minNum": 1300,
+         "maxNum": 1499
+        }
+       ],
+       "credits": 1.9
+      },
+      {
+       "id": "fos56",
+       "group": "Foundations of Science",
+       "label": "Foundations of Science 5-6 component",
+       "count": 4,
+       "any": [
+        {
+         "subject": [
+          "SCIEN"
+         ],
+         "minNum": 1500,
+         "maxNum": 1699
+        }
+       ],
+       "credits": 1.9
+      },
+      {
+       "id": "calc",
+       "group": "Science & Math",
+       "label": "MATH-UH 1012Q Calculus with Applications to Science and Engineering",
+       "count": 1,
+       "any": [
         {
          "codes": [
-          "BIOL-UH 2010",
-          "CHEM-UH 2010",
-          "BIOL-UH 3120"
+          "MATH-UH 1012Q"
          ]
-        },
+        }
+       ]
+      },
+      {
+       "id": "mvc",
+       "group": "Science & Math",
+       "label": "MATH-UH 1020Q Multivariable Calculus with Applications to Science and Engineering",
+       "count": 1,
+       "any": [
         {
          "codes": [
-          "BIOL-UH 3090",
-          "BIOL-UH 4001",
-          "BIOL-UH 4002"
+          "MATH-UH 1020Q"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "r0",
+       "group": "Required",
+       "label": "BIOL-UH 2010 Human Physiology",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "BIOL-UH 2010"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "r1",
+       "group": "Required",
+       "label": "CHEM-UH 2010 Organic Chemistry 1",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 2010"
+         ]
+        }
+       ],
+       "credits": 5
+      },
+      {
+       "id": "r2",
+       "group": "Required",
+       "label": "BIOL-UH 3120 Biostatistics",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "BIOL-UH 3120"
          ]
         }
        ]
@@ -6506,6 +6850,77 @@
         }
        ],
        "credits": 2
+      },
+      {
+       "id": "b1",
+       "group": "Specialization",
+       "label": "BIOL-UH 3101 Behavioral and Integrative Neuroscience",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "BIOL-UH 3101"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "b2",
+       "group": "Specialization",
+       "label": "BIOL-UH 3117 Molecular Neurobiology",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "BIOL-UH 3117"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "b3",
+       "group": "Specialization",
+       "label": "PSYCH-UH 1001 Introduction to Psychology",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "PSYCH-UH 1001"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "b4",
+       "group": "Specialization",
+       "label": "PSYCH-UH 2410 Cognition or PSYCH-UH 2412 Cognitive Neuroscience",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "PSYCH-UH 2410",
+          "PSYCH-UH 2412"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "lab",
+       "group": "Specialization",
+       "label": "Biology lab elective",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "BIOL-UH 3101",
+          "BIOL-UH 3211",
+          "BIOL-UH 3213",
+          "BIOL-UH 3218",
+          "BIOL-UH 3220",
+          "PSYCH-UH 3617"
+         ]
+        }
+       ]
       },
       {
        "id": "cap1",
@@ -6542,13 +6957,13 @@
    "name": "Chemistry (BS)",
    "match": "chemistry",
    "contact": "",
-   "trackNote": "The Bulletin page for Chemistry is incomplete (no elective list or track tables). Treat this one as a rough guide.",
+   "trackNote": "Track lists come from the Bulletin course inventory; the program page itself is incomplete.",
    "source": "NYUAD Bulletin 2026–27",
    "tracks": [
     {
-     "id": "chem",
+     "id": "chem-cs",
      "name": "2026–27 Bulletin",
-     "short": "Standard",
+     "short": "Chemical Sciences",
      "blurb": "",
      "requirements": [
       {
@@ -6681,8 +7096,48 @@
        ]
       },
       {
-       "id": "pc1l",
+       "id": "inorg",
        "group": "Required",
+       "label": "CHEM-UH 3015 Inorganic Chemistry",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 3015"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "biochem",
+       "group": "Required",
+       "label": "CHEM-UH 3020 Biochemistry: Macromolecular Structure and Function",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 3020"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "seminar",
+       "group": "Required",
+       "label": "CHEM-UH 3090 Research Seminar in Chemistry",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 3090"
+         ]
+        }
+       ],
+       "credits": 2
+      },
+      {
+       "id": "pc1l",
+       "group": "Chemical Sciences",
        "label": "CHEM-UH 3012 Physical Chemistry Laboratory: Thermodynamics and Kinetics",
        "count": 1,
        "any": [
@@ -6696,7 +7151,7 @@
       },
       {
        "id": "pc2",
-       "group": "Required",
+       "group": "Chemical Sciences",
        "label": "CHEM-UH 3013 Physical Chemistry: Quantum Mechanics and Spectroscopy",
        "count": 1,
        "any": [
@@ -6709,7 +7164,7 @@
       },
       {
        "id": "pc2l",
-       "group": "Required",
+       "group": "Chemical Sciences",
        "label": "CHEM-UH 3014 Physical Chemistry Laboratory: Quantum Mechanics and Spectroscopy",
        "count": 1,
        "any": [
@@ -6720,6 +7175,200 @@
         }
        ],
        "credits": 2
+      },
+      {
+       "id": "anal",
+       "group": "Chemical Sciences",
+       "label": "CHEM-UH 3016 Analytical Chemistry",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 3016"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "elec",
+       "group": "Chemical Sciences",
+       "label": "Chemical Sciences elective",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 2201",
+          "CHEM-UH 3021",
+          "CHEM-UH 3022",
+          "CHEM-UH 3201",
+          "CHEM-UH 4212"
+         ]
+        }
+       ],
+       "note": "Enough to reach 56 major credits."
+      },
+      {
+       "id": "cap1",
+       "group": "Capstone",
+       "label": "CHEM-UH 4001 Capstone Project in Chemistry 1",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 4001"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "cap2",
+       "group": "Capstone",
+       "label": "CHEM-UH 4002 Capstone Project in Chemistry 2",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 4002"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "chem-ms",
+     "name": "2026–27 Bulletin",
+     "short": "Medical Sciences",
+     "blurb": "",
+     "requirements": [
+      {
+       "id": "fos12",
+       "group": "Foundations of Science",
+       "label": "Foundations of Science 1-2 component",
+       "count": 5,
+       "any": [
+        {
+         "subject": [
+          "SCIEN"
+         ],
+         "minNum": 1100,
+         "maxNum": 1299
+        }
+       ],
+       "note": "Lectures and labs count separately. If your plan lists Foundations of Science as one row, use \"I've already done this\" for the rest.",
+       "credits": 1.9
+      },
+      {
+       "id": "fos34",
+       "group": "Foundations of Science",
+       "label": "Foundations of Science 3-4 component",
+       "count": 5,
+       "any": [
+        {
+         "subject": [
+          "SCIEN"
+         ],
+         "minNum": 1300,
+         "maxNum": 1499
+        }
+       ],
+       "credits": 1.9
+      },
+      {
+       "id": "fos56",
+       "group": "Foundations of Science",
+       "label": "Foundations of Science 5-6 component",
+       "count": 4,
+       "any": [
+        {
+         "subject": [
+          "SCIEN"
+         ],
+         "minNum": 1500,
+         "maxNum": 1699
+        }
+       ],
+       "credits": 1.9
+      },
+      {
+       "id": "calc",
+       "group": "Science & Math",
+       "label": "MATH-UH 1012Q Calculus with Applications to Science and Engineering",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "MATH-UH 1012Q"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mvc",
+       "group": "Science & Math",
+       "label": "MATH-UH 1020Q Multivariable Calculus with Applications to Science and Engineering",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "MATH-UH 1020Q"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "oc1",
+       "group": "Required",
+       "label": "CHEM-UH 2010 Organic Chemistry 1",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 2010"
+         ]
+        }
+       ],
+       "credits": 5
+      },
+      {
+       "id": "oc2",
+       "group": "Required",
+       "label": "CHEM-UH 3010 Organic Chemistry 2",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 3010"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "oc2l",
+       "group": "Required",
+       "label": "CHEM-UH 3050 Organic Chemistry 2 Lab",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 3050"
+         ]
+        }
+       ],
+       "credits": 1
+      },
+      {
+       "id": "pc1",
+       "group": "Required",
+       "label": "CHEM-UH 3011 Physical Chemistry: Thermodynamics and Kinetics",
+       "count": 1,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 3011"
+         ]
+        }
+       ]
       },
       {
        "id": "inorg",
@@ -6735,47 +7384,17 @@
        ]
       },
       {
-       "id": "anal",
+       "id": "biochem",
        "group": "Required",
-       "label": "CHEM-UH 3016 Analytical Chemistry",
+       "label": "CHEM-UH 3020 Biochemistry: Macromolecular Structure and Function",
        "count": 1,
        "any": [
         {
          "codes": [
-          "CHEM-UH 3016"
+          "CHEM-UH 3020"
          ]
         }
        ]
-      },
-      {
-       "id": "biochem",
-       "group": "Required",
-       "label": "Biochemistry: Molecular Structure and Function, or Biochemistry: Metabolism",
-       "count": 1,
-       "all": [
-        {
-         "subject": [
-          "CHEM"
-         ],
-         "minLevel": 3000
-        }
-       ],
-       "note": "The Bulletin page doesn't give these course numbers. Set \"Counts toward\" under \"Your plan\" once you know the code."
-      },
-      {
-       "id": "elec",
-       "group": "Electives",
-       "label": "Chemistry elective",
-       "count": 1,
-       "all": [
-        {
-         "subject": [
-          "CHEM"
-         ],
-         "minLevel": 3000
-        }
-       ],
-       "note": "Enough to reach 56 major credits. Check the track (Chemical Sciences or Medical Sciences) with your mentor."
       },
       {
        "id": "seminar",
@@ -6789,6 +7408,42 @@
          ]
         }
        ],
+       "credits": 2
+      },
+      {
+       "id": "lec",
+       "group": "Medical Sciences",
+       "label": "Medical Sciences lecture elective",
+       "count": 2,
+       "any": [
+        {
+         "codes": [
+          "CHEM-UH 2201",
+          "CHEM-UH 3021",
+          "CHEM-UH 3201",
+          "CHEM-UH 4212"
+         ]
+        }
+       ],
+       "note": "The Bulletin program page doesn't give counts for this track; two lecture and two lab electives fill the 56-credit minimum. Confirm with your mentor."
+      },
+      {
+       "id": "lab",
+       "group": "Medical Sciences",
+       "label": "Medical Sciences lab elective",
+       "count": 2,
+       "any": [
+        {
+         "codes": [
+          "BIOL-UH 3213",
+          "CHEM-UH 3012",
+          "CHEM-UH 3014",
+          "CHEM-UH 3016",
+          "CHEM-UH 3022"
+         ]
+        }
+       ],
+       "note": "Optional extras the Bulletin lists for this track: BIOL-UH 2114, 3116, 3120, MATH-UH 2011, PHIL-UH 1118 (Bioethics), PSYCH-UH 2210, 3620.",
        "credits": 2
       },
       {
@@ -7960,7 +8615,7 @@
       {
        "id": "com2510",
        "group": "Computer Eng",
-       "label": "ENGR-UH 2510",
+       "label": "ENGR-UH 2510 Object-Oriented Programming",
        "count": 1,
        "any": [
         {
@@ -7973,7 +8628,7 @@
       {
        "id": "com3510",
        "group": "Computer Eng",
-       "label": "ENGR-UH 3510",
+       "label": "ENGR-UH 3510 Data Structures and Algorithms",
        "count": 1,
        "any": [
         {
@@ -7986,7 +8641,7 @@
       {
        "id": "com3511",
        "group": "Computer Eng",
-       "label": "ENGR-UH 3511",
+       "label": "ENGR-UH 3511 Computer Organization and Architecture",
        "count": 1,
        "any": [
         {
@@ -8220,7 +8875,7 @@
       {
        "id": "e2025",
        "group": "Science & Math",
-       "label": "ENGR-UH 2025",
+       "label": "ENGR-UH 2025 Fundamentals of Discrete Math",
        "count": 1,
        "any": [
         {
@@ -8359,7 +9014,7 @@
       {
        "id": "ele2311",
        "group": "Electrical",
-       "label": "ENGR-UH 2311",
+       "label": "ENGR-UH 2311 Advanced Circuits",
        "count": 1,
        "any": [
         {
@@ -8400,7 +9055,7 @@
       {
        "id": "ele3610",
        "group": "Electrical",
-       "label": "ENGR-UH 3610",
+       "label": "ENGR-UH 3610 Signals and Systems",
        "count": 1,
        "any": [
         {
@@ -8413,7 +9068,7 @@
       {
        "id": "ele3611",
        "group": "Electrical",
-       "label": "ENGR-UH 3611",
+       "label": "ENGR-UH 3611 Electronics",
        "count": 1,
        "any": [
         {
@@ -8426,7 +9081,7 @@
       {
        "id": "ele3613",
        "group": "Electrical",
-       "label": "ENGR-UH 3613",
+       "label": "ENGR-UH 3613 Electromagnetics",
        "count": 1,
        "any": [
         {
@@ -8439,7 +9094,7 @@
       {
        "id": "ele3620",
        "group": "Electrical",
-       "label": "ENGR-UH 3620",
+       "label": "ENGR-UH 3620 Analog and Digital Communication Theory",
        "count": 1,
        "any": [
         {
@@ -8777,27 +9432,77 @@
        "group": "Engineering electives",
        "label": "Engineering elective",
        "count": 10,
-       "all": [
-        {
-         "subject": [
-          "ENGR"
-         ],
-         "minLevel": 2000
-        }
-       ],
-       "not": [
+       "any": [
         {
          "codes": [
-          "ENGR-UH 2010",
-          "ENGR-UH 2011",
-          "ENGR-UH 2012",
-          "ENGR-UH 2013",
-          "ENGR-UH 2017",
-          "ENGR-UH 2019",
-          "ENGR-UH 2027",
-          "ENGR-UH 2710",
-          "ENGR-UH 4011",
-          "ENGR-UH 4020"
+          "CS-UH 2010",
+          "CS-UH 3211",
+          "ENGR-UH 1801",
+          "ENGR-UH 2028",
+          "ENGR-UH 2112",
+          "ENGR-UH 2113",
+          "ENGR-UH 2210",
+          "ENGR-UH 2211",
+          "ENGR-UH 2212",
+          "ENGR-UH 2311",
+          "ENGR-UH 2410",
+          "ENGR-UH 2510",
+          "ENGR-UH 2610",
+          "ENGR-UH 2810",
+          "ENGR-UH 2811",
+          "ENGR-UH 2812",
+          "ENGR-UH 3111",
+          "ENGR-UH 3210",
+          "ENGR-UH 3230",
+          "ENGR-UH 3331",
+          "ENGR-UH 3332",
+          "ENGR-UH 3410",
+          "ENGR-UH 3411",
+          "ENGR-UH 3412",
+          "ENGR-UH 3413",
+          "ENGR-UH 3414",
+          "ENGR-UH 3420",
+          "ENGR-UH 3430",
+          "ENGR-UH 3431",
+          "ENGR-UH 3432",
+          "ENGR-UH 3510",
+          "ENGR-UH 3511",
+          "ENGR-UH 3512",
+          "ENGR-UH 3520",
+          "ENGR-UH 3530",
+          "ENGR-UH 3610",
+          "ENGR-UH 3611",
+          "ENGR-UH 3613",
+          "ENGR-UH 3620",
+          "ENGR-UH 3710",
+          "ENGR-UH 3720",
+          "ENGR-UH 3730",
+          "ENGR-UH 3751",
+          "ENGR-UH 3810",
+          "ENGR-UH 3813",
+          "ENGR-UH 4112",
+          "ENGR-UH 4141",
+          "ENGR-UH 4142",
+          "ENGR-UH 4143",
+          "ENGR-UH 4160",
+          "ENGR-UH 4230",
+          "ENGR-UH 4320",
+          "ENGR-UH 4330",
+          "ENGR-UH 4423",
+          "ENGR-UH 4424",
+          "ENGR-UH 4431",
+          "ENGR-UH 4433",
+          "ENGR-UH 4434",
+          "ENGR-UH 4436",
+          "ENGR-UH 4460",
+          "ENGR-UH 4560",
+          "ENGR-UH 4610",
+          "ENGR-UH 4620",
+          "ENGR-UH 4701",
+          "ENGR-UH 4710",
+          "ENGR-UH 4712",
+          "ENGR-UH 4760",
+          "ENGR-UH 4810"
          ]
         }
        ],
@@ -8886,7 +9591,7 @@
       {
        "id": "bchem",
        "group": "Science & Math",
-       "label": "CHEM-UH 3101",
+       "label": "CHEM-UH 3101 Physical Chemistry for the Life Sciences",
        "count": 1,
        "any": [
         {
@@ -9077,7 +9782,7 @@
       {
        "id": "bio1801",
        "group": "Bioengineering",
-       "label": "ENGR-UH 1801",
+       "label": "ENGR-UH 1801 Bioengineering Principles",
        "count": 1,
        "any": [
         {
@@ -9105,7 +9810,7 @@
       {
        "id": "bio2811",
        "group": "Bioengineering",
-       "label": "ENGR-UH 2811",
+       "label": "ENGR-UH 2811 Biotransport Phenomena",
        "count": 1,
        "any": [
         {
@@ -9133,7 +9838,7 @@
       {
        "id": "bio2813",
        "group": "Bioengineering",
-       "label": "ENGR-UH 2813",
+       "label": "ENGR-UH 2813 Bioinstrumentation",
        "count": 1,
        "any": [
         {
@@ -9617,24 +10322,55 @@
        "group": "Electives",
        "label": "Arts Practice elective",
        "count": 1,
-       "all": [
+       "any": [
         {
-         "subject": [
-          "THEAT"
+         "codes": [
+          "CADT-UH 1077",
+          "CADT-UH 1092",
+          "IM-UH 2322",
+          "IM-UH 3115",
+          "THEAT-UH 1110",
+          "THEAT-UH 1111",
+          "THEAT-UH 1112",
+          "THEAT-UH 1115",
+          "THEAT-UH 1121",
+          "THEAT-UH 1122",
+          "THEAT-UH 1126",
+          "THEAT-UH 1127",
+          "THEAT-UH 1128",
+          "THEAT-UH 1129",
+          "THEAT-UH 1131",
+          "THEAT-UH 1522",
+          "THEAT-UH 1523",
+          "THEAT-UH 2110",
+          "THEAT-UH 2111",
+          "THEAT-UH 2112",
+          "THEAT-UH 2115"
          ]
         }
-       ],
-       "note": "Category lists aren't published with codes; check the course attributes in Albert."
+       ]
       },
       {
        "id": "htc",
        "group": "Electives",
        "label": "History, Theory, Criticism elective",
        "count": 1,
-       "all": [
+       "any": [
         {
-         "subject": [
-          "THEAT"
+         "codes": [
+          "CADT-UH 1078",
+          "CCEA-UH 1001",
+          "CCEA-UH 1055",
+          "CCEA-UH 1056",
+          "CCEA-UH 1090",
+          "LAW-UH 2131",
+          "MUSIC-UH 1713",
+          "THEAT-UH 1512",
+          "THEAT-UH 1519",
+          "THEAT-UH 1520",
+          "THEAT-UH 1521",
+          "THEAT-UH 1522",
+          "THEAT-UH 1523"
          ]
         }
        ]
@@ -9644,7 +10380,49 @@
        "group": "Electives",
        "label": "Additional Theater elective",
        "count": 4,
-       "all": [
+       "any": [
+        {
+         "codes": [
+          "CADT-UH 1077",
+          "CADT-UH 1092",
+          "IM-UH 2322",
+          "IM-UH 3115",
+          "THEAT-UH 1110",
+          "THEAT-UH 1111",
+          "THEAT-UH 1112",
+          "THEAT-UH 1115",
+          "THEAT-UH 1121",
+          "THEAT-UH 1122",
+          "THEAT-UH 1126",
+          "THEAT-UH 1127",
+          "THEAT-UH 1128",
+          "THEAT-UH 1129",
+          "THEAT-UH 1131",
+          "THEAT-UH 1522",
+          "THEAT-UH 1523",
+          "THEAT-UH 2110",
+          "THEAT-UH 2111",
+          "THEAT-UH 2112",
+          "THEAT-UH 2115"
+         ]
+        },
+        {
+         "codes": [
+          "CADT-UH 1078",
+          "CCEA-UH 1001",
+          "CCEA-UH 1055",
+          "CCEA-UH 1056",
+          "CCEA-UH 1090",
+          "LAW-UH 2131",
+          "MUSIC-UH 1713",
+          "THEAT-UH 1512",
+          "THEAT-UH 1519",
+          "THEAT-UH 1520",
+          "THEAT-UH 1521",
+          "THEAT-UH 1522",
+          "THEAT-UH 1523"
+         ]
+        },
         {
          "subject": [
           "THEAT"

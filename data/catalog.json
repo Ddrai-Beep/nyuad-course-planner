@@ -72,7 +72,7 @@
   },
   {
    "code": "ACS-UH 2417",
-   "title": "",
+   "title": "Ottoman Crossroads",
    "tags": []
   },
   {
@@ -116,7 +116,7 @@
   },
   {
    "code": "ANTH-UH 1010",
-   "title": "",
+   "title": "Introduction to Anthropology",
    "tags": []
   },
   {
@@ -144,7 +144,7 @@
   },
   {
    "code": "ANTH-UH 2111",
-   "title": "",
+   "title": "India: Topics in Anthropology & History",
    "tags": []
   },
   {
@@ -176,7 +176,7 @@
   },
   {
    "code": "ANTH-UH 2124",
-   "title": "",
+   "title": "Politics of Healing and Wellbeing",
    "tags": []
   },
   {
@@ -186,32 +186,32 @@
   },
   {
    "code": "ARABL-UH 2120",
-   "title": "",
+   "title": "Intermediate Arabic 2",
    "tags": []
   },
   {
    "code": "ARABL-UH 2211",
-   "title": "",
+   "title": "Colloquial Arabic: Levantine Dialect 1",
    "tags": []
   },
   {
    "code": "ARABL-UH 2212",
-   "title": "",
+   "title": "Colloquial Arabic: Egyptian Dialect",
    "tags": []
   },
   {
    "code": "ARABL-UH 2213",
-   "title": "",
+   "title": "Colloquial Arabic: Emirati Dialect and Culture",
    "tags": []
   },
   {
    "code": "ARABL-UH 3110",
-   "title": "",
+   "title": "Advanced Arabic 1",
    "tags": []
   },
   {
    "code": "ARABL-UH 3120",
-   "title": "",
+   "title": "Advanced Arabic 2",
    "tags": []
   },
   {
@@ -221,7 +221,7 @@
   },
   {
    "code": "ARABL-UH 3211",
-   "title": "",
+   "title": "Colloquial Arabic: Levantine Dialect 2",
    "tags": []
   },
   {
@@ -301,7 +301,7 @@
   },
   {
    "code": "ARTH-UH 1718",
-   "title": "",
+   "title": "Ways of Making",
    "tags": []
   },
   {
@@ -489,17 +489,22 @@
   },
   {
    "code": "BIOL-UH 2010",
-   "title": "",
+   "title": "Human Physiology",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 2113",
+   "title": "Evolution",
    "tags": []
   },
   {
    "code": "BIOL-UH 2114",
-   "title": "",
+   "title": "Genetics",
    "tags": []
   },
   {
    "code": "BIOL-UH 3090",
-   "title": "",
+   "title": "Research Seminar in Biology",
    "tags": []
   },
   {
@@ -508,8 +513,23 @@
    "tags": []
   },
   {
+   "code": "BIOL-UH 3114",
+   "title": "Molecular Biology",
+   "tags": []
+  },
+  {
    "code": "BIOL-UH 3116",
-   "title": "",
+   "title": "Immunology",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3117",
+   "title": "Molecular Neurobiology",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3118",
+   "title": "Conservation Biology",
    "tags": []
   },
   {
@@ -519,22 +539,27 @@
   },
   {
    "code": "BIOL-UH 3121",
-   "title": "",
+   "title": "RNA Biology",
    "tags": []
   },
   {
    "code": "BIOL-UH 3122",
-   "title": "",
+   "title": "Stem Cell Biology",
    "tags": []
   },
   {
    "code": "BIOL-UH 3123",
-   "title": "",
+   "title": "Introduction to Bioinformatics",
    "tags": []
   },
   {
    "code": "BIOL-UH 3124",
-   "title": "",
+   "title": "Developmental Biology",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3125",
+   "title": "Population Genomics",
    "tags": []
   },
   {
@@ -548,28 +573,33 @@
    "tags": []
   },
   {
+   "code": "BIOL-UH 3213",
+   "title": "Applied Molecular Biology Techniques",
+   "tags": []
+  },
+  {
    "code": "BIOL-UH 3215",
-   "title": "",
+   "title": "Microbiology",
    "tags": []
   },
   {
    "code": "BIOL-UH 3218",
-   "title": "",
+   "title": "Experimental Synthetic Biology & AI-Driven Biotechnology",
    "tags": []
   },
   {
    "code": "BIOL-UH 3220",
-   "title": "",
+   "title": "Experimental Systems Biology & Complex Human Disorders",
    "tags": []
   },
   {
    "code": "BIOL-UH 4001",
-   "title": "",
+   "title": "Capstone Project in Biology 1",
    "tags": []
   },
   {
    "code": "BIOL-UH 4002",
-   "title": "",
+   "title": "Capstone Project in Biology 2",
    "tags": []
   },
   {
@@ -579,12 +609,12 @@
   },
   {
    "code": "BUSOR-UH 1004",
-   "title": "",
+   "title": "Strategic Management",
    "tags": []
   },
   {
    "code": "BUSOR-UH 1007",
-   "title": "",
+   "title": "Introduction to Entrepreneurship",
    "tags": []
   },
   {
@@ -596,7 +626,7 @@
   },
   {
    "code": "BUSOR-UH 1016",
-   "title": "",
+   "title": "Research Methods in Business",
    "tags": []
   },
   {
@@ -606,42 +636,42 @@
   },
   {
    "code": "BUSOR-UH 1103",
-   "title": "",
+   "title": "Human Resource Management",
    "tags": []
   },
   {
    "code": "BUSOR-UH 1104",
-   "title": "",
+   "title": "Diversity and Inclusion",
    "tags": []
   },
   {
    "code": "BUSOR-UH 1105",
-   "title": "",
+   "title": "Developing Women Leaders",
    "tags": []
   },
   {
    "code": "BUSOR-UH 1107",
-   "title": "",
+   "title": "Professional Responsibility",
    "tags": []
   },
   {
    "code": "BUSOR-UH 1301",
-   "title": "",
+   "title": "Business Ethics",
    "tags": []
   },
   {
    "code": "BUSOR-UH 1302",
-   "title": "",
+   "title": "Impact Investing",
    "tags": []
   },
   {
    "code": "BUSOR-UH 1501",
-   "title": "",
+   "title": "Introduction to Accounting",
    "tags": []
   },
   {
    "code": "BUSOR-UH 2003",
-   "title": "",
+   "title": "Managerial Accounting",
    "tags": []
   },
   {
@@ -653,7 +683,7 @@
   },
   {
    "code": "BUSOR-UH 2005",
-   "title": "",
+   "title": "Managing Change",
    "tags": []
   },
   {
@@ -663,17 +693,17 @@
   },
   {
    "code": "BUSOR-UH 2101",
-   "title": "",
+   "title": "Business Models and Strategy",
    "tags": []
   },
   {
    "code": "BUSOR-UH 2102",
-   "title": "",
+   "title": "Small Business Management",
    "tags": []
   },
   {
    "code": "BUSOR-UH 2105",
-   "title": "",
+   "title": "Social Entrepreneurship",
    "tags": []
   },
   {
@@ -683,42 +713,47 @@
   },
   {
    "code": "BUSOR-UH 2107",
-   "title": "",
+   "title": "Managing People and Teams",
    "tags": []
   },
   {
    "code": "BUSOR-UH 2108",
-   "title": "",
+   "title": "Design Thinking",
    "tags": []
   },
   {
    "code": "BUSOR-UH 2109",
-   "title": "",
+   "title": "Global Strategy",
    "tags": []
   },
   {
    "code": "BUSOR-UH 2110",
-   "title": "",
+   "title": "Creativity and Creative Industries",
    "tags": []
   },
   {
    "code": "BUSOR-UH 2111",
-   "title": "",
+   "title": "Negotiations and Bargaining in the Workplace",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2113",
+   "title": "Corporate Finance Law",
    "tags": []
   },
   {
    "code": "BUSOR-UH 2301",
-   "title": "",
+   "title": "Sustainability Management & Reporting",
    "tags": []
   },
   {
    "code": "BUSOR-UH 2302",
-   "title": "",
+   "title": "Sustainable Finance: Corporations, Investors, and Standards",
    "tags": []
   },
   {
    "code": "BUSOR-UH 3101",
-   "title": "",
+   "title": "Valuation",
    "tags": []
   },
   {
@@ -973,7 +1008,7 @@
   },
   {
    "code": "CADT-UH 1097",
-   "title": "",
+   "title": "City to Studio: Transforming Urban Research",
    "tags": []
   },
   {
@@ -1141,7 +1176,7 @@
   },
   {
    "code": "CCEA-UH 1080X",
-   "title": "",
+   "title": "Food, Culture, and Politics",
    "tags": []
   },
   {
@@ -2433,13 +2468,18 @@
    "tags": []
   },
   {
+   "code": "CHEM-UH 2201",
+   "title": "Advanced Materials",
+   "tags": []
+  },
+  {
    "code": "CHEM-UH 3010",
    "title": "Organic Chemistry 2",
    "tags": []
   },
   {
    "code": "CHEM-UH 3011",
-   "title": "",
+   "title": "Physical Chemistry: Thermodynamics and Kinetics",
    "tags": []
   },
   {
@@ -2464,17 +2504,22 @@
   },
   {
    "code": "CHEM-UH 3016",
-   "title": "",
+   "title": "Analytical Chemistry",
    "tags": []
   },
   {
    "code": "CHEM-UH 3020",
-   "title": "",
+   "title": "Biochemistry: Macromolecular Structure and Function",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3021",
+   "title": "Biochemistry: Metabolism",
    "tags": []
   },
   {
    "code": "CHEM-UH 3022",
-   "title": "",
+   "title": "Biochemistry: Experimental Biochemistry",
    "tags": []
   },
   {
@@ -2489,12 +2534,12 @@
   },
   {
    "code": "CHEM-UH 3101",
-   "title": "",
+   "title": "Physical Chemistry for the Life Sciences",
    "tags": []
   },
   {
    "code": "CHEM-UH 3201",
-   "title": "",
+   "title": "Interdisciplinary Magnetic Resonance",
    "tags": []
   },
   {
@@ -2505,6 +2550,11 @@
   {
    "code": "CHEM-UH 4002",
    "title": "Capstone Project in Chemistry 2",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 4212",
+   "title": "Advanced Organic Chemistry",
    "tags": []
   },
   {
@@ -2539,17 +2589,17 @@
   },
   {
    "code": "CS-UH 2214",
-   "title": "",
+   "title": "Database Systems",
    "tags": []
   },
   {
    "code": "CS-UH 2216",
-   "title": "",
+   "title": "Natural Language Processing",
    "tags": []
   },
   {
    "code": "CS-UH 2218",
-   "title": "",
+   "title": "Algorithmic Foundations of Data Science",
    "tags": []
   },
   {
@@ -2561,12 +2611,12 @@
   },
   {
    "code": "CS-UH 2220",
-   "title": "",
+   "title": "Machine Learning",
    "tags": []
   },
   {
    "code": "CS-UH 2221",
-   "title": "",
+   "title": "Arabic Computational Linguistics",
    "tags": []
   },
   {
@@ -2586,17 +2636,17 @@
   },
   {
    "code": "CS-UH 3210",
-   "title": "",
+   "title": "Computer Security",
    "tags": []
   },
   {
    "code": "CS-UH 3211",
-   "title": "",
+   "title": "Quantum Computing",
    "tags": []
   },
   {
    "code": "CS-UH 3212",
-   "title": "",
+   "title": "Advanced AI and Machine Learning",
    "tags": []
   },
   {
@@ -3218,7 +3268,7 @@
   },
   {
    "code": "ENGR-UH 1000",
-   "title": "",
+   "title": "Computer Programming for Engineers",
    "tags": []
   },
   {
@@ -3228,12 +3278,12 @@
   },
   {
    "code": "ENGR-UH 1021",
-   "title": "",
+   "title": "Design and Innovation",
    "tags": []
   },
   {
    "code": "ENGR-UH 1801",
-   "title": "",
+   "title": "Bioengineering Principles",
    "tags": []
   },
   {
@@ -3243,67 +3293,72 @@
   },
   {
    "code": "ENGR-UH 2011",
-   "title": "",
+   "title": "Engineering Statics",
    "tags": []
   },
   {
    "code": "ENGR-UH 2012",
-   "title": "",
+   "title": "Conservation Laws in Engineering",
    "tags": []
   },
   {
    "code": "ENGR-UH 2013",
-   "title": "",
+   "title": "Digital Logic",
    "tags": []
   },
   {
    "code": "ENGR-UH 2017",
-   "title": "",
+   "title": "Numerical Methods",
    "tags": []
   },
   {
    "code": "ENGR-UH 2019",
-   "title": "",
+   "title": "Circuits Fundamentals",
    "tags": []
   },
   {
    "code": "ENGR-UH 2025",
-   "title": "",
+   "title": "Fundamentals of Discrete Math",
    "tags": []
   },
   {
    "code": "ENGR-UH 2026",
-   "title": "",
+   "title": "Partial Differential Equations for Engineers",
    "tags": []
   },
   {
    "code": "ENGR-UH 2027",
-   "title": "",
+   "title": "Introduction to Data Analysis for Engineers",
    "tags": []
   },
   {
    "code": "ENGR-UH 2028",
-   "title": "",
+   "title": "Tissue Engineering",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2112",
+   "title": "Engineers for Social Impact",
    "tags": []
   },
   {
    "code": "ENGR-UH 2113",
-   "title": "",
+   "title": "Introduction to Manufacturing Processes",
    "tags": []
   },
   {
    "code": "ENGR-UH 2210",
-   "title": "",
+   "title": "Engineering Dynamics",
    "tags": []
   },
   {
    "code": "ENGR-UH 2211",
-   "title": "",
+   "title": "Solid Mechanics",
    "tags": []
   },
   {
    "code": "ENGR-UH 2212",
-   "title": "",
+   "title": "Fluid Mechanics",
    "tags": []
   },
   {
@@ -3313,12 +3368,12 @@
   },
   {
    "code": "ENGR-UH 2311",
-   "title": "",
+   "title": "Advanced Circuits",
    "tags": []
   },
   {
    "code": "ENGR-UH 2350",
-   "title": "",
+   "title": "Hardware Design",
    "tags": []
   },
   {
@@ -3328,12 +3383,12 @@
   },
   {
    "code": "ENGR-UH 2510",
-   "title": "",
+   "title": "Object-Oriented Programming",
    "tags": []
   },
   {
    "code": "ENGR-UH 2610",
-   "title": "",
+   "title": "Fundamentals of Complex Variables",
    "tags": []
   },
   {
@@ -3343,22 +3398,22 @@
   },
   {
    "code": "ENGR-UH 2810",
-   "title": "",
+   "title": "Biomechanics",
    "tags": []
   },
   {
    "code": "ENGR-UH 2811",
-   "title": "",
+   "title": "Biotransport Phenomena",
    "tags": []
   },
   {
    "code": "ENGR-UH 2812",
-   "title": "",
+   "title": "Bioimaging",
    "tags": []
   },
   {
    "code": "ENGR-UH 2813",
-   "title": "",
+   "title": "Bioinstrumentation",
    "tags": []
   },
   {
@@ -3368,7 +3423,7 @@
   },
   {
    "code": "ENGR-UH 3111",
-   "title": "",
+   "title": "Analysis of Chemical and Biological Processes",
    "tags": []
   },
   {
@@ -3378,7 +3433,7 @@
   },
   {
    "code": "ENGR-UH 3130",
-   "title": "",
+   "title": "Quantitative Synthetic Biology",
    "tags": []
   },
   {
@@ -3388,17 +3443,17 @@
   },
   {
    "code": "ENGR-UH 3230",
-   "title": "",
+   "title": "Finite Element Modeling and Analysis",
    "tags": []
   },
   {
    "code": "ENGR-UH 3331",
-   "title": "",
+   "title": "Computer Vision",
    "tags": []
   },
   {
    "code": "ENGR-UH 3332",
-   "title": "",
+   "title": "Applied Machine Learning",
    "tags": []
   },
   {
@@ -3423,7 +3478,7 @@
   },
   {
    "code": "ENGR-UH 3414",
-   "title": "",
+   "title": "Climate Change Mitigation",
    "tags": []
   },
   {
@@ -3448,12 +3503,12 @@
   },
   {
    "code": "ENGR-UH 3510",
-   "title": "",
+   "title": "Data Structures and Algorithms",
    "tags": []
   },
   {
    "code": "ENGR-UH 3511",
-   "title": "",
+   "title": "Computer Organization and Architecture",
    "tags": []
   },
   {
@@ -3473,47 +3528,47 @@
   },
   {
    "code": "ENGR-UH 3610",
-   "title": "",
+   "title": "Signals and Systems",
    "tags": []
   },
   {
    "code": "ENGR-UH 3611",
-   "title": "",
+   "title": "Electronics",
    "tags": []
   },
   {
    "code": "ENGR-UH 3613",
-   "title": "",
+   "title": "Electromagnetics",
    "tags": []
   },
   {
    "code": "ENGR-UH 3620",
-   "title": "",
+   "title": "Analog and Digital Communication Theory",
    "tags": []
   },
   {
    "code": "ENGR-UH 3710",
-   "title": "",
+   "title": "Thermodynamics",
    "tags": []
   },
   {
    "code": "ENGR-UH 3714",
-   "title": "",
+   "title": "Robot Learning",
    "tags": []
   },
   {
    "code": "ENGR-UH 3720",
-   "title": "",
+   "title": "Computer-Aided Design",
    "tags": []
   },
   {
    "code": "ENGR-UH 3730",
-   "title": "",
+   "title": "Modeling and Analysis of Dynamical Systems",
    "tags": []
   },
   {
    "code": "ENGR-UH 3751",
-   "title": "",
+   "title": "Heat Transport",
    "tags": []
   },
   {
@@ -3523,22 +3578,22 @@
   },
   {
    "code": "ENGR-UH 3810",
-   "title": "",
+   "title": "Quantitative Physiology",
    "tags": []
   },
   {
    "code": "ENGR-UH 3811",
-   "title": "",
+   "title": "Neuroengineering",
    "tags": []
   },
   {
    "code": "ENGR-UH 3812",
-   "title": "",
+   "title": "Laser and Optics in Medicine",
    "tags": []
   },
   {
    "code": "ENGR-UH 3813",
-   "title": "",
+   "title": "Nanobiotechnology",
    "tags": []
   },
   {
@@ -3553,7 +3608,7 @@
   },
   {
    "code": "ENGR-UH 4112",
-   "title": "",
+   "title": "Engineering Honors Research",
    "tags": []
   },
   {
@@ -3563,17 +3618,17 @@
   },
   {
    "code": "ENGR-UH 4141",
-   "title": "",
+   "title": "Fundamentals and Applications of MEMS",
    "tags": []
   },
   {
    "code": "ENGR-UH 4142",
-   "title": "",
+   "title": "Biosensors and Biochips",
    "tags": []
   },
   {
    "code": "ENGR-UH 4143",
-   "title": "",
+   "title": "Computer Vision and Pattern Recognition",
    "tags": []
   },
   {
@@ -3583,52 +3638,52 @@
   },
   {
    "code": "ENGR-UH 4160",
-   "title": "",
+   "title": "Selected Topics in Biomedical and Health Systems",
    "tags": []
   },
   {
    "code": "ENGR-UH 4230",
-   "title": "",
+   "title": "Applied Optimization",
    "tags": []
   },
   {
    "code": "ENGR-UH 4231",
-   "title": "",
+   "title": "Membrane Science and Engineering",
    "tags": []
   },
   {
    "code": "ENGR-UH 4320",
-   "title": "",
+   "title": "Hardware Security",
    "tags": []
   },
   {
    "code": "ENGR-UH 4321",
-   "title": "",
+   "title": "Introduction to Hardware Security",
    "tags": []
   },
   {
    "code": "ENGR-UH 4322",
-   "title": "",
+   "title": "Introduction to Systems Security",
    "tags": []
   },
   {
    "code": "ENGR-UH 4323",
-   "title": "",
+   "title": "Web Privacy",
    "tags": []
   },
   {
    "code": "ENGR-UH 4330",
-   "title": "",
+   "title": "Robotics",
    "tags": []
   },
   {
    "code": "ENGR-UH 4423",
-   "title": "",
+   "title": "Production and Logistics Management",
    "tags": []
   },
   {
    "code": "ENGR-UH 4424",
-   "title": "",
+   "title": "Information Management and Modeling for Construction",
    "tags": []
   },
   {
@@ -3648,27 +3703,27 @@
   },
   {
    "code": "ENGR-UH 4436",
-   "title": "",
+   "title": "Computer Assisted Design for Civil Engineers",
    "tags": []
   },
   {
    "code": "ENGR-UH 4460",
-   "title": "",
+   "title": "Selected Topics in Urban Systems",
    "tags": []
   },
   {
    "code": "ENGR-UH 4560",
-   "title": "",
+   "title": "Selected Topics in Information and Computational Systems: AI Agents",
    "tags": []
   },
   {
    "code": "ENGR-UH 4610",
-   "title": "",
+   "title": "Control Systems Engineering",
    "tags": []
   },
   {
    "code": "ENGR-UH 4620",
-   "title": "",
+   "title": "Fundamentals of Photonics-I",
    "tags": []
   },
   {
@@ -3678,32 +3733,37 @@
   },
   {
    "code": "ENGR-UH 4701",
-   "title": "",
+   "title": "Electrochemical Energy Devices",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4710",
+   "title": "Thermal Systems",
    "tags": []
   },
   {
    "code": "ENGR-UH 4712",
-   "title": "",
+   "title": "Mechanics of Composite Materials",
    "tags": []
   },
   {
    "code": "ENGR-UH 4713",
-   "title": "",
+   "title": "Computational Fluid Dynamics",
    "tags": []
   },
   {
    "code": "ENGR-UH 4714",
-   "title": "",
+   "title": "Compressible Flow",
    "tags": []
   },
   {
    "code": "ENGR-UH 4760",
-   "title": "",
+   "title": "Selected Topics in Mechanical Engineering",
    "tags": []
   },
   {
    "code": "ENGR-UH 4765",
-   "title": "",
+   "title": "Topics in Civil Engineering",
    "tags": []
   },
   {
@@ -3713,7 +3773,7 @@
   },
   {
    "code": "ENGR-UH 4810",
-   "title": "",
+   "title": "Biomaterials",
    "tags": []
   },
   {
@@ -3735,7 +3795,7 @@
   },
   {
    "code": "FILMM-UH 1012",
-   "title": "",
+   "title": "Forms of Writing for the Screen",
    "tags": []
   },
   {
@@ -3750,27 +3810,32 @@
   },
   {
    "code": "FILMM-UH 1513",
-   "title": "",
+   "title": "Directing the Non-actor: Singular Drama",
    "tags": []
   },
   {
    "code": "FILMM-UH 1514",
-   "title": "",
+   "title": "Cinematography: Art & Craft",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 1516",
+   "title": "Producing the Short Fiction Film: From Conception to Screen",
    "tags": []
   },
   {
    "code": "FILMM-UH 1517",
-   "title": "",
+   "title": "Production Sound for Film and New Media",
    "tags": []
   },
   {
    "code": "FILMM-UH 1910",
-   "title": "",
+   "title": "Docu-Fiction",
    "tags": []
   },
   {
    "code": "FILMM-UH 1911",
-   "title": "",
+   "title": "Introduction to Documentary Film",
    "tags": []
   },
   {
@@ -3780,12 +3845,17 @@
   },
   {
    "code": "FILMM-UH 2510",
-   "title": "",
+   "title": "Practices of Narrative Filmmaking",
    "tags": []
   },
   {
    "code": "FILMM-UH 2513",
-   "title": "",
+   "title": "Principles of Post-Production for Film and Video",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 2515",
+   "title": "Practices of Documentary Filmmaking: Record and Representation",
    "tags": []
   },
   {
@@ -3795,12 +3865,12 @@
   },
   {
    "code": "FILMM-UH 3511",
-   "title": "",
+   "title": "Cinematic Expression: Methods, Sketches",
    "tags": []
   },
   {
    "code": "FILMM-UH 3512",
-   "title": "",
+   "title": "Short Projects in Cinematography & Directing",
    "tags": []
   },
   {
@@ -3827,7 +3897,7 @@
   },
   {
    "code": "HERST-UH 1501",
-   "title": "",
+   "title": "Experimenting with the Past: Cultural Heritage Connections in the Gulf and Western Indian Ocean",
    "tags": []
   },
   {
@@ -3852,6 +3922,11 @@
    ]
   },
   {
+   "code": "HIST-UH 1119",
+   "title": "Russia and the World",
+   "tags": []
+  },
+  {
    "code": "HIST-UH 1125X",
    "title": "South Asia in the Indian Ocean World",
    "tags": []
@@ -3859,6 +3934,11 @@
   {
    "code": "HIST-UH 1126X",
    "title": "Digital History",
+   "tags": []
+  },
+  {
+   "code": "HIST-UH 1127",
+   "title": "The Gulf in the Age of Empires",
    "tags": []
   },
   {
@@ -3878,8 +3958,18 @@
    ]
   },
   {
+   "code": "HIST-UH 2113",
+   "title": "Global Sixties",
+   "tags": []
+  },
+  {
+   "code": "HIST-UH 2116",
+   "title": "Empires and Museums: A History of Knowledge Production and Museum-making",
+   "tags": []
+  },
+  {
    "code": "HIST-UH 2117X",
-   "title": "",
+   "title": "History in the Headlines",
    "tags": []
   },
   {
@@ -3893,6 +3983,11 @@
    ]
   },
   {
+   "code": "HIST-UH 2122X",
+   "title": "Public History",
+   "tags": []
+  },
+  {
    "code": "HIST-UH 2123",
    "title": "Women in World History",
    "tags": [
@@ -3901,7 +3996,7 @@
   },
   {
    "code": "HIST-UH 2710",
-   "title": "",
+   "title": "The Police in Global Perspective",
    "tags": []
   },
   {
@@ -3911,7 +4006,7 @@
   },
   {
    "code": "HIST-UH 3110",
-   "title": "",
+   "title": "Economic Development and Environmental Change in China",
    "tags": []
   },
   {
@@ -3922,8 +4017,13 @@
    ]
   },
   {
+   "code": "HIST-UH 3312",
+   "title": "Arts and Politics in Modern Latin America (1780 to the present)",
+   "tags": []
+  },
+  {
    "code": "HIST-UH 3315",
-   "title": "",
+   "title": "Love in Africa",
    "tags": []
   },
   {
@@ -3984,17 +4084,17 @@
   },
   {
    "code": "IM-UH 1511",
-   "title": "",
+   "title": "Introduction to Digital Humanities",
    "tags": []
   },
   {
    "code": "IM-UH 2110",
-   "title": "",
+   "title": "Interaction Design and User Experience Lab",
    "tags": []
   },
   {
    "code": "IM-UH 2111",
-   "title": "",
+   "title": "Creative Content Development Across Media, In the Age of AI",
    "tags": []
   },
   {
@@ -4009,7 +4109,7 @@
   },
   {
    "code": "IM-UH 2314",
-   "title": "",
+   "title": "Reinventing Drawing",
    "tags": []
   },
   {
@@ -4019,27 +4119,27 @@
   },
   {
    "code": "IM-UH 2316",
-   "title": "",
+   "title": "Software Art: Text",
    "tags": []
   },
   {
    "code": "IM-UH 2318",
-   "title": "",
+   "title": "Decoding Nature",
    "tags": []
   },
   {
    "code": "IM-UH 2320",
-   "title": "",
+   "title": "Games and Play",
    "tags": []
   },
   {
    "code": "IM-UH 2322",
-   "title": "",
+   "title": "Live Coding",
    "tags": []
   },
   {
    "code": "IM-UH 2324",
-   "title": "",
+   "title": "Connections Lab",
    "tags": []
   },
   {
@@ -4054,32 +4154,32 @@
   },
   {
    "code": "IM-UH 2515",
-   "title": "",
+   "title": "Designing Virtual Worlds",
    "tags": []
   },
   {
    "code": "IM-UH 2516",
-   "title": "",
+   "title": "Virtual Reality Research and Applications",
    "tags": []
   },
   {
    "code": "IM-UH 2517",
-   "title": "",
+   "title": "Breaking the Code: Gender, Art, and Interactivity in the Digital Age",
    "tags": []
   },
   {
    "code": "IM-UH 3115",
-   "title": "",
+   "title": "Virtual Body Performance",
    "tags": []
   },
   {
    "code": "IM-UH 3116",
-   "title": "",
+   "title": "Music Devices",
    "tags": []
   },
   {
    "code": "IM-UH 3117",
-   "title": "",
+   "title": "Performing Robots",
    "tags": []
   },
   {
@@ -4089,32 +4189,32 @@
   },
   {
    "code": "IM-UH 3311",
-   "title": "",
+   "title": "Alternate Realities",
    "tags": []
   },
   {
    "code": "IM-UH 3312",
-   "title": "",
+   "title": "A.rt I.ntel",
    "tags": []
   },
   {
    "code": "IM-UH 3315",
-   "title": "",
+   "title": "Desert Media Art",
    "tags": []
   },
   {
    "code": "IM-UH 3325",
-   "title": "",
+   "title": "Digital Matter: Parametric Design Lab",
    "tags": []
   },
   {
    "code": "IM-UH 3510",
-   "title": "",
+   "title": "Living Systems Design",
    "tags": []
   },
   {
    "code": "IM-UH 3511",
-   "title": "",
+   "title": "Designing in Complex Systems",
    "tags": []
   },
   {
@@ -4220,6 +4320,11 @@
   {
    "code": "LAW-UH 2115X",
    "title": "Comparative Legal Systems: United States and UAE",
+   "tags": []
+  },
+  {
+   "code": "LAW-UH 2119",
+   "title": "Speech, Debate, and Oral Argumentation",
    "tags": []
   },
   {
@@ -4334,6 +4439,11 @@
    ]
   },
   {
+   "code": "LAW-UH 2139",
+   "title": "UN Law and Practice",
+   "tags": []
+  },
+  {
    "code": "LAW-UH 2500",
    "title": "Criminal Law",
    "tags": [
@@ -4353,6 +4463,16 @@
    "tags": [
     "law-req"
    ]
+  },
+  {
+   "code": "LAW-UH 3101",
+   "title": "Advanced Mooting Part I (Arbitration Procedure, the CISG & Advanced Mooting)",
+   "tags": []
+  },
+  {
+   "code": "LAW-UH 3102",
+   "title": "Advanced Mooting Part II Arbitration Procedure, the CISG & Advanced Mooting",
+   "tags": []
   },
   {
    "code": "LAW-UH 3103",
@@ -4406,17 +4526,17 @@
   },
   {
    "code": "LITCW-UH 1004",
-   "title": "",
+   "title": "Tracing Abu Dhabi\u2019s Stories",
    "tags": []
   },
   {
    "code": "LITCW-UH 1101",
-   "title": "",
+   "title": "Postcolonial Englishes",
    "tags": []
   },
   {
    "code": "LITCW-UH 1102",
-   "title": "",
+   "title": "They Also Write for Kids \u2014 And So Do We",
    "tags": []
   },
   {
@@ -4428,7 +4548,7 @@
   },
   {
    "code": "LITCW-UH 1106",
-   "title": "",
+   "title": "Islands and Continents",
    "tags": []
   },
   {
@@ -4440,12 +4560,12 @@
   },
   {
    "code": "LITCW-UH 1501",
-   "title": "",
+   "title": "Feature Writing",
    "tags": []
   },
   {
    "code": "LITCW-UH 1503",
-   "title": "",
+   "title": "Letters From Afar: Travel Writing Abroad",
    "tags": []
   },
   {
@@ -4474,12 +4594,12 @@
   },
   {
    "code": "LITCW-UH 1510G",
-   "title": "",
+   "title": "Lost in Translation: A Creative Journey",
    "tags": []
   },
   {
    "code": "LITCW-UH 2101",
-   "title": "",
+   "title": "Literary and Cultural Theory",
    "tags": []
   },
   {
@@ -4496,7 +4616,7 @@
   },
   {
    "code": "LITCW-UH 2332",
-   "title": "",
+   "title": "Literature and Revolution",
    "tags": []
   },
   {
@@ -4508,7 +4628,7 @@
   },
   {
    "code": "LITCW-UH 2340",
-   "title": "",
+   "title": "Inventions of Love: East and West",
    "tags": []
   },
   {
@@ -4520,17 +4640,17 @@
   },
   {
    "code": "LITCW-UH 2503",
-   "title": "",
+   "title": "Advanced Creative Writing: Nonfiction Essay",
    "tags": []
   },
   {
    "code": "LITCW-UH 2504",
-   "title": "",
+   "title": "What Is a Poem Anyway: Poets vs. AI",
    "tags": []
   },
   {
    "code": "LITCW-UH 2510",
-   "title": "",
+   "title": "Intermediate Creative Writing: Narrative Prose - Form and Style",
    "tags": []
   },
   {
@@ -4540,12 +4660,12 @@
   },
   {
    "code": "LITCW-UH 3317",
-   "title": "",
+   "title": "Migrant Poetics, Narratives of Flight",
    "tags": []
   },
   {
    "code": "LITCW-UH 3319",
-   "title": "",
+   "title": "Sound and Fury: Noise in Literature & Creative Writing",
    "tags": []
   },
   {
@@ -4555,17 +4675,17 @@
   },
   {
    "code": "LITCW-UH 3501",
-   "title": "",
+   "title": "Advanced Creative Writing: Documentary Forms",
    "tags": []
   },
   {
    "code": "LITCW-UH 3502",
-   "title": "",
+   "title": "Advanced Creative Writing: A Novel in Fourteen Weeks",
    "tags": []
   },
   {
    "code": "LITCW-UH 3504",
-   "title": "",
+   "title": "Advanced Creative Writing: Workshop in Poetry",
    "tags": []
   },
   {
@@ -4662,52 +4782,52 @@
   },
   {
    "code": "MATH-UH 3210",
-   "title": "",
+   "title": "Abstract Algebra 2",
    "tags": []
   },
   {
    "code": "MATH-UH 3212",
-   "title": "",
+   "title": "Analysis 2",
    "tags": []
   },
   {
    "code": "MATH-UH 3213",
-   "title": "",
+   "title": "Advanced Probability",
    "tags": []
   },
   {
    "code": "MATH-UH 3410",
-   "title": "",
+   "title": "Number Theory and Cryptography",
    "tags": []
   },
   {
    "code": "MATH-UH 3411",
-   "title": "",
+   "title": "Dynamical Systems",
    "tags": []
   },
   {
    "code": "MATH-UH 3413",
-   "title": "",
+   "title": "Numerical Methods",
    "tags": []
   },
   {
    "code": "MATH-UH 3414",
-   "title": "",
+   "title": "Partial Differential Equations",
    "tags": []
   },
   {
    "code": "MATH-UH 3415Q",
-   "title": "",
+   "title": "Stochastic Processes",
    "tags": []
   },
   {
    "code": "MATH-UH 3610",
-   "title": "",
+   "title": "Complex Analysis",
    "tags": []
   },
   {
    "code": "MATH-UH 3612",
-   "title": "",
+   "title": "Differential Geometry",
    "tags": []
   },
   {
@@ -4722,7 +4842,7 @@
   },
   {
    "code": "MATH-UH 4610",
-   "title": "",
+   "title": "Topology",
    "tags": []
   },
   {
@@ -4732,7 +4852,7 @@
   },
   {
    "code": "MUSIC-UH 1002",
-   "title": "",
+   "title": "Music Technology Fundamentals",
    "tags": []
   },
   {
@@ -4776,6 +4896,11 @@
    ]
   },
   {
+   "code": "MUSIC-UH 1713",
+   "title": "Musical Theater Since 1850: A Mirror of Society",
+   "tags": []
+  },
+  {
    "code": "MUSIC-UH 2004",
    "title": "Music Histories and Historiography 2",
    "tags": []
@@ -4787,17 +4912,17 @@
   },
   {
    "code": "MUSIC-UH 2416",
-   "title": "",
+   "title": "Recording and Production Techniques",
    "tags": []
   },
   {
    "code": "MUSIC-UH 2418",
-   "title": "",
+   "title": "Immersive Audio Storytelling for Motion Picture",
    "tags": []
   },
   {
    "code": "MUSIC-UH 2419",
-   "title": "",
+   "title": "Computational Approaches to Music and Audio I",
    "tags": []
   },
   {
@@ -4816,12 +4941,12 @@
   },
   {
    "code": "MUSIC-UH 2668",
-   "title": "",
+   "title": "Popular Music and Politics in Africa",
    "tags": []
   },
   {
    "code": "MUSIC-UH 3417",
-   "title": "",
+   "title": "Computational Approaches to Music and Audio II",
    "tags": []
   },
   {
@@ -4871,8 +4996,28 @@
    ]
   },
   {
+   "code": "PHIL-UH 1117",
+   "title": "Law and Philosophy",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 1118",
+   "title": "Bioethics",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 1120",
+   "title": "AI and Philosophy",
+   "tags": []
+  },
+  {
    "code": "PHIL-UH 1810",
-   "title": "",
+   "title": "Introduction to Logic",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2210",
+   "title": "Ancient Mediterranean Philosophy",
    "tags": []
   },
   {
@@ -4881,13 +5026,48 @@
    "tags": []
   },
   {
+   "code": "PHIL-UH 2212",
+   "title": "Classical Indian Philosophy",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2222",
+   "title": "Early Modern European Philosophy",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2223",
+   "title": "Nineteenth- and Twentieth-Century European Philosophy",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2224",
+   "title": "Classical Chinese Philosophy",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2410",
+   "title": "Epistemology",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2411",
+   "title": "Metaphysics: What Is Real?",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2412",
+   "title": "Philosophy of Language",
+   "tags": []
+  },
+  {
    "code": "PHIL-UH 2414",
-   "title": "",
+   "title": "What\u2019s So Special About Science? Problems and Puzzles",
    "tags": []
   },
   {
    "code": "PHIL-UH 2415",
-   "title": "",
+   "title": "Philosophy of Mathematics",
    "tags": []
   },
   {
@@ -4897,7 +5077,17 @@
   },
   {
    "code": "PHIL-UH 2417",
-   "title": "",
+   "title": "Philosophical Foundations of Space, Time and Motion",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2610",
+   "title": "Ethics",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2611",
+   "title": "Applied Ethics",
    "tags": []
   },
   {
@@ -4908,13 +5098,43 @@
    ]
   },
   {
+   "code": "PHIL-UH 2615",
+   "title": "Philosophy of Action",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2616",
+   "title": "Environmental Ethics",
+   "tags": []
+  },
+  {
    "code": "PHIL-UH 2810",
-   "title": "",
+   "title": "Advanced Logic",
    "tags": []
   },
   {
    "code": "PHIL-UH 2910",
-   "title": "",
+   "title": "Philosophy at the Atomic Scale",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 3000",
+   "title": "Capstone Proposal",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 3210",
+   "title": "Topics in the History of Philosophy",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 3410",
+   "title": "Topics in Theoretical Philosophy",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 3610",
+   "title": "Topics in Practical Philosophy",
    "tags": []
   },
   {
@@ -4944,7 +5164,7 @@
   },
   {
    "code": "PHYS-UH 3010",
-   "title": "",
+   "title": "Mechanics",
    "tags": []
   },
   {
@@ -4974,52 +5194,52 @@
   },
   {
    "code": "PHYS-UH 3211",
-   "title": "",
+   "title": "General Relativity",
    "tags": []
   },
   {
    "code": "PHYS-UH 3213",
-   "title": "",
+   "title": "Computational Physics",
    "tags": []
   },
   {
    "code": "PHYS-UH 3214",
-   "title": "",
+   "title": "Astrophysics",
    "tags": []
   },
   {
    "code": "PHYS-UH 3215",
-   "title": "",
+   "title": "Introduction to Detector Electronics",
    "tags": []
   },
   {
    "code": "PHYS-UH 3217",
-   "title": "",
+   "title": "Multi-wavelength Astronomy",
    "tags": []
   },
   {
    "code": "PHYS-UH 3219",
-   "title": "",
+   "title": "Biological Physics: From single molecules to the cell",
    "tags": []
   },
   {
    "code": "PHYS-UH 3220",
-   "title": "",
+   "title": "Imaging and Spectroscopy Lab",
    "tags": []
   },
   {
    "code": "PHYS-UH 3222",
-   "title": "",
+   "title": "X Ray Astronomy Lab",
    "tags": []
   },
   {
    "code": "PHYS-UH 3223",
-   "title": "",
+   "title": "Data Analysis with Python",
    "tags": []
   },
   {
    "code": "PHYS-UH 3260",
-   "title": "",
+   "title": "Special Topics in Physics",
    "tags": []
   },
   {
@@ -5034,12 +5254,12 @@
   },
   {
    "code": "PHYS-UH 4212",
-   "title": "",
+   "title": "Quantum Mechanics 2",
    "tags": []
   },
   {
    "code": "PHYS-UH 4215",
-   "title": "",
+   "title": "Particle Physics",
    "tags": []
   },
   {
@@ -5258,7 +5478,7 @@
   },
   {
    "code": "POLSC-UH 3213",
-   "title": "",
+   "title": "International Security",
    "tags": []
   },
   {
@@ -5293,7 +5513,7 @@
   },
   {
    "code": "POLSC-UH 3514",
-   "title": "",
+   "title": "Authoritarian Regimes Global Governance",
    "tags": []
   },
   {
@@ -5381,52 +5601,52 @@
   },
   {
    "code": "PSYCH-UH 2210",
-   "title": "",
+   "title": "Developmental Psychology",
    "tags": []
   },
   {
    "code": "PSYCH-UH 2211",
-   "title": "",
+   "title": "Social Psychology",
    "tags": []
   },
   {
    "code": "PSYCH-UH 2215",
-   "title": "",
+   "title": "Psychology of Sex and Gender",
    "tags": []
   },
   {
    "code": "PSYCH-UH 2216",
-   "title": "",
+   "title": "Psychotherapy and Counseling",
    "tags": []
   },
   {
    "code": "PSYCH-UH 2217",
-   "title": "",
+   "title": "Abnormal Psychology",
    "tags": []
   },
   {
    "code": "PSYCH-UH 2218",
-   "title": "",
+   "title": "Language Science",
    "tags": []
   },
   {
    "code": "PSYCH-UH 2219",
-   "title": "",
+   "title": "Cultural Psychology",
    "tags": []
   },
   {
    "code": "PSYCH-UH 2410",
-   "title": "",
+   "title": "Cognition",
    "tags": []
   },
   {
    "code": "PSYCH-UH 2411",
-   "title": "",
+   "title": "Perception",
    "tags": []
   },
   {
    "code": "PSYCH-UH 2412",
-   "title": "",
+   "title": "Cognitive Neuroscience",
    "tags": []
   },
   {
@@ -5436,7 +5656,7 @@
   },
   {
    "code": "PSYCH-UH 3512",
-   "title": "",
+   "title": "Applied Perspectives on Human Memory",
    "tags": []
   },
   {
@@ -5484,7 +5704,7 @@
   },
   {
    "code": "PSYCH-UH 3720",
-   "title": "",
+   "title": "Special Topics in Psychology",
    "tags": []
   },
   {
@@ -5499,37 +5719,37 @@
   },
   {
    "code": "PSYCN-UH 1002",
-   "title": "",
+   "title": "Gender & Representation: Field Study Workshop",
    "tags": []
   },
   {
    "code": "SCIEN-UH 1121EQ",
-   "title": "",
+   "title": "Foundations of Science 1-2: Physics",
    "tags": []
   },
   {
    "code": "SCIEN-UH 1122EQ",
-   "title": "",
+   "title": "Foundations of Science 1-2: Chemistry",
    "tags": []
   },
   {
    "code": "SCIEN-UH 1123EQ",
-   "title": "",
+   "title": "Foundations of Science 1-2: Biology",
    "tags": []
   },
   {
    "code": "SCIEN-UH 1124C",
-   "title": "",
+   "title": "Foundations of Science 1 Lab: Physics",
    "tags": []
   },
   {
    "code": "SCIEN-UH 1341Q",
-   "title": "",
+   "title": "Foundations of Science 3-4: Physics",
    "tags": []
   },
   {
    "code": "SCIEN-UH 1342Q",
-   "title": "",
+   "title": "Foundations of Science 3-4: Chemistry",
    "tags": []
   },
   {
@@ -5738,7 +5958,7 @@
   },
   {
    "code": "SRPP-UH 2416X",
-   "title": "",
+   "title": "Gulf Urban Societies",
    "tags": []
   },
   {
@@ -5770,7 +5990,7 @@
   },
   {
    "code": "SRPP-UH 2610",
-   "title": "",
+   "title": "Introduction to Public Policy",
    "tags": []
   },
   {
@@ -5864,7 +6084,7 @@
   },
   {
    "code": "SRPP-UH 3610",
-   "title": "",
+   "title": "Methods of Public Policy Analysis",
    "tags": []
   },
   {
@@ -5889,11 +6109,16 @@
   },
   {
    "code": "THEAT-UH 1011",
-   "title": "",
+   "title": "Thinking Theater",
    "tags": []
   },
   {
    "code": "THEAT-UH 1110",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1111",
    "title": "",
    "tags": []
   },
@@ -5913,6 +6138,11 @@
    "tags": []
   },
   {
+   "code": "THEAT-UH 1122",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "THEAT-UH 1126",
    "title": "Costuming Performance",
    "tags": []
@@ -5923,13 +6153,33 @@
    "tags": []
   },
   {
+   "code": "THEAT-UH 1128",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "THEAT-UH 1129",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1131",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1512",
    "title": "",
    "tags": []
   },
   {
    "code": "THEAT-UH 1519",
    "title": "Installation Art",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1520",
+   "title": "",
    "tags": []
   },
   {
@@ -5946,6 +6196,21 @@
   },
   {
    "code": "THEAT-UH 1523",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 2110",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 2111",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 2112",
    "title": "",
    "tags": []
   },
