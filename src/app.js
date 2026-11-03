@@ -10,7 +10,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 const S = {
   programs: null, catalog: null, offerings: null, votes: null,
   plan: null, courses: [], source: null,
-  track: LS.get('track', null), trackOpen: false,
+  majorId: LS.get('majorId', null), track: LS.get('track', null), trackOpen: false,
   minorId: LS.get('minorId', null),
   extraMinors: LS.get('extraMinors', []),
   checkMinor: null,
@@ -23,7 +23,7 @@ const listKey = () => `list:${S.programs.registrationTerm}`;
 const getList = () => LS.get(listKey(), []);
 const setList = (l) => LS.set(listKey(), l);
 const save = () => {
-  LS.set('overrides', S.overrides); LS.set('manual', S.manual); LS.set('track', S.track);
+  LS.set('overrides', S.overrides); LS.set('manual', S.manual); LS.set('track', S.track); LS.set('majorId', S.majorId);
   LS.set('minorId', S.minorId); LS.set('extraMinors', S.extraMinors);
 };
 
@@ -67,6 +67,14 @@ const COMPETENCIES = ['cadt', 'ccea', 'cdad', 'csts'];
 const GENERIC = (c) => c.status === 'slot' && !c.hint;
 
 function minorById(id) { return S.programs.minors.find((m) => m.id === id); }
+// The major: picked by hand, else read from the plan's "Major(s)" line (earliest mention wins), else Political Science
+function detectMajor() {
+  const txt = (S.plan?.meta.majors || '').toLowerCase();
+  const hits = S.programs.majors.map((m) => ({ m, i: txt.indexOf(m.match) })).filter((x) => x.i >= 0)
+    .sort((a, b) => a.i - b.i || b.m.match.length - a.m.match.length);
+  return hits[0]?.m || S.programs.majors[0];
+}
+function majorDef() { return S.programs.majors.find((m) => m.id === S.majorId) || detectMajor(); }
 function defaultMinor() {
   const txt = (S.plan.meta.minors || '').toLowerCase();
   return S.programs.minors.find((m) => txt.includes(m.match)) || S.programs.minors[0];
@@ -77,16 +85,17 @@ function analyse() {
   const ov = (k) => S.overrides[k] || {};
   const mn = (k) => S.manual[k] || {};
   const minorDef = minorById(S.minorId) || defaultMinor();
-  const chosen = P.major.tracks.find((t) => t.id === S.track);
+  const M = majorDef();
+  const chosen = M.tracks.find((t) => t.id === S.track);
 
   // Core first, steering away from courses the major/minor could use.
   const majorish = new Set(S.courses.filter((c) =>
-    [...(chosen || P.major.tracks[0]).requirements, ...minorDef.requirements].some((r) => reqMatches(c, r))).map((c) => c.id));
+    [...(chosen || M.tracks[0]).requirements, ...minorDef.requirements].some((r) => reqMatches(c, r))).map((c) => c.id));
   const core = solve(P.core.requirements, S.courses, ov('core'), mn('core'), { avoid: majorish });
   // Policy: a Core competency course can't also count toward a major or minor.
   const coreComp = new Set(core.reqs.filter((r) => COMPETENCIES.includes(r.req.id)).flatMap((r) => r.slots.map((s) => s.course?.id)).filter(Boolean));
 
-  const tracks = P.major.tracks.map((t) => {
+  const tracks = M.tracks.map((t) => {
     const r = solve(t.requirements, S.courses, ov(`major:${t.id}`), mn(`major:${t.id}`), { exclude: coreComp });
     return { track: t, result: r, left: notDone(r) };
   });
@@ -109,13 +118,14 @@ function analyse() {
       const c = sl.course;
       if (c && c.status === 'done') continue;
       if (c) { if (seen.has(c.id)) continue; seen.add(c.id); }
-      reqCredits += r.req.id === 'field' ? 3 : 4; reqCount++;
+      reqCredits += r.req.credits ?? (r.req.id === 'field' ? 3 : 4); reqCount++;
     }
   }
+  reqCredits = Math.round(reqCredits);
   const electiveCredits = Math.max(0, P.graduation.credits - st.earned - reqCredits);
   const needE = gened.reqs.some((r) => r.req.id === 'e' && r.status === 'needed');
   const electives = { left: Math.ceil(electiveCredits / 4), credits: electiveCredits, openSlots: genericSlots.length, reqCredits, reqCount, needE };
-  const ctx = { tracks, best, major, trackId, minorDef, minor, core, gened, extras, st, electives, coreComp };
+  const ctx = { M, tracks, best, major, trackId, minorDef, minor, core, gened, extras, st, electives, coreComp };
   ctx.flags = flags(ctx);
   return ctx;
 }
@@ -127,7 +137,7 @@ function uniqueCount(minorRes, majorUsed) {
   return minorRes.reqs.flatMap((r) => r.slots).filter((s) => (s.course && !majorUsed.has(s.course.id)) || (!s.course && !s.manual)).length;
 }
 
-function flags({ major, minor, minorDef, coreComp }) {
+function flags({ M, major, minor, minorDef, coreComp }) {
   const out = [...S.plan.warnings];
   const term = S.programs.registrationTerm;
   for (const c of S.courses) {
@@ -137,12 +147,12 @@ function flags({ major, minor, minorDef, coreComp }) {
     if (isPassFail(c) && (/major|minor|core/i.test(c.reqText) || c.tags.size))
       out.push({ level: 'warn', text: `${name} was taken Pass/Fail. NYUAD policy: Pass/Fail courses don't count toward the Core, a major or a minor (the Spring 2026 exception doesn't cover ${esc(c.term.label)}), so I haven't counted it. If you were granted an exception, set it under "Your plan".` });
     if (/minor/i.test(c.reqText) && !inMinor && !(minorDef.id === 'econ' && c.subject === 'ECON'))
-      out.push({ level: 'warn', text: `${name} is marked "Minor" in your plan but doesn't fill a ${esc(minorDef.name)} requirement.${minorDef.id === 'econ' ? ' Only ECON-subject courses count as Economics electives.' : ''}` });
+      out.push({ level: 'warn', text: `${name} is marked "Minor" in your plan but doesn't fill ${/^[AEIOU]/.test(minorDef.name) ? 'an' : 'a'} ${esc(minorDef.name)} requirement.${minorDef.id === 'econ' ? ' Only ECON-subject courses count as Economics electives.' : ''}` });
     if (/major/i.test(c.reqText) && !inMajor && !isPassFail(c)) {
       const full = major.result.reqs.find((r) => reqMatches(c, r.req));
       const why = coreComp.has(c.id) ? ' It counts for a Core competency, which can\'t double-count.'
         : full ? ` It would count as "${esc(full.req.label)}", but that's already filled by ${full.slots.map((sl) => `<b>${esc(sl.course?.displayCode || sl.course?.raw || 'a course')}</b>`).join(', ')}.` : '';
-      out.push({ level: 'warn', text: `${name} is marked "Major Req" but doesn't fill a Political Science requirement on the <i>${esc(major.track.short)}</i> track.${why}` });
+      out.push({ level: 'warn', text: `${name} is marked "Major Req" but doesn't fill ${/^[AEIOU]/.test(M.name) ? 'an' : 'a'} ${esc(shortMajor(M))} requirement${M.tracks.length > 1 ? ` on the <i>${esc(major.track.short)}</i> track` : ''}.${why}` });
     }
     if (c.tags.has('study-away-equiv') && inMajor)
       out.push({ level: 'info', text: `${name} is counted as Intro to International Politics (study-away equivalent). Confirm it on the PS study-away pathway.` });
@@ -230,7 +240,7 @@ function renderDash() {
   return `
   <section class="summary card">
     <div class="summary-head">
-      <h1 class="h2">${esc(m.majors || 'Political Science')}${m.minors ? ` <span class="muted">+ ${esc(m.minors)} minor</span>` : ''}</h1>
+      <h1 class="h2">${esc(m.majors || A.M.name)}${m.minors ? ` <span class="muted">+ ${esc(m.minors)} minor</span>` : ''}</h1>
       <button class="btn btn-ghost small" data-action="reset">Load a different plan</button>
     </div>
     <div class="stats">
@@ -257,7 +267,7 @@ function renderDash() {
   <div class="cols">
     <section class="col-main">
       <h2 class="section-title"><span class="num">2</span> What you still need</h2>
-      ${renderProgram(`major:${A.trackId}`, `${P.major.name} · ${A.major.track.short}`, A.major.result)}
+      ${renderProgram(`major:${A.trackId}`, A.M.tracks.length > 1 ? `${A.M.name} · ${A.major.track.short}` : A.M.name, A.major.result)}
       ${renderProgram(`minor:${A.minorDef.id}`, A.minorDef.name, A.minor)}
       ${A.extras.map((x) => renderProgram(`minor:${x.def.id}`, x.def.name, x.result, `<button class="link small" data-action="dropminor" data-id="${x.def.id}">Remove</button>`)).join('')}
       ${renderProgram('core', P.core.name, A.core)}
@@ -270,20 +280,36 @@ function renderDash() {
   ${renderPlan(A)}`;
 }
 
+const shortMajor = (M) => M.name.replace(/ \((BA|BS)\)$/, '');
+
+function majorSelect() {
+  const auto = detectMajor();
+  const opts = [...S.programs.majors].sort((a, b) => a.name.localeCompare(b.name));
+  return `<label class="major-pick small"><span class="muted">Major</span>
+    <select data-action="major" aria-label="Major">
+      <option value="" ${!S.majorId ? 'selected' : ''}>From your plan: ${esc(shortMajor(auto))}</option>
+      ${opts.map((m) => `<option value="${m.id}" ${S.majorId === m.id ? 'selected' : ''}>${esc(m.name)}</option>`).join('')}
+    </select></label>`;
+}
+
 function renderTracks(A) {
-  const P = S.programs;
-  if (S.track && !S.trackOpen) {
+  const M = A.M;
+  const single = M.tracks.length === 1;
+  const src = `<span title="${esc(M.source || '')}">Source: ${esc((M.source || '').split(' (')[0])}</span>`;
+  if (single || (M.tracks.some((t) => t.id === S.track) && !S.trackOpen)) {
     const t = A.major;
     return `<section class="card track-collapsed">
       <span class="num">1</span>
-      <div><div class="small muted">Bulletin track</div><b>${esc(t.track.name)} · ${esc(t.track.short)}</b> <span class="muted">· ${t.left} left</span></div>
-      <button class="btn btn-ghost btn-small" data-action="trackopen">Change</button>
+      <div><div class="small muted">${single ? 'Major' : 'Major and track'}</div><b>${esc(M.name)}</b>${single ? '' : ` · ${esc(t.track.short)}`} <span class="muted">· ${t.left} left</span>
+        <div class="small muted">${M.trackNote ? `${esc(M.trackNote)} ` : ''}${src}</div></div>
+      ${majorSelect()}
+      ${single ? '' : '<button class="btn btn-ghost btn-small" data-action="trackopen">Change track</button>'}
     </section>`;
   }
   return `
   <section>
-    <h2 class="section-title"><span class="num">1</span> Pick your bulletin track</h2>
-    <p class="muted small section-sub">The PS major changed this year. 2nd and 3rd years can graduate under either bulletin. Questions: ${esc(P.major.contact)}</p>
+    <div class="section-row"><h2 class="section-title"><span class="num">1</span> Pick your ${M.id === 'ps' ? 'bulletin track' : 'track'}</h2>${majorSelect()}</div>
+    <p class="muted small section-sub">${esc(M.trackNote || '')}${M.contact ? ` Questions: ${esc(M.contact)}.` : ''} ${src}</p>
     <div class="tracks">
       ${A.tracks.map((t) => `
         <button class="track ${t.track.id === A.trackId ? 'track-on' : ''}" data-action="track" data-id="${t.track.id}">
@@ -351,7 +377,7 @@ function optionRows(list, label) {
     const v = S.votes.status(e.code);
     return `<tr>
       <td class="opt-code"><code>${esc(e.code)}</code></td>
-      <td>${esc(e.title)}${notOffered ? `<div class="small warn-text">${esc(notOffered)}</div>` : ''}</td>
+      <td>${e.title ? esc(e.title) : '<span class="muted">Title in Albert</span>'}${notOffered ? `<div class="small warn-text">${esc(notOffered)}</div>` : ''}</td>
       <td>${offered ? `<span class="tag tag-offered">Offered ${esc(term)}</span>` : '<span class="tag">Check Albert</span>'}${voteBadge(v)}</td>
       <td class="opt-act">${inList.has(e.code) ? '<span class="small muted">On your list</span>' : `<button class="btn btn-small btn-secondary" data-action="add" data-code="${esc(e.code)}" data-title="${esc(e.title)}" data-label="${esc(label)}">+ Add</button>`}</td>
     </tr>`;
@@ -409,7 +435,7 @@ function renderBoth(A) {
   const open = S.open.has('both');
   return `
   <div class="card program">
-    <div class="program-head"><h3>Counts for both: ${esc(A.major.track.short)} major + ${esc(A.minorDef.name.replace(' (Minor)', ''))} minor</h3>
+    <div class="program-head"><h3>Counts for both: ${esc(A.M.tracks.length > 1 ? `${shortMajor(A.M)} (${A.major.track.short})` : shortMajor(A.M))} major + ${esc(A.minorDef.name.replace(' (Minor)', ''))} minor</h3>
       <button class="btn btn-small btn-secondary" data-action="toggle" data-key="both">${open ? 'Hide' : 'Show'}</button></div>
     ${open ? `<div class="both-body">
       <p class="small">Already double-counting: ${current.length ? current.map((c) => `<b>${esc(c.displayCode || c.raw)}</b>`).join(', ') : 'none'}.
@@ -611,6 +637,7 @@ document.addEventListener('click', async (ev) => {
 document.addEventListener('change', (ev) => {
   const el = ev.target;
   if (el.id === 'file' && el.files[0]) { const f = el.files[0]; return withLoad(() => readFile(f), f.name); }
+  if (el.dataset.action === 'major') { S.majorId = el.value || null; S.track = null; S.trackOpen = false; save(); return render(); }
   if (el.dataset.action === 'addlater' && el.value) {
     const c = S.courses.find((x) => x.id === el.value);
     if (c) addToList(c.displayCode, c.cat?.title || c.title, c.reqText);

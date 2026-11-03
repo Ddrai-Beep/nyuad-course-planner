@@ -75,6 +75,8 @@ function clauseMatch(c, cl) {
   if (cl.campus && !cl.campus.includes(c.campus)) return false;
   if (cl.minLevel && !(c.level >= cl.minLevel)) return false;
   if (cl.maxLevel && !(c.level && c.level <= cl.maxLevel)) return false;
+  if (cl.minNum && !(c.number >= cl.minNum)) return false;
+  if (cl.maxNum && !(c.number && c.number <= cl.maxNum)) return false;
   if (cl.coreCat && c.coreCat !== cl.coreCat && !c.tags.has(`core-${cl.coreCat}`)) return false;
   if (cl.attr && !c.attrs?.has(cl.attr)) return false;
   if (cl.ccol && c.ccolType !== cl.ccol && !c.tags.has(`ccol-${cl.ccol}`)) return false;

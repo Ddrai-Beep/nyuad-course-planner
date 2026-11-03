@@ -132,7 +132,19 @@ for c, t in [('CCEA-UH 1011', 'Law and the Imagination'), ('CSTS-UH 1061', 'Glob
              ('SRPP-UH 2414', 'Global Family Policies and Laws')]:
     add(c, t, 'law-elec')
 
-json.dump({"_source": "NYUAD Bulletin (most recent) + Political Science Courses — Spring 2027 (J. Jensen, 26 Oct 2026)",
+# Courses named in the other majors + Art History minor (written by build_majors.py; codes and titles only, no tags)
+mc = os.path.join(os.path.dirname(__file__), 'majors_courses.json')
+if os.path.exists(mc):
+    for code, title in json.load(open(mc)).items():
+        if norm(code) in cat:
+            if title and not cat[norm(code)]['title']: cat[norm(code)]['title'] = title
+            continue
+        # don't add a suffix-less duplicate of a code the catalog already has with an X/E/Q suffix
+        base = re.sub(r'[A-Z]+$', '', norm(code))
+        if any(re.sub(r'[A-Z]+$', '', k) == base for k in cat): continue
+        add(code, title)
+
+json.dump({"_source":"NYUAD Bulletin (most recent) + Political Science Courses — Spring 2027 (J. Jensen, 26 Oct 2026)",
            "courses": sorted(cat.values(), key=lambda e: e['code'])},
           open(out_path, 'w'), indent=1)
 print(len(cat), 'courses')

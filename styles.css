@@ -197,3 +197,9 @@ input, select { border-width: var(--bw) !important; }
 .dc-note div { margin-top: 4px; }
 select.full { width: 100%; max-width: none; margin-top: 8px; }
 .reg-list + select.full { margin-top: 10px; }
+
+/* Major picker */
+.section-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.section-row .major-pick { margin-bottom: 4px; }
+.major-pick { display: flex; align-items: center; gap: 8px; flex: none; }
+.major-pick select { max-width: 260px; }

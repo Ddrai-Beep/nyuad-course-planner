@@ -71,6 +71,11 @@
    ]
   },
   {
+   "code": "ACS-UH 2417",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "ACS-UH 2419X",
    "title": "Sufism",
    "tags": []
@@ -95,6 +100,26 @@
    ]
   },
   {
+   "code": "ACS-UH 3010",
+   "title": "Problems and Methods in Arab Crossroads Studies",
+   "tags": []
+  },
+  {
+   "code": "ACS-UH 4000",
+   "title": "Senior Capstone Seminar",
+   "tags": []
+  },
+  {
+   "code": "ACS-UH 4001",
+   "title": "Senior Capstone Project",
+   "tags": []
+  },
+  {
+   "code": "ANTH-UH 1010",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "ANTH-UH 1102X",
    "title": "Anthropology of and as Media",
    "tags": [
@@ -116,6 +141,11 @@
    "tags": [
     "core-CSTS"
    ]
+  },
+  {
+   "code": "ANTH-UH 2111",
+   "title": "",
+   "tags": []
   },
   {
    "code": "ANTH-UH 2113",
@@ -145,8 +175,43 @@
    "tags": []
   },
   {
+   "code": "ANTH-UH 2124",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "ARABL-UH 1132X",
    "title": "Elementary Qur'anic Arabic",
+   "tags": []
+  },
+  {
+   "code": "ARABL-UH 2120",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ARABL-UH 2211",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ARABL-UH 2212",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ARABL-UH 2213",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ARABL-UH 3110",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ARABL-UH 3120",
+   "title": "",
    "tags": []
   },
   {
@@ -155,8 +220,23 @@
    "tags": []
   },
   {
+   "code": "ARABL-UH 3211",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "ARABL-UH 4015X",
    "title": "Arabic Cultural Explorations",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1010",
+   "title": "Ways of Looking",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1116",
+   "title": "South Asian Art",
    "tags": []
   },
   {
@@ -170,13 +250,118 @@
    "tags": []
   },
   {
+   "code": "ARTH-UH 1122X",
+   "title": "Global Art and Science: Geometries, Ecologies, Technologies",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1123",
+   "title": "East Asian Art",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1510",
+   "title": "Photography I",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1511",
+   "title": "Drawing and Painting I",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1512",
+   "title": "Sculpture I",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1710",
+   "title": "Types of Art: From Calligraphy and Stone Carving to Digital Type",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1712",
+   "title": "Graphic Design",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1714",
+   "title": "Yes Logo",
+   "tags": []
+  },
+  {
    "code": "ARTH-UH 1715X",
    "title": "Arabic Typography",
    "tags": []
   },
   {
+   "code": "ARTH-UH 1717",
+   "title": "Still (Moving) Images: Interventions and Experiments in Photography and Film",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1718",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "ARTH-UH 2118X",
    "title": "Contemporary Art and Politics in the Arab World",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2120",
+   "title": "Curatorial Practice",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2123",
+   "title": "Museums, Art and Society",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2124",
+   "title": "Art of the Sixties",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2125",
+   "title": "Art of the 1970s and 80s: Postminimalism to Postmodernism & Beyond",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2130",
+   "title": "International Surrealisms",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2131",
+   "title": "Silk Roads, Sea Routes and Shared Heritage",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2132",
+   "title": "Zen Art: Between History and Imagination",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2610",
+   "title": "Global Renaissance",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2612",
+   "title": "Abstraction: Painting Methods",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2712",
+   "title": "Interventions: Three-Dimensional Thinking",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2716",
+   "title": "Print Studio 1",
    "tags": []
   },
   {
@@ -194,6 +379,26 @@
    ]
   },
   {
+   "code": "ARTH-UH 2813",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2820",
+   "title": "Photography II",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2822",
+   "title": "Projects in Mixed Media",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2823",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "ARTH-UH 2825",
    "title": "Advanced Lighting and Production Techniques",
    "tags": [
@@ -201,8 +406,63 @@
    ]
   },
   {
+   "code": "ARTH-UH 3010",
+   "title": "Thinking Art",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 3011",
+   "title": "Making Art",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 3811",
+   "title": "Drawing and Painting II",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 4000",
+   "title": "Senior Seminar in Research and Practice",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 4001",
+   "title": "Capstone Project",
+   "tags": []
+  },
+  {
+   "code": "ARTMD-GH 5001",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ARTMD-GH 5051",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ARTMD-GH 5133",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ARTMD-GH 5510",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ARTMD-GH 5720",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "AW-UH 1113X",
    "title": "Alexander and the East",
+   "tags": []
+  },
+  {
+   "code": "AW-UH 1114",
+   "title": "",
    "tags": []
   },
   {
@@ -228,6 +488,106 @@
    "tags": []
   },
   {
+   "code": "BIOL-UH 2010",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 2114",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3090",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3101",
+   "title": "Behavioral and Integrative Neuroscience",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3116",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3120",
+   "title": "Biostatistics",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3121",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3122",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3123",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3124",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3130",
+   "title": "Biophysics",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3211",
+   "title": "Experimental Neurobiology",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3215",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3218",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 3220",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 4001",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BIOL-UH 4002",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 1003",
+   "title": "Management & Organizations",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 1004",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 1007",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "BUSOR-UH 1011",
    "title": "Foundations of Leadership",
    "tags": [
@@ -235,11 +595,141 @@
    ]
   },
   {
+   "code": "BUSOR-UH 1016",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 1101",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 1103",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 1104",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 1105",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 1107",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 1301",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 1302",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 1501",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2003",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "BUSOR-UH 2004",
    "title": "Data Analytics: Business",
    "tags": [
     "methods"
    ]
+  },
+  {
+   "code": "BUSOR-UH 2005",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2006",
+   "title": "Managerial Economics",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2101",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2102",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2105",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2106",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2107",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2108",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2109",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2110",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2111",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2301",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 2302",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 3101",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 4000",
+   "title": "Capstone Seminar",
+   "tags": []
+  },
+  {
+   "code": "BUSOR-UH 4001",
+   "title": "Capstone Project",
+   "tags": []
   },
   {
    "code": "CADT-UH 1001",
@@ -297,6 +787,11 @@
    "tags": [
     "core-CADT"
    ]
+  },
+  {
+   "code": "CADT-UH 1025",
+   "title": "Re-Design",
+   "tags": []
   },
   {
    "code": "CADT-UH 1026",
@@ -477,6 +972,11 @@
    ]
   },
   {
+   "code": "CADT-UH 1097",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "CCEA-UH 1001",
    "title": "Ritual and Play",
    "tags": [
@@ -638,6 +1138,11 @@
    "tags": [
     "core-CCEA"
    ]
+  },
+  {
+   "code": "CCEA-UH 1080X",
+   "title": "",
+   "tags": []
   },
   {
    "code": "CCEA-UH 1082",
@@ -1923,11 +2428,186 @@
    ]
   },
   {
+   "code": "CHEM-UH 2010",
+   "title": "Organic Chemistry 1",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3010",
+   "title": "Organic Chemistry 2",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3011",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3012",
+   "title": "Physical Chemistry Laboratory: Thermodynamics and Kinetics",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3013",
+   "title": "Physical Chemistry: Quantum Mechanics and Spectroscopy",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3014",
+   "title": "Physical Chemistry Laboratory: Quantum Mechanics and Spectroscopy",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3015",
+   "title": "Inorganic Chemistry",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3016",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3020",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3022",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3050",
+   "title": "Organic Chemistry 2 Lab",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3090",
+   "title": "Research Seminar in Chemistry",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3101",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 3201",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 4001",
+   "title": "Capstone Project in Chemistry 1",
+   "tags": []
+  },
+  {
+   "code": "CHEM-UH 4002",
+   "title": "Capstone Project in Chemistry 2",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 1001",
+   "title": "Introduction to Computer Science",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 1002",
+   "title": "Discrete Mathematics",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 1050",
+   "title": "Data Structures",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 1052",
+   "title": "Algorithms",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 2010",
+   "title": "Computer Systems Organization",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 2012",
+   "title": "Software Engineering",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 2214",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 2216",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 2218",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "CS-UH 2219E",
    "title": "Computational Social Science",
    "tags": [
     "methods"
    ]
+  },
+  {
+   "code": "CS-UH 2220",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 2221",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 3010",
+   "title": "Operating Systems",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 3012",
+   "title": "Computer Networks",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 3090",
+   "title": "Research Seminar in Computer Science",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 3210",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 3211",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 3212",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 4001",
+   "title": "Capstone Project in Computer Science 1",
+   "tags": []
+  },
+  {
+   "code": "CS-UH 4002",
+   "title": "Capstone Project in Computer Science 2",
+   "tags": []
   },
   {
    "code": "CSTS-UH 1006",
@@ -2515,6 +3195,16 @@
    ]
   },
   {
+   "code": "ECON-UH 4020",
+   "title": "Capstone Seminar",
+   "tags": []
+  },
+  {
+   "code": "ECON-UH 4099",
+   "title": "Capstone Project",
+   "tags": []
+  },
+  {
    "code": "ECON-UH 4210",
    "title": "Advanced Econometrics",
    "tags": [
@@ -2522,8 +3212,508 @@
    ]
   },
   {
+   "code": "ENGL-UA 9164",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 1000",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 1010",
+   "title": "Engineering Ethics",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 1021",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 1801",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "ENGR-UH 2010Q",
    "title": "Probability and Statistics for Engineers",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2011",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2012",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2013",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2017",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2019",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2025",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2026",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2027",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2028",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2113",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2210",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2211",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2212",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2310",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2311",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2350",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2410",
+   "title": "Chemistry for Engineers",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2510",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2610",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2710",
+   "title": "Differential Equations for Engineers",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2810",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2811",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2812",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 2813",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3110",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3111",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3120",
+   "title": "Engineering Materials",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3130",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3210",
+   "title": "Advanced Solid Mechanics",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3230",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3331",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3332",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3410",
+   "title": "Structural Systems",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3411",
+   "title": "Environmental Engineering",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3412",
+   "title": "Geotechnical Engineering",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3413",
+   "title": "Transportation and Traffic Engineering",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3414",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3420",
+   "title": "Project Management",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3430",
+   "title": "Steel Structures Design",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3431",
+   "title": "Concrete Structures Design",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3432",
+   "title": "Water and Wastewater Systems Design",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3510",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3511",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3512",
+   "title": "Computer Networks",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3520",
+   "title": "Operating Systems",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3530",
+   "title": "Embedded Systems",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3610",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3611",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3613",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3620",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3710",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3714",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3720",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3730",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3751",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3752",
+   "title": "Thermofluids Lab",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3810",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3811",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3812",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 3813",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4011",
+   "title": "Senior Design Capstone Project I",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4020",
+   "title": "Senior Design Capstone Project II",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4112",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4140",
+   "title": "Mechatronics",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4141",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4142",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4143",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4145",
+   "title": "Mechatronics Lab",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4160",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4230",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4231",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4320",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4321",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4322",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4323",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4330",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4423",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4424",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4431",
+   "title": "Foundation Engineering Design",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4433",
+   "title": "Structure and Properties of Civil Engineering Materials",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4434",
+   "title": "Water Desalination Engineering",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4436",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4460",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4560",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4610",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4620",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4660",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4701",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4712",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4713",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4714",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4760",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4765",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4770",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "ENGR-UH 4810",
+   "title": "",
    "tags": []
   },
   {
@@ -2534,8 +3724,93 @@
    ]
   },
   {
+   "code": "FILMM-UH 1010",
+   "title": "Sound, Image, and Story",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 1011",
+   "title": "Concepts of Film and New Media",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 1012",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "FILMM-UH 1013X",
    "title": "Understanding MENASA Film and New Media",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 1510",
+   "title": "Techniques for Safety and Production",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 1513",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 1514",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 1517",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 1910",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 1911",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 1912",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 2510",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 2513",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 3110",
+   "title": "Archives, Methods, Screens",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 3511",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 3512",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 4000",
+   "title": "Capstone Seminar",
+   "tags": []
+  },
+  {
+   "code": "FILMM-UH 4001",
+   "title": "Capstone Project",
    "tags": []
   },
   {
@@ -2548,6 +3823,11 @@
   {
    "code": "HERST-UH 1101X",
    "title": "Heritage Management in the Arabian World",
+   "tags": []
+  },
+  {
+   "code": "HERST-UH 1501",
+   "title": "",
    "tags": []
   },
   {
@@ -2598,6 +3878,11 @@
    ]
   },
   {
+   "code": "HIST-UH 2117X",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "HIST-UH 2121",
    "title": "Genocide in a Global Perspective",
    "tags": [
@@ -2615,11 +3900,31 @@
    ]
   },
   {
+   "code": "HIST-UH 2710",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "HIST-UH 3010",
+   "title": "Writing History",
+   "tags": []
+  },
+  {
+   "code": "HIST-UH 3110",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "HIST-UH 3112",
    "title": "Asian Borderlands",
    "tags": [
     "core-CSTS"
    ]
+  },
+  {
+   "code": "HIST-UH 3315",
+   "title": "",
+   "tags": []
   },
   {
    "code": "HIST-UH 3510X",
@@ -2634,6 +3939,21 @@
   {
    "code": "HIST-UH 3710X",
    "title": "Central Asia and the Middle East",
+   "tags": []
+  },
+  {
+   "code": "HIST-UH 3717",
+   "title": "Art and Politics in Europe from the French Revolution to WWII",
+   "tags": []
+  },
+  {
+   "code": "HIST-UH 4000",
+   "title": "Capstone Seminar",
+   "tags": []
+  },
+  {
+   "code": "HIST-UH 4001",
+   "title": "Capstone Project",
    "tags": []
   },
   {
@@ -2658,8 +3978,163 @@
    ]
   },
   {
+   "code": "IM-UH 1013",
+   "title": "Understanding Interactive Media",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 1511",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2110",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2111",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2113",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2310",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2314",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2315",
+   "title": "Software Art: Image",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2316",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2318",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2320",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2322",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2324",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2513",
+   "title": "Future Punk",
+   "tags": []
+  },
+  {
    "code": "IM-UH 2514E",
    "title": "Bioart Practices",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2515",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2516",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 2517",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 3115",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 3116",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 3117",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 3118",
+   "title": "Machine Lab",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 3311",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 3312",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 3315",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 3325",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 3510",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 3511",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 4000",
+   "title": "Capstone Seminar",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 4001",
+   "title": "Capstone Project",
+   "tags": []
+  },
+  {
+   "code": "INTM-SHU 193",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "INTM-SHU 258",
+   "title": "",
    "tags": []
   },
   {
@@ -2910,6 +4385,41 @@
    ]
   },
   {
+   "code": "LAW-UH 4000",
+   "title": "Capstone Seminar",
+   "tags": []
+  },
+  {
+   "code": "LAW-UH 4001",
+   "title": "Capstone Project",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 1000",
+   "title": "Literary Interpretation",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 1003",
+   "title": "Introduction to Creative Writing",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 1004",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 1101",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 1102",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "LITCW-UH 1105",
    "title": "Politics of Writing",
    "tags": [
@@ -2917,11 +4427,26 @@
    ]
   },
   {
+   "code": "LITCW-UH 1106",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "LITCW-UH 1160X",
    "title": "Global Women Writing",
    "tags": [
     "core-CCEA"
    ]
+  },
+  {
+   "code": "LITCW-UH 1501",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 1503",
+   "title": "",
+   "tags": []
   },
   {
    "code": "LITCW-UH 1506",
@@ -2948,6 +4473,16 @@
    ]
   },
   {
+   "code": "LITCW-UH 1510G",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 2101",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "LITCW-UH 2312X",
    "title": "Masterpieces of Pre-Modern Arabic Literature in Translation",
    "tags": []
@@ -2960,11 +4495,21 @@
    ]
   },
   {
+   "code": "LITCW-UH 2332",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "LITCW-UH 2333",
    "title": "Translation and Colonization",
    "tags": [
     "core-CSTS"
    ]
+  },
+  {
+   "code": "LITCW-UH 2340",
+   "title": "",
+   "tags": []
   },
   {
    "code": "LITCW-UH 2341",
@@ -2974,8 +4519,63 @@
    ]
   },
   {
+   "code": "LITCW-UH 2503",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 2504",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 2510",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 3000",
+   "title": "Problems and Methods of Literary Studies",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 3317",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 3319",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "LITCW-UH 3350X",
    "title": "Literatures of the Middle East and the Maghreb",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 3501",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 3502",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 3504",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 4000",
+   "title": "Capstone Seminar",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 4001",
+   "title": "Capstone Project",
    "tags": []
   },
   {
@@ -3041,8 +4641,118 @@
    "tags": []
   },
   {
+   "code": "MATH-UH 2012Q",
+   "title": "Abstract Algebra 1",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 2013Q",
+   "title": "Analysis 1",
+   "tags": []
+  },
+  {
    "code": "MATH-UH 2410Q",
    "title": "Mathematical Modeling",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 3090",
+   "title": "Research Seminar in Mathematics",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 3210",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 3212",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 3213",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 3410",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 3411",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 3413",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 3414",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 3415Q",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 3610",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 3612",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 4001",
+   "title": "Capstone Project in Mathematics 1",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 4002",
+   "title": "Capstone Project in Mathematics 2",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 4610",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 1001",
+   "title": "Music Theory & Analysis I",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 1002",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 1003",
+   "title": "Making Music",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 1004",
+   "title": "Music: Histories and Historiography 1",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 1005",
+   "title": "Anthropology of Music 1",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 1271",
+   "title": "",
    "tags": []
   },
   {
@@ -3066,6 +4776,31 @@
    ]
   },
   {
+   "code": "MUSIC-UH 2004",
+   "title": "Music Histories and Historiography 2",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 2005",
+   "title": "Anthropology of Music 2",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 2416",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 2418",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 2419",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "MUSIC-UH 2662",
    "title": "Music and Copyright",
    "tags": [
@@ -3078,6 +4813,31 @@
    "tags": [
     "core-CCEA"
    ]
+  },
+  {
+   "code": "MUSIC-UH 2668",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 3417",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 4000",
+   "title": "Capstone Seminar",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 4001",
+   "title": "Capstone Project",
+   "tags": []
+  },
+  {
+   "code": "PCIX-SHU 201",
+   "title": "",
+   "tags": []
   },
   {
    "code": "PEACE-UH 1011",
@@ -3111,8 +4871,33 @@
    ]
   },
   {
+   "code": "PHIL-UH 1810",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "PHIL-UH 2211X",
    "title": "Classical Arabic Philosophy",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2414",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2415",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2416",
+   "title": "Images",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2417",
+   "title": "",
    "tags": []
   },
   {
@@ -3121,6 +4906,141 @@
    "tags": [
     "law-elec"
    ]
+  },
+  {
+   "code": "PHIL-UH 2810",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2910",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 4000",
+   "title": "Capstone Project",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 4001",
+   "title": "Capstone Project",
+   "tags": []
+  },
+  {
+   "code": "PHYS-GA 9007",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 2010",
+   "title": "Electromagnetism and Special Relativity",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 2115",
+   "title": "Electricity and Magnetism for Engineers",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3010",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3011",
+   "title": "Electricity and Magnetism",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3012",
+   "title": "Quantum Mechanics 1",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3013",
+   "title": "Advanced Physics Laboratory",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3014",
+   "title": "Statistical Mechanics and Thermodynamics",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3090",
+   "title": "Research Seminar in Physics",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3211",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3213",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3214",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3215",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3217",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3219",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3220",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3222",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3223",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 3260",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 4001",
+   "title": "Capstone Project in Physics 1",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 4002",
+   "title": "Capstone Project in Physics 2",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 4212",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PHYS-UH 4215",
+   "title": "",
+   "tags": []
   },
   {
    "code": "POL-UA 700",
@@ -3337,6 +5257,11 @@
    ]
   },
   {
+   "code": "POLSC-UH 3213",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "POLSC-UH 3313",
    "title": "Making and Breaking Elections",
    "tags": [
@@ -3365,6 +5290,11 @@
    "tags": [
     "area-old"
    ]
+  },
+  {
+   "code": "POLSC-UH 3514",
+   "title": "",
+   "tags": []
   },
   {
    "code": "POLSC-UH 4000",
@@ -3430,6 +5360,11 @@
    "level": 3000
   },
   {
+   "code": "PSYCH-UH 1001",
+   "title": "Introduction to Psychology",
+   "tags": []
+  },
+  {
    "code": "PSYCH-UH 1002EQ",
    "title": "Research Methods in Psychology",
    "tags": []
@@ -3442,6 +5377,66 @@
   {
    "code": "PSYCH-UH 1004Q",
    "title": "Statistics for Psychology",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 2210",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 2211",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 2215",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 2216",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 2217",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 2218",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 2219",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 2410",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 2411",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 2412",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 3090",
+   "title": "Research Seminar in Psychology",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 3512",
+   "title": "",
    "tags": []
   },
   {
@@ -3488,6 +5483,81 @@
    "tags": []
   },
   {
+   "code": "PSYCH-UH 3720",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 4001",
+   "title": "Capstone Project in Psychology 1",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 4002",
+   "title": "Capstone Project in Psychology 2",
+   "tags": []
+  },
+  {
+   "code": "PSYCN-UH 1002",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SCIEN-UH 1121EQ",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SCIEN-UH 1122EQ",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SCIEN-UH 1123EQ",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SCIEN-UH 1124C",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SCIEN-UH 1341Q",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SCIEN-UH 1342Q",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SCIEN-UH 1343",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SCIEN-UH 1344BE",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SCIEN-UH 1561Q",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SCIEN-UH 1563",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SCIEN-UH 1564BE",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "SOCSC-UH 1010Q",
    "title": "Statistics for the Social and Behavioral Sciences",
    "tags": [
@@ -3517,11 +5587,26 @@
    ]
   },
   {
+   "code": "SOCSC-UH 1113",
+   "title": "Introduction to the Study of Society",
+   "tags": []
+  },
+  {
    "code": "SOCSC-UH 1310",
    "title": "Foundations of Modern Social Thought",
    "tags": [
     "spet"
    ]
+  },
+  {
+   "code": "SOCSC-UH 1311",
+   "title": "Introduction to Political Theory",
+   "tags": []
+  },
+  {
+   "code": "SOCSC-UH 1312",
+   "title": "Modern Social Theory in Comparative Perspective",
+   "tags": []
   },
   {
    "code": "SOCSC-UH 1313",
@@ -3590,6 +5675,26 @@
    ]
   },
   {
+   "code": "SRPP-UH 1617",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 1701",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 1810X",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 1816",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "SRPP-UH 1818",
    "title": "Gender, Policy and Politics",
    "tags": [
@@ -3632,11 +5737,41 @@
    ]
   },
   {
+   "code": "SRPP-UH 2416X",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "SRPP-UH 2418",
    "title": "Politics and Society",
    "tags": [
     "breadth-old"
    ]
+  },
+  {
+   "code": "SRPP-UH 2419",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 2420",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 2421",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 2422",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 2610",
+   "title": "",
+   "tags": []
   },
   {
    "code": "SRPP-UH 2611",
@@ -3660,6 +5795,11 @@
    ]
   },
   {
+   "code": "SRPP-UH 2616",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "SRPP-UH 2618",
    "title": "Welfare States in Comparative Perspective",
    "tags": [
@@ -3681,6 +5821,31 @@
    ]
   },
   {
+   "code": "SRPP-UH 2627",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 2629",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 2630",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 2801X",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 3210",
+   "title": "",
+   "tags": []
+  },
+  {
    "code": "SRPP-UH 3214",
    "title": "Social Networks",
    "tags": [
@@ -3688,11 +5853,121 @@
    ]
   },
   {
+   "code": "SRPP-UH 3215",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 3412",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 3610",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 3810",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 4000",
+   "title": "Capstone Seminar",
+   "tags": []
+  },
+  {
+   "code": "SRPP-UH 4001",
+   "title": "Capstone Project",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1010",
+   "title": "Making Theater",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1011",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1110",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1112",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1115",
+   "title": "Scenography: Performance, Production Design, Installation",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1121",
+   "title": "Design for Performance",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1126",
+   "title": "Costuming Performance",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1127",
+   "title": "Ugly",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1129",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1519",
+   "title": "Installation Art",
+   "tags": []
+  },
+  {
    "code": "THEAT-UH 1521",
    "title": "Women Who Kill",
    "tags": [
     "core-CCEA"
    ]
+  },
+  {
+   "code": "THEAT-UH 1522",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 1523",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 2115",
+   "title": "",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 3090",
+   "title": "Capstone Seminar",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 4001",
+   "title": "Capstone Project A",
+   "tags": []
+  },
+  {
+   "code": "THEAT-UH 4002",
+   "title": "Capstone Project B",
+   "tags": []
   },
   {
    "code": "WRIT-UH 1100",
