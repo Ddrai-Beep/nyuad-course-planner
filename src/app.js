@@ -178,7 +178,7 @@ function renderDash() {
 
   ${warn.length || info.length ? `
   <section class="card flags">
-    <h2 class="h3">⚠️ ${warn.length} thing${warn.length === 1 ? '' : 's'} to check</h2>
+    <h2 class="h3">${warn.length} thing${warn.length === 1 ? '' : 's'} to check</h2>
     <ul class="flag-list">${warn.map((f) => `<li class="flag-warn">${f.text}</li>`).join('')}</ul>
     ${info.length ? `<details><summary class="small muted">${info.length} assumption${info.length === 1 ? '' : 's'} I made</summary><ul class="flag-list">${info.map((f) => `<li>${f.text}</li>`).join('')}</ul></details>` : ''}
   </section>` : ''}
@@ -234,7 +234,7 @@ function renderReq(pkey, r) {
     if (s.manual) return `<span class="chip chip-ok">Marked done <button class="link" data-action="unmanual" data-p="${pkey}" data-r="${r.req.id}">undo</button></span>`;
     if (!s.course) return '';
     const c = s.course;
-    return `<span class="chip chip-${STATUS[c.status][1]}" title="${esc(c.raw)} · ${esc(c.term.label)}">${esc(c.displayCode || c.raw)}${c.status === 'slot' ? ' (no course yet)' : ''} <span class="muted">${esc(c.term.label)}</span></span>`;
+    return `<span class="chip chip-${STATUS[c.status][1]}" title="${esc(c.raw)} · ${esc(c.term.label)}">${esc(c.displayCode || c.raw)}${c.status === 'slot' ? ' (no course yet)' : ''} <span class="muted">· ${esc(c.term.label)}</span></span>`;
   }).join('');
   const missing = r.slots.filter((s) => !s.manual && (!s.course || s.course.status === 'slot')).length;
   const countTag = r.req.count > 1 ? `<span class="muted small"> · ${r.filled}/${r.req.count}</span>` : '';
