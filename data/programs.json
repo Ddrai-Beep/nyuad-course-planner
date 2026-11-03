@@ -1135,12 +1135,15 @@
  ],
  "policy": {
   "minorUnique": 2,
-  "source": "NYUAD Academic Policies (bulletin)",
+  "source": "NYUAD Bulletin academic policies + NYUAD Student Portal (Revised Requirements for Graduation; Spring 2026 Grading Policies, updated 12 Mar 2026; FAQs, 18 Mar 2026)",
   "passFailCounts": {
    "terms": [
     "Spring 2026"
    ],
-   "note": "Spring 2026 policy (Student Portal): Pass/Fail courses that term count toward the major and minor."
-  }
+   "note": "Spring 2026: Pass/Fail (P) grades satisfy major, minor and Core requirements but do not meet prerequisites, and do not count toward the 3-course Pass/Fail limit."
+  },
+  "minGrade": "C",
+  "passFailLimit": 3,
+  "semesters": 8
  }
 }

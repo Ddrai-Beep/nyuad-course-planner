@@ -1,5 +1,5 @@
 import { parsePlan, pickPlanSheet } from './parser.js';
-import { buildCatalog, enrich, solve, eligibleCourses, stats, normKey, reqMatches, isPassFail, setPassFailTerms } from './engine.js';
+import { buildCatalog, enrich, solve, eligibleCourses, stats, normKey, reqMatches, isPassFail, setPassFailTerms, belowC, isPFExceptionTerm } from './engine.js';
 import { readFile, readGoogleSheet, readSample } from './io.js';
 import { Votes, LS } from './votes.js';
 import { DEFAULT_PLAN, DEFAULT_PLAN_LABEL } from '../config.js';
@@ -150,6 +150,17 @@ function flags({ major, minor, minorDef, coreComp }) {
     if (c.term.label === term && S.offerings.notOffered[normKey(c.displayCode)])
       out.push({ level: 'warn', text: `${name}: ${esc(S.offerings.notOffered[normKey(c.displayCode)])}` });
   }
+  for (const c of S.courses) {
+    if (c.status === 'slot') continue;
+    const name = `<b>${esc(c.displayCode || c.raw)}</b>`;
+    if (belowC(c)) out.push({ level: 'warn', text: `${name} got a ${esc(c.grade)}. Only a C or higher satisfies major, minor, Core and prerequisite requirements, so it only counts toward your 128 credits.` });
+    if (/^P$/i.test(c.grade) && !c.pe && isPFExceptionTerm(c) && (major.result.used.has(c.id) || minor.used.has(c.id)))
+      out.push({ level: 'info', text: `${name} (P, ${esc(c.term.label)}) counts toward your requirements under the Spring 2026 grading policy, but it doesn't meet prerequisites for later courses. Check with the ARC if a course you plan needs it.` });
+  }
+  const pfUsed = S.courses.filter((c) => /^P$/i.test(c.grade) && !c.pe && !isPFExceptionTerm(c)).length;
+  if (pfUsed > S.programs.policy.passFailLimit) out.push({ level: 'warn', text: `You have ${pfUsed} Pass/Fail courses. The limit is ${S.programs.policy.passFailLimit} (Spring 2026 doesn't count toward it).` });
+  const st = stats(S.courses, S.programs.graduation.credits);
+  if (st.gpa !== null && st.gpa < S.programs.graduation.gpa) out.push({ level: 'warn', text: `Your GPA from the grades listed is ${st.gpa.toFixed(2)}. You need at least ${S.programs.graduation.gpa.toFixed(1)} to graduate.` });
   const uniq = uniqueCount(minor, major.result.used);
   if (uniq < S.programs.policy.minorUnique)
     out.push({ level: 'warn', text: `Your ${esc(minorDef.name)} needs at least ${S.programs.policy.minorUnique} courses that don't also count toward your major. Right now only ${uniq} would be unique.` });

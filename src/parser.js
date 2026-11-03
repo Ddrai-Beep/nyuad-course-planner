@@ -169,6 +169,8 @@ export function parsePlan(grid, today = new Date()) {
       else if (timing === 'current') c.status = 'inprogress';
       else c.status = c.placeholder ? 'slot' : 'planned';
       if (c.placeholder && c.status === 'done') c.status = 'slot';
+      // June J-Term (2025) field colloquia were 3 credits
+      if (c.ccol && c.creditsAssumed && a.t.season === 'summer') c.credits = 3;
       if (c.ccol) c.ccolType = (a.t.season === 'j-term' || a.t.season === 'summer' || /J$/.test(c.suffix || '')) ? 'field' : 'term';
       courses.push(c);
     }

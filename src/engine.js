@@ -85,6 +85,9 @@ const RANK = { done: 0, inprogress: 1, planned: 2, slot: 3 };
 let PF_OK_TERMS = new Set();
 export function setPassFailTerms(terms) { PF_OK_TERMS = new Set(terms || []); }
 // Pass/Fail courses don't count toward Core/major/minor, except in terms with a P/F exception (e.g. Spring 2026)
+// Standard grading: only C or higher satisfies major, minor, Core and prerequisite requirements
+export const belowC = (c) => /^(C-|D\+|D|F)$/i.test(String(c.grade || '').trim());
+export const isPFExceptionTerm = (c) => PF_OK_TERMS.has(c.term?.label);
 export const isPassFail = (c) => /^P$/i.test(String(c.grade || '').trim()) && !c.pe && !PF_OK_TERMS.has(c.term?.label);
 
 // opts.exclude: Set of course ids that can't be used (e.g. used by a Core competency)
@@ -101,7 +104,7 @@ export function solve(requirements, courses, overrides = {}, manual = {}, opts =
   }
   const pool = courses
     .filter((c) => c.status !== 'dropped' && !c.audit && overrides[c.id] !== 'none')
-    .filter((c) => overrides[c.id] || ((opts.allowPF || !isPassFail(c)) && !(opts.exclude && opts.exclude.has(c.id))))
+    .filter((c) => overrides[c.id] || ((opts.allowPF || !isPassFail(c)) && !belowC(c) && !(opts.exclude && opts.exclude.has(c.id))))
     .sort((a, b) => (opts.avoid ? (opts.avoid.has(a.id) - opts.avoid.has(b.id)) : 0) || RANK[a.status] - RANK[b.status] || a.term.order - b.term.order);
 
   // forced assignments
