@@ -193,3 +193,7 @@ input, select { border-width: var(--bw) !important; }
 .req-ok .pill-ok { display: none; }
 .minor-row { cursor: pointer; } .minor-row:hover { background: #faf6e8; }
 .mini-bar { height: 5px; background: #ece6d2; border-radius: 99px; margin-top: 6px; max-width: 260px; overflow: hidden; } .mini-bar span { display: block; height: 100%; background: var(--ok); }
+.dc-note { background: #fffaf0; border: var(--bw) solid #ebcf95; border-radius: 9px; padding: 8px 12px; margin-bottom: 10px; }
+.dc-note div { margin-top: 4px; }
+select.full { width: 100%; max-width: none; margin-top: 8px; }
+.reg-list + select.full { margin-top: 10px; }

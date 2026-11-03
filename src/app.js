@@ -88,7 +88,7 @@ function analyse() {
 
   const tracks = P.major.tracks.map((t) => {
     const r = solve(t.requirements, S.courses, ov(`major:${t.id}`), mn(`major:${t.id}`), { exclude: coreComp });
-    return { track: t, result: r, left: r.summary.needed };
+    return { track: t, result: r, left: notDone(r) };
   });
   const best = [...tracks].sort((a, b) => a.left - b.left || a.result.summary.planned - b.result.summary.planned)[0];
   const trackId = chosen ? chosen.id : best.track.id;
@@ -107,18 +107,21 @@ function analyse() {
     for (const r of res.reqs) for (const sl of r.slots) {
       if (sl.manual) continue;
       const c = sl.course;
-      if (c && (c.status === 'done' || c.status === 'inprogress')) continue;
+      if (c && c.status === 'done') continue;
       if (c) { if (seen.has(c.id)) continue; seen.add(c.id); }
       reqCredits += r.req.id === 'field' ? 3 : 4; reqCount++;
     }
   }
-  const electiveCredits = Math.max(0, P.graduation.credits - st.earned - st.inprog - reqCredits);
+  const electiveCredits = Math.max(0, P.graduation.credits - st.earned - reqCredits);
   const needE = gened.reqs.some((r) => r.req.id === 'e' && r.status === 'needed');
   const electives = { left: Math.ceil(electiveCredits / 4), credits: electiveCredits, openSlots: genericSlots.length, reqCredits, reqCount, needE };
   const ctx = { tracks, best, major, trackId, minorDef, minor, core, gened, extras, st, electives, coreComp };
   ctx.flags = flags(ctx);
   return ctx;
 }
+
+// Nothing counts as taken until it's done: in-progress and planned courses are still "left"
+const notDone = (res) => res.total - res.summary.done;
 
 function uniqueCount(minorRes, majorUsed) {
   return minorRes.reqs.flatMap((r) => r.slots).filter((s) => (s.course && !majorUsed.has(s.course.id)) || (!s.course && !s.manual)).length;
@@ -208,7 +211,7 @@ function renderLoad() {
 }
 
 const STATUS = {
-  done: ['Done', 'ok'], inprogress: ['In progress', 'prog'], planned: ['Planned', 'plan'],
+  done: ['Done', 'ok'], inprogress: ['In progress', 'plan'], planned: ['Planned', 'plan'],
   slot: ['Planned', 'plan'], needed: ['Needed', 'need'],
 };
 const pill = (s) => `<span class="pill pill-${STATUS[s][1]}">${STATUS[s][0]}</span>`;
@@ -219,7 +222,7 @@ function renderDash() {
   const st = A.st, el = A.electives;
   const G = st.gradCredits;
   const pct = (x) => Math.min(100, (x / G) * 100);
-  const left = A.major.result.summary.needed + A.minor.summary.needed + A.core.summary.needed + A.gened.summary.needed;
+  const left = notDone(A.major.result) + notDone(A.minor) + notDone(A.core) + notDone(A.gened);
   const plannedReq = el.reqCredits;
   const m = S.plan.meta;
   const warn = A.flags.filter((f) => f.level !== 'info'), info = A.flags.filter((f) => f.level === 'info');
@@ -231,15 +234,15 @@ function renderDash() {
       <button class="btn btn-ghost small" data-action="reset">Load a different plan</button>
     </div>
     <div class="stats">
-      <div class="stat"><div class="stat-num">${left}</div><div class="stat-label">requirements left</div></div>
+      <div class="stat"><div class="stat-num">${left}</div><div class="stat-label">requirements not yet completed</div></div>
       <div class="stat"><div class="stat-num">${el.left}</div><div class="stat-label">electives left after major, minor &amp; Core <span class="muted">(${el.credits} cr${el.needE ? ', one must be an E course' : ''})</span></div></div>
       <div class="stat"><div class="stat-num">${st.earned}<span class="muted">/${G}</span></div><div class="stat-label">credits earned</div></div>
       ${st.gpa ? `<div class="stat"><div class="stat-num">${st.gpa.toFixed(2)}</div><div class="stat-label">GPA</div></div>` : ''}
     </div>
     <div class="bar">
-      <span class="bar-ok" style="width:${pct(st.earned)}%"></span><span class="bar-prog" style="width:${pct(st.inprog)}%"></span><span class="bar-plan" style="width:${pct(Math.max(0, plannedReq))}%"></span><span class="bar-elec" style="width:${pct(el.credits)}%"></span>
+      <span class="bar-ok" style="width:${pct(st.earned)}%"></span><span class="bar-plan" style="width:${pct(Math.max(0, plannedReq))}%"></span><span class="bar-elec" style="width:${pct(el.credits)}%"></span>
     </div>
-    <div class="legend small"><span><i class="dot dot-ok"></i>Earned ${st.earned}</span><span><i class="dot dot-prog"></i>In progress ${st.inprog}</span><span><i class="dot dot-plan"></i>Requirements still to take ${plannedReq} (${el.reqCount} courses)</span><span><i class="dot dot-elec"></i>Electives left ${el.credits}</span><span>Total ${G}</span></div>
+    <div class="legend small"><span><i class="dot dot-ok"></i>Completed ${st.earned}</span><span><i class="dot dot-plan"></i>Requirements still to complete ${plannedReq} (${el.reqCount} courses, incl. in progress)</span><span><i class="dot dot-elec"></i>Electives left ${el.credits}</span><span>Total ${G}</span></div>
   </section>
 
   ${warn.length || info.length ? `
@@ -288,7 +291,7 @@ function renderTracks(A) {
           <span class="track-kicker">${esc(t.track.name)}</span>
           <span class="track-name">${esc(t.track.short)}</span>
           <span class="track-left"><b>${t.left}</b> left</span>
-          <span class="track-sub">${t.result.summary.done} done · ${t.result.summary.inprogress + t.result.summary.planned} in progress/planned</span>
+          <span class="track-sub">${t.result.summary.done} done of ${t.result.total}</span>
         </button>`).join('')}
     </div>
   </section>`;
@@ -302,9 +305,9 @@ function renderProgram(key, title, res, extra = '') {
   <div class="card program">
     <div class="program-head">
       <h3>${esc(title)}</h3>
-      <span class="small muted">${complete ? 'Complete' : `${s.needed} needed · ${s.planned + s.inprogress} planned/in progress`} · ${s.done}/${res.total} done ${extra}</span>
+      <span class="small muted">${complete ? 'Complete' : `${res.total - s.done} left`} · ${s.done}/${res.total} done ${extra}</span>
     </div>
-    <div class="progress"><span style="width:${(s.done / res.total) * 100}%"></span><span class="p2" style="width:${((s.inprogress + s.planned) / res.total) * 100}%"></span></div>
+    <div class="progress"><span style="width:${(s.done / res.total) * 100}%"></span></div>
     <ul class="reqs">${rows.join('')}</ul>
   </div>`;
 }
@@ -320,6 +323,8 @@ function renderSlot(pkey, r, slot, i) {
   else if (c && c.status === 'slot') fill = `<div class="fill muted">${esc(c.raw)} · ${esc(c.term.label)} · course not chosen yet</div>`;
   else if (c) fill = `<div class="fill"><span class="fill-code">${esc(c.displayCode || c.raw)}</span>${c.displayCode && c.title && c.title !== c.raw ? ` ${esc(c.title)}` : ''} <span class="muted">· ${esc(c.term.label)}</span></div>`;
   const canFind = !slot.manual && (!c || c.status === 'slot');
+  const term = S.programs.registrationTerm;
+  const canAdd = c && c.displayCode && c.status === 'planned' && !getList().some((x) => x.code === c.displayCode);
   return `
   <li class="req req-${STATUS[status][1]}">
     <div class="req-row">
@@ -331,6 +336,7 @@ function renderSlot(pkey, r, slot, i) {
       </div>
       <div class="req-actions">
         ${status === 'done' ? '' : pill(status)}
+        ${canAdd ? `<button class="btn btn-small btn-secondary" data-action="add" data-code="${esc(c.displayCode)}" data-title="${esc(c.cat?.title || c.title)}" data-label="${esc(label)}">+ Add to ${esc(term)}</button>` : ''}
         ${canFind ? `<button class="btn btn-small ${open ? 'btn-secondary' : 'btn-primary'}" data-action="toggle" data-key="${esc(key)}">${open ? 'Hide' : 'Find courses'}</button>` : ''}
       </div>
     </div>
@@ -421,8 +427,11 @@ function renderMinorCheck(A) {
   const free = A.electives.left;
   const ranked = S.programs.minors.filter((m) => m.id !== A.minorDef.id && !S.extraMinors.includes(m.id)).map((m) => {
     const r = solve(m.requirements, S.courses, S.overrides[`minor:${m.id}`] || {}, {}, { exclude: A.coreComp, avoid: used });
-    const done = r.summary.done + r.summary.inprogress;
-    return { m, r, done, total: r.total, needed: r.total - done, uniq: uniqueCount(r, used) };
+    const done = r.summary.done;
+    // Courses that would count but are blocked because they fill a Core competency
+    const blocked = S.courses.filter((c) => A.coreComp.has(c.id) && m.requirements.some((q) => reqMatches(c, q)))
+      .map((c) => ({ c, req: m.requirements.find((q) => reqMatches(c, q)), core: A.core.reqs.find((q) => q.slots.some((sl) => sl.course?.id === c.id))?.req.label }));
+    return { m, r, done, total: r.total, needed: r.total - done, uniq: uniqueCount(r, used), blocked };
   }).sort((a, b) => b.done / b.total - a.done / a.total || (b.r.summary.planned) - (a.r.summary.planned) || a.needed - b.needed);
   return `
   <div class="card program">
@@ -439,8 +448,12 @@ function renderMinorCheck(A) {
         ${open ? `<div class="options">
           <ul class="small plain">${x.r.reqs.flatMap((q) => q.slots.map((s, i) => {
             const st = s.course ? (s.course.status === 'slot' ? 'planned' : s.course.status) : 'needed';
-            return `<li>${st === 'done' || st === 'inprogress' ? '✓' : '○'} ${esc(q.req.count > 1 ? `${q.req.label} ${i + 1}` : q.req.label)}${s.course && st !== 'planned' ? ` · <span class="muted">${esc(s.course.displayCode || s.course.raw)}</span>` : ''}</li>`;
+            return `<li>${st === 'done' ? '✓' : st === 'needed' ? '○' : '◐'} ${esc(q.req.count > 1 ? `${q.req.label} ${i + 1}` : q.req.label)}${s.course && st !== 'planned' ? ` · <span class="muted">${esc(s.course.displayCode || s.course.raw)}</span>` : ''}</li>`;
           })).join('')}</ul>
+          <div class="dc-note small">
+            <b>Double-counting:</b> a course can count toward this minor and your major (each minor needs ${S.programs.policy.minorUnique} courses of its own), but <b>not</b> toward this minor and a Core competency (CADT, CCEA, CDAD, CSTS), per NYUAD academic policy.
+            ${x.blocked.length ? x.blocked.map((b) => `<div>• <b>${esc(b.c.displayCode || b.c.raw)}</b> would count as "${esc(b.req.label)}", but it's filling your ${esc(b.core || 'Core')} requirement, so it can't count here.</div>`).join('') : `<div>• None of your courses match this minor's requirements${x.m.id === 'phil' ? '. Philosophy only takes PHIL-UH courses, and Global Ethics is CSTS-UH 1061, not a PHIL course' : ''}.</div>`}
+          </div>
           <div class="verdict ${fits ? 'verdict-ok' : 'verdict-no'}">
             ${fits ? `<b>Fits.</b> ${x.needed} more course${x.needed === 1 ? '' : 's'}, and you have room for ${free} elective${free === 1 ? '' : 's'} after your major, minor and Core.`
                    : `<b>Doesn't fit in 128 credits.</b> ${x.needed} more courses, but you only have room for ${free} elective${free === 1 ? '' : 's'}, so ${x.needed - free} course${x.needed - free === 1 ? '' : 's'} (${(x.needed - free) * 4} credits) would go on top.`}
@@ -465,6 +478,7 @@ function renderList() {
   const term = S.programs.registrationTerm;
   const done = list.filter((i) => i.registered).length;
   const planned = S.courses.filter((c) => c.term.label === term && c.displayCode && !list.some((i) => i.code === c.displayCode));
+  const later = S.courses.filter((c) => c.status === 'planned' && c.term.label !== term && c.displayCode && !list.some((i) => i.code === c.displayCode));
   return `
   <div class="card list-card">
     <h2 class="section-title"><span class="num">3</span> Your ${esc(term)} list</h2>
@@ -494,6 +508,8 @@ function renderList() {
       }).join('') || '<li class="muted small empty">Nothing yet. Use <b>Find courses</b> to add some.</li>'}
     </ul>
     ${planned.length ? `<button class="btn btn-secondary btn-small full" data-action="addplanned">+ Add the ${planned.length} course${planned.length > 1 ? 's' : ''} in your plan for ${esc(term)}</button>` : ''}
+    ${later.length ? `<select class="full" data-action="addlater"><option value="">+ Pull a planned course from a later term…</option>
+      ${later.map((c) => `<option value="${esc(c.id)}">${esc(c.displayCode)} · ${esc(c.term.label)}</option>`).join('')}</select>` : ''}
     ${S.votes.online ? '' : '<p class="small muted offline">Shared reports are offline, so yours are saved on this device only.</p>'}
   </div>`;
 }
@@ -523,7 +539,8 @@ function renderPlan(A) {
           <td>${esc(c.raw)}</td><td>${esc(c.prereq)}</td><td>${esc(c.reqText)}</td><td>${esc(c.grade)}</td><td class="num-cell">${esc(c.creditsRaw)}</td></tr>
         ${editing && c.status !== 'slot' ? `<tr class="prow-edit"><td colspan="5">
           <label class="small">Major ${sel(majorKey, A.major.track.requirements, c, assigned(A.major.result, c))}</label>
-          <label class="small">Minor ${sel(minorKey, A.minorDef.requirements, c, assigned(A.minor, c))}</label></td></tr>` : ''}`;
+          <label class="small">Minor ${sel(minorKey, A.minorDef.requirements, c, assigned(A.minor, c))}</label>
+          ${c.displayCode && c.status !== 'done' && !getList().some((x) => x.code === c.displayCode) ? `<button class="btn btn-small btn-secondary" data-action="add" data-code="${esc(c.displayCode)}" data-title="${esc(c.cat?.title || c.title)}" data-label="${esc(c.reqText)}">+ Add to ${esc(S.programs.registrationTerm)} list</button>` : ''}</td></tr>` : ''}`;
     }).join('');
     return `<div class="tblock"><div class="tblock-head">${esc(label)}</div>
       <table class="tmpl"><thead><tr><th>Course</th><th>Prerequisite</th><th>Requirement</th><th>Grade</th><th>Credit Hr</th></tr></thead>
@@ -594,6 +611,11 @@ document.addEventListener('click', async (ev) => {
 document.addEventListener('change', (ev) => {
   const el = ev.target;
   if (el.id === 'file' && el.files[0]) { const f = el.files[0]; return withLoad(() => readFile(f), f.name); }
+  if (el.dataset.action === 'addlater' && el.value) {
+    const c = S.courses.find((x) => x.id === el.value);
+    if (c) addToList(c.displayCode, c.cat?.title || c.title, c.reqText);
+    return render();
+  }
   if (el.dataset.action === 'override') {
     const o = S.overrides[el.dataset.key] || (S.overrides[el.dataset.key] = {});
     if (el.value) o[el.dataset.id] = el.value; else delete o[el.dataset.id];

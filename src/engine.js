@@ -31,8 +31,20 @@ export function levelOf(number, campus) {
   return Math.floor(n / 1000) * 1000;
 }
 
+const normTitle = (t) => String(t || '').toLowerCase().replace(/\b(and|et|the|of|a)\b/g, '').replace(/[^a-z0-9]/g, '');
+// Codeless Core entries like "CDAD Cyberwarfare": find the catalog course with that title
+// *within the same subject* (so a J-Term "CCOL What is Life" never picks up CDAD-UH 1065E's E attribute)
+function titleKey(course, catalog) {
+  const subj = course.coreCat || (course.ccol ? 'CCOL' : null);
+  if (!subj) return null;
+  const want = normTitle(course.raw.replace(/^\s*[A-Z]{3,5}\b[\s:;-]*/i, ''));
+  if (want.length < 4) return null;
+  for (const e of catalog.values()) if (e.subject === subj && normTitle(e.title) === want) return e.key;
+  return null;
+}
+
 export function enrich(course, catalog) {
-  const key = course.key || course.aliasKey;
+  const key = course.key || course.aliasKey || titleKey(course, catalog);
   const cat = key ? catalog.get(normKey(key)) : null;
   const tags = new Set(cat ? cat.tags : []);
   let subject = course.subject, campus = course.campus, number = course.number;
