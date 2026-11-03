@@ -2,6 +2,7 @@ import { parsePlan, pickPlanSheet, termLabel } from './parser.js';
 import { buildCatalog, enrich, solve, eligibleCourses, stats, normKey } from './engine.js';
 import { readFile, readGoogleSheet, readSample } from './io.js';
 import { Votes, LS } from './votes.js';
+import { DEFAULT_PLAN, DEFAULT_PLAN_LABEL } from '../config.js';
 
 const $app = document.getElementById('app');
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -32,6 +33,9 @@ async function boot() {
   S.votes.load().then(render);
   const cached = LS.get('lastPlan', null);
   if (cached) { try { loadSheets(cached.sheets, cached.source, false); } catch { /* ignore */ } }
+  else if (DEFAULT_PLAN && !LS.get('skipDefault', false)) {
+    try { loadSheets(await readSample(DEFAULT_PLAN), DEFAULT_PLAN_LABEL, false); } catch { /* fall back to upload screen */ }
+  }
   render();
 }
 
@@ -126,8 +130,9 @@ function renderLoad() {
       <div class="card load-card">
         <div class="step">C</div>
         <h3>Just looking?</h3>
-        <p class="muted small">Try it with a made-up student's plan.</p>
+        <p class="muted small">Try it with a made-up student's plan${DEFAULT_PLAN ? ` or ${esc(DEFAULT_PLAN_LABEL)}` : ''}.</p>
         <button class="btn btn-secondary" data-action="sample">Try sample plan</button>
+        ${DEFAULT_PLAN ? `<button class="btn btn-ghost" data-action="default">${esc(DEFAULT_PLAN_LABEL)}</button>` : ''}
       </div>
     </div>
     <p class="muted small privacy">🔒 Your plan stays in this browser. It's never uploaded or stored on a server.</p>
@@ -385,8 +390,9 @@ document.addEventListener('click', async (ev) => {
   if (!el || el.tagName === 'SELECT' || (el.tagName === 'INPUT' && el.type !== 'checkbox')) return;
   const a = el.dataset.action;
   if (a === 'plantoggle') { ev.preventDefault(); S.open.has('plan') ? S.open.delete('plan') : S.open.add('plan'); return render(); }
-  if (a === 'sample') return withLoad(readSample, 'the sample plan');
-  if (a === 'reset') { S.plan = null; LS.set('lastPlan', null); return render(); }
+  if (a === 'sample') return withLoad(() => readSample(), 'the sample plan');
+  if (a === 'default') return withLoad(() => readSample(DEFAULT_PLAN), DEFAULT_PLAN_LABEL);
+  if (a === 'reset') { S.plan = null; LS.set('lastPlan', null); LS.set('skipDefault', true); return render(); }
   if (a === 'track') { S.track = el.dataset.id; save(); return render(); }
   if (a === 'toggle') { const k = el.dataset.key; S.open.has(k) ? S.open.delete(k) : S.open.add(k); return render(); }
   if (a === 'add') { addToList(el.dataset.code, el.dataset.title, el.dataset.label); return render(); }

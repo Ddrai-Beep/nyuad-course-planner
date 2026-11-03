@@ -58,7 +58,8 @@ export async function readGoogleSheet(url) {
   return [{ name: 'Google Sheet', grid: parseCSV(text) }];
 }
 
-export async function readSample() {
-  const res = await fetch('sample/sample-plan.csv');
+export async function readSample(path = 'sample/sample-plan.csv') {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Couldn't load ${path}`);
   return [{ name: 'Sample plan', grid: parseCSV(await res.text()) }];
 }

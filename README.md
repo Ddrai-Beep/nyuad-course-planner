@@ -26,4 +26,6 @@ When next term's guide comes out: add a new key to `offerings.json`, change `reg
 - **Site:** GitHub Pages serves it from the `main` branch root. There's no build step.
 - **Worker (optional, free):** Cloudflare Worker + D1 for shared availability reports. It also reads Google Sheets with every tab, where the no-server fallback only gets the first tab. To set it up once, run `bash worker/setup.sh`. It logs you in, creates the database, deploys, and writes the URL into `config.js`. Commit and push afterwards.
 
+The live site opens on `data/my-plan.csv` (set `DEFAULT_PLAN` in `config.js` to change or remove it).
+
 Unofficial: confirm with your advisor and in Albert.
