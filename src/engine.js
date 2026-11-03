@@ -41,8 +41,12 @@ export function enrich(course, catalog) {
     for (const t of course.hint.tags || []) tags.add(t);
     if (course.hint.subject) { subject = course.hint.subject; campus = 'UH'; number = course.hint.number; }
   }
+  const attrs = new Set(course.attrs || []);
+  const sfx = cat?.code?.match(/\d{4}([A-Z]*)$/)?.[1] || '';
+  for (const ch of sfx) if ('XEQ'.includes(ch)) attrs.add(ch);
   return {
     ...course,
+    attrs,
     cat,
     tags,
     subject, campus, number,
@@ -59,10 +63,10 @@ function clauseMatch(c, cl) {
   if (cl.campus && !cl.campus.includes(c.campus)) return false;
   if (cl.minLevel && !(c.level >= cl.minLevel)) return false;
   if (cl.maxLevel && !(c.level && c.level <= cl.maxLevel)) return false;
-  if (cl.coreCat && c.coreCat !== cl.coreCat) return false;
+  if (cl.coreCat && c.coreCat !== cl.coreCat && !c.tags.has(`core-${cl.coreCat}`)) return false;
   if (cl.attr && !c.attrs?.has(cl.attr)) return false;
-  if (cl.ccol && c.ccolType !== cl.ccol) return false;
-  if (cl.fyws && !c.fyws) return false;
+  if (cl.ccol && c.ccolType !== cl.ccol && !c.tags.has(`ccol-${cl.ccol}`)) return false;
+  if (cl.fyws && !c.fyws && !c.tags.has('fyws')) return false;
   if (cl.pe && !c.pe) return false;
   return true;
 }
@@ -78,7 +82,12 @@ const RANK = { done: 0, inprogress: 1, planned: 2, slot: 3 };
 
 // Bipartite matching (Kuhn) of courses → requirement slots.
 // overrides: { [courseId]: reqId | 'none' }, manual: { [reqId]: n } slots marked done by hand
-export function solve(requirements, courses, overrides = {}, manual = {}) {
+export const isPassFail = (c) => /^P$/i.test(String(c.grade || '').trim()) && !c.pe;
+
+// opts.exclude: Set of course ids that can't be used (e.g. used by a Core competency)
+// opts.avoid: Set of course ids to use only as a last resort (minor-uniqueness rule)
+// opts.allowPF: count Pass/Fail courses (only gen-ed attributes and PE)
+export function solve(requirements, courses, overrides = {}, manual = {}, opts = {}) {
   const slots = [];
   for (const req of requirements) for (let i = 0; i < req.count; i++) slots.push({ req, i, course: null, manual: false });
   // manual completions take the last slots of a requirement
@@ -89,7 +98,8 @@ export function solve(requirements, courses, overrides = {}, manual = {}) {
   }
   const pool = courses
     .filter((c) => c.status !== 'dropped' && !c.audit && overrides[c.id] !== 'none')
-    .sort((a, b) => RANK[a.status] - RANK[b.status] || a.term.order - b.term.order);
+    .filter((c) => overrides[c.id] || ((opts.allowPF || !isPassFail(c)) && !(opts.exclude && opts.exclude.has(c.id))))
+    .sort((a, b) => (opts.avoid ? (opts.avoid.has(a.id) - opts.avoid.has(b.id)) : 0) || RANK[a.status] - RANK[b.status] || a.term.order - b.term.order);
 
   // forced assignments
   const forced = new Set();
@@ -121,16 +131,16 @@ export function solve(requirements, courses, overrides = {}, manual = {}) {
   const used = new Set(slots.filter((s) => s.course).map((s) => s.course.id));
   const reqs = requirements.map((req) => {
     const rs = slots.filter((s) => s.req === req);
-    const state = (s) => (s.manual ? 'done' : s.course ? s.course.status : 'needed');
+    const state = (s) => (s.manual ? 'done' : s.course ? (s.course.status === 'slot' ? 'planned' : s.course.status) : 'needed');
     const states = rs.map(state);
-    const order = ['needed', 'slot', 'planned', 'inprogress', 'done'];
+    const order = ['needed', 'planned', 'inprogress', 'done'];
     const worst = states.reduce((w, x) => (order.indexOf(x) < order.indexOf(w) ? x : w), 'done');
-    return { req, slots: rs, status: worst, filled: states.filter((x) => x !== 'needed' && x !== 'slot').length };
+    return { req, slots: rs, status: worst, filled: states.filter((x) => x !== 'needed').length };
   });
   const summary = { done: 0, inprogress: 0, planned: 0, needed: 0 };
   for (const s of slots) {
     const st = s.manual ? 'done' : s.course ? s.course.status : 'needed';
-    summary[st === 'slot' ? 'needed' : st]++;
+    summary[st === 'slot' ? 'planned' : st]++;
   }
   return { reqs, used, summary, total: slots.length };
 }
@@ -139,7 +149,7 @@ export function eligibleCourses(req, catalog) {
   const out = [];
   for (const e of catalog.values()) {
     if (e.alias_of) continue;
-    const c = { tags: new Set(e.tags), subject: e.subject, campus: e.campus, number: e.number, level: e.number ? Math.floor(e.number / 1000) * 1000 : 0, displayCode: e.code, attrs: new Set() };
+    const c = { tags: new Set(e.tags), subject: e.subject, campus: e.campus, number: e.number, level: e.number ? Math.floor(e.number / 1000) * 1000 : 0, displayCode: e.code, attrs: new Set([...(e.code.match(/\d{4}([A-Z]*)$/)?.[1] || '')].filter((ch) => 'XEQ'.includes(ch))) };
     if (reqMatches(c, req)) out.push(e);
   }
   return out;

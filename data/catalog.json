@@ -2,6 +2,44 @@
  "_source": "NYUAD Bulletin (most recent) + Political Science Courses \u2014 Spring 2027 (J. Jensen, 26 Oct 2026)",
  "courses": [
   {
+   "code": "ACS-UH 1010X",
+   "title": "Anthropology and the Arab World",
+   "tags": [
+    "acs-req"
+   ]
+  },
+  {
+   "code": "ACS-UH 1011X",
+   "title": "Introduction to Modern Arabic Literature",
+   "tags": [
+    "acs-req"
+   ]
+  },
+  {
+   "code": "ACS-UH 1012X",
+   "title": "Emergence of the Modern Middle East",
+   "tags": [
+    "acs-req"
+   ]
+  },
+  {
+   "code": "ACS-UH 1214X",
+   "title": "Quran as Literature",
+   "tags": []
+  },
+  {
+   "code": "ACS-UH 1410X",
+   "title": "Making of the Muslim Middle East",
+   "tags": []
+  },
+  {
+   "code": "ACS-UH 1412X",
+   "title": "Race and Ethnicity in the Histories of the Middle East and Africa",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
    "code": "ACS-UH 1610X",
    "title": "Feminism and Islamism in the Middle East and North Africa",
    "tags": [
@@ -9,11 +47,185 @@
    ]
   },
   {
+   "code": "ACS-UH 1612X",
+   "title": "Energy and Society in the Gulf",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "ACS-UH 2212X",
+   "title": "Introduction to Islamic Texts",
+   "tags": []
+  },
+  {
+   "code": "ACS-UH 2213X",
+   "title": "Modern Arabic Short Stories",
+   "tags": []
+  },
+  {
+   "code": "ACS-UH 2410X",
+   "title": "Paradise Lost: Muslims, Christians and Jews in Al-Andalus",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "ACS-UH 2419X",
+   "title": "Sufism",
+   "tags": []
+  },
+  {
+   "code": "ACS-UH 2613X",
+   "title": "Youth in the Middle East",
+   "tags": []
+  },
+  {
    "code": "ACS-UH 2614X",
    "title": "Colonization of Palestine",
    "tags": [
     "breadth-old"
    ]
+  },
+  {
+   "code": "ACS-UH 2615X",
+   "title": "Arab Genders and Sexualities",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "ANTH-UH 1102X",
+   "title": "Anthropology of and as Media",
+   "tags": [
+    "core-CCEA",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "ANTH-UH 1103",
+   "title": "Sense and Senses",
+   "tags": [
+    "core-CCEA",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "ANTH-UH 1104",
+   "title": "Merchants, Chiefs and Spirits",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "ANTH-UH 2113",
+   "title": "Memoir and Ethnography",
+   "tags": [
+    "core-CADT",
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "ANTH-UH 2114X",
+   "title": "Listening to Islam",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "ANTH-UH 2116",
+   "title": "Displacement and Dispossession in the Modern Middle East",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "ANTH-UH 2121X",
+   "title": "Gender/Religion/Violence",
+   "tags": []
+  },
+  {
+   "code": "ARABL-UH 1132X",
+   "title": "Elementary Qur'anic Arabic",
+   "tags": []
+  },
+  {
+   "code": "ARABL-UH 3131X",
+   "title": "Introduction to Qur'anic Arabic",
+   "tags": []
+  },
+  {
+   "code": "ARABL-UH 4015X",
+   "title": "Arabic Cultural Explorations",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1120X",
+   "title": "Art and Architecture of the Islamic World",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1121X",
+   "title": "Gulf and Indian Ocean World Art and Architecture",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 1715X",
+   "title": "Arabic Typography",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2118X",
+   "title": "Contemporary Art and Politics in the Arab World",
+   "tags": []
+  },
+  {
+   "code": "ARTH-UH 2721",
+   "title": "Art and Architecture: Reinventing the City",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "ARTH-UH 2726",
+   "title": "City to Studio: Transforming Urban Research",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "ARTH-UH 2825",
+   "title": "Advanced Lighting and Production Techniques",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "AW-UH 1113X",
+   "title": "Alexander and the East",
+   "tags": []
+  },
+  {
+   "code": "AW-UH 1115X",
+   "title": "Political Past, Political Presents",
+   "tags": []
+  },
+  {
+   "code": "AW-UH 1118",
+   "title": "Archaeology, Arabia and the Bible",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "AW-UH 1119X",
+   "title": "Sacred Cities: Jerusalem and Mecca",
+   "tags": []
+  },
+  {
+   "code": "AW-UH 1120X",
+   "title": "Archaeology of the Gulf",
+   "tags": []
   },
   {
    "code": "BUSOR-UH 1011",
@@ -30,10 +242,1684 @@
    ]
   },
   {
+   "code": "CADT-UH 1001",
+   "title": "Manus et Machina",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1005",
+   "title": "Creativity and Innovation",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1008EQ",
+   "title": "Touch",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1013EQ",
+   "title": "Language of Computers",
+   "tags": [
+    "core-CADT",
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CADT-UH 1016E",
+   "title": "Utilitas, Venustas, Firmitas",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1020",
+   "title": "Wayfinding: Graphic Design in the Built Environment",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1021",
+   "title": "Art of Narrative Science",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1024",
+   "title": "What Is Music?",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1026",
+   "title": "Human Value",
+   "tags": [
+    "core-CADT",
+    "core-CCEA",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CADT-UH 1027",
+   "title": "Memoir and Anti-Memoir",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1029",
+   "title": "Inspiration, Art, and the Examined Life",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1033",
+   "title": "Bioinspiration",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1037X",
+   "title": "Machines in Islamic Civilization",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1038",
+   "title": "Autonomous and Social Robots",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1039",
+   "title": "Photo Album",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1040",
+   "title": "Ethics of the Image",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1045E",
+   "title": "Plastic Fantastic",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1048",
+   "title": "Reinventing the Wheel",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1049E",
+   "title": "Material World",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1051",
+   "title": "Performing Online",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1052",
+   "title": "Silence",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1053",
+   "title": "Designing Health",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1061",
+   "title": "The Body Archive",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1062",
+   "title": "Contextual Innovation in Society",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1063",
+   "title": "Foodways for the Anthropocene",
+   "tags": [
+    "core-CADT",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CADT-UH 1074",
+   "title": "Creative Robotics and Tech",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1077",
+   "title": "Site Specificity",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1078",
+   "title": "Voice",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1079E",
+   "title": "Have a Seat",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1091",
+   "title": "The Photographic Essay",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1092",
+   "title": "Starting With Self",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1093",
+   "title": "Gamified Learning",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CADT-UH 1094",
+   "title": "Music, the Mind, and Artificial Intelligence",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1001",
+   "title": "Ritual and Play",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1003",
+   "title": "Collecting",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1004",
+   "title": "Identity and Object",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1007",
+   "title": "Abstraction",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1009X",
+   "title": "A Thousand and One Nights",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1010",
+   "title": "Imagined Cities",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1011",
+   "title": "Law and the Imagination",
+   "tags": [
+    "core-CCEA",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1014",
+   "title": "Money and the Good Life",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1015",
+   "title": "Gender and Representation",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1017",
+   "title": "On Violence",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1023",
+   "title": "Dis/Abilities in Musical Contexts",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1037",
+   "title": "Listening",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1046",
+   "title": "Rogue Fictions",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1053",
+   "title": "The Hero",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1055",
+   "title": "Global Shakespeare",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1056",
+   "title": "Tragedy",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1061",
+   "title": "Memory",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1062",
+   "title": "Everything Is a Remix",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1063",
+   "title": "Literary Translation",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1069",
+   "title": "Cultural Appropriation",
+   "tags": [
+    "core-CCEA",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1074",
+   "title": "Race, Racialization and Narration",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1077X",
+   "title": "Islamism, Islamophobia, and Muslim Popular Culture",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1078X",
+   "title": "Representing the Middle East",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1082",
+   "title": "Literature of Migration",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1083",
+   "title": "Cultural History of Falconry",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1085",
+   "title": "Cinematic Imagination",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1090",
+   "title": "Un/Making History",
+   "tags": [
+    "core-CCEA",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1092",
+   "title": "Reaching for the Stars",
+   "tags": [
+    "core-CADT",
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1094X",
+   "title": "Orientalisms",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1095X",
+   "title": "Arabia Felix",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1096",
+   "title": "Global Scents: All the Perfumes of Arabia",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1097",
+   "title": "Music: Conflict, Protest, and Peace",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1098",
+   "title": "Immersive Experiences",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1102",
+   "title": "Culture and Citizenship",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1107",
+   "title": "Once Upon a Time: Folk and Fairy Tales Reconsidered",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1110",
+   "title": "Faith and Finance",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1112",
+   "title": "Fashion, Culture & the Body",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1113",
+   "title": "Expressive Culture: Film",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1114X",
+   "title": "Sexualities of the Middle East",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1115",
+   "title": "Languages of Israel",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1123",
+   "title": "Noise in Literature",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1124",
+   "title": "The Age of Images",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1125",
+   "title": "Nation and Narration",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1136",
+   "title": "Encountering the Other",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1137",
+   "title": "Stories of Our Bodies",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1138",
+   "title": "Eco-Art and Ecomedia",
+   "tags": [
+    "core-CADT",
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCEA-UH 1139",
+   "title": "The Image in Question",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1000",
+   "title": "Mortal and Immortal Questions",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1002",
+   "title": "Indigeneity",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1003X",
+   "title": "Faith in Science, Reason in Revelation",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1006E",
+   "title": "Conserving Our Global Heritage through Science",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1008",
+   "title": "Reading the Earth",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1010",
+   "title": "Future of Medicine",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1013",
+   "title": "Colonialism and Postcolonialism",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1015Q",
+   "title": "Labor",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1016Q",
+   "title": "Cooperation",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1019",
+   "title": "Extinction",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1020",
+   "title": "Water",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1021",
+   "title": "The Desert",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1024Q",
+   "title": "Life in the Universe",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1025",
+   "title": "Human Body",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1026",
+   "title": "Migration",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1030",
+   "title": "War",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1031",
+   "title": "Nature and Human Nature",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1032",
+   "title": "Communication: from bacteria to humans",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1034",
+   "title": "Gender",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1035",
+   "title": "Inequality",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1038",
+   "title": "Prejudice",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1040",
+   "title": "Disability",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1042",
+   "title": "Multi-ethnic Democracy",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1045",
+   "title": "Axes of Evil",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1046",
+   "title": "Women and Leadership",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1048",
+   "title": "Statehood",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1049",
+   "title": "State of the Nation",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1052X",
+   "title": "Art of Revolution",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1053",
+   "title": "Calamity and Creation",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1055",
+   "title": "Oil",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1056EQ",
+   "title": "Fairness",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1058",
+   "title": "Journeys",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1059Q",
+   "title": "Quantified Self",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1060",
+   "title": "What Is Secularism?",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1061",
+   "title": "Water for Life",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1065Q",
+   "title": "Resentment and Politics",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1069",
+   "title": "Global Language",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1070",
+   "title": "Hindsight",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1071",
+   "title": "Price of Luxury",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1072",
+   "title": "Tolerance",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1074",
+   "title": "Industrial Revolutions and the Future of Work",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1075",
+   "title": "Body Politics",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1077",
+   "title": "Food and Human Population",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1079",
+   "title": "Justice in Times of Transition",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1080",
+   "title": "Learning Languages in a Global Society",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1081",
+   "title": "Migration and Belonging",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1082",
+   "title": "Multispecies Living and the Environmental Crisis",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1086",
+   "title": "Corruption",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1088",
+   "title": "Panacea",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1089",
+   "title": "Drama of Science",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1093",
+   "title": "Caste and Race",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1094",
+   "title": "Fire",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1095",
+   "title": "Emotions",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1096",
+   "title": "Ghosts, Magic, and the Mystical",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1097",
+   "title": "The Sacred",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1099",
+   "title": "The Science of Human Connection",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1100",
+   "title": "Negotiation and Consensus Building",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1101",
+   "title": "Incarceration",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1102",
+   "title": "Language and Identity",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1103",
+   "title": "Exclusionary Foundations of Knowledge Production",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1104",
+   "title": "Globalization and its Discontents",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1105",
+   "title": "Nudges and Well-Being",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1106",
+   "title": "Mind, Matter, and Machine",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1107",
+   "title": "Shelter",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1108",
+   "title": "Infinity",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1109",
+   "title": "Identity",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1110",
+   "title": "Poverty and Inequality",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1111",
+   "title": "24 Hours in Our Brain",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1112",
+   "title": "Climate and Humanity",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1113",
+   "title": "Encompassing Nature",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1114",
+   "title": "Problem of the Self",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1115",
+   "title": "Beyond Nature-Culture",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1116",
+   "title": "Wireless Revolution",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1117",
+   "title": "Slavery and Freedom",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1118",
+   "title": "(In)Fertility",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1119",
+   "title": "Techruption",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1120",
+   "title": "Cyborgs",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1121",
+   "title": "Violence",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1123",
+   "title": "Choose Your Journey",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1124",
+   "title": "Linguistic Diversity",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 1125",
+   "title": "Beauty",
+   "tags": [
+    "ccol-term"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2001EJ",
+   "title": "An Ocean Voyage",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2002J",
+   "title": "Just Cash: The Politics, Economics, and Philosophy of Cash Transfer Programs",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2003J",
+   "title": "Mande Music and the Black Experience",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2004J",
+   "title": "Sand",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2005J",
+   "title": "Art / Environment / Attention",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2006J",
+   "title": "Common Sense",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2007J",
+   "title": "The Science of Color and Art",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2008J",
+   "title": "The Puzzle of Life",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2009J",
+   "title": "The Sensorial City: Food Studies and Urban Ethnography",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2010J",
+   "title": "Disability and Development",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2011J",
+   "title": "Commercial Determinants of Health",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2012J",
+   "title": "Wayfinding: Graphic Design in the Built Environment",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2013J",
+   "title": "Debt and Society",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2014J",
+   "title": "Being Here",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2015J",
+   "title": "Colorism Across Global Lines: Focus Study in Ghana",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2016J",
+   "title": "Sensing (Sensitive) Archives",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2017J",
+   "title": "African Perspectives on Data and Technology",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2018J",
+   "title": "Message in a Bottle",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2019J",
+   "title": "Network Theory and Social Interactions",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2020J",
+   "title": "Ribbons of Blue: Urbanization on the Coastal Fringe",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2021J",
+   "title": "The Silk Road: Ancient and Modern Globalizations",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2022J",
+   "title": "New Capitals of Contemporary Art: Sharjah, Abu Dhabi and Amman",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2023J",
+   "title": "Endangered Languages",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2024J",
+   "title": "Global Africa and China",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2025J",
+   "title": "Social Media and Governance of Speech",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2026J",
+   "title": "Technology for Sustainable Development",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2027J",
+   "title": "Unequal Childhoods",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2028J",
+   "title": "Music, Migration, and Memory",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2029J",
+   "title": "Californian Ideology",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2030J",
+   "title": "What is Fair in University Admissions?",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2031J",
+   "title": "Strategies for Civic Inclusion",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2032J",
+   "title": "Tropical Forests and the Climate Crisis",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2033J",
+   "title": "Immersive Experiences",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2034J",
+   "title": "Falconry: A Global History",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2035J",
+   "title": "Creative Robotics & Tech",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2036J",
+   "title": "Tone Meister: The Pursuit of Perfect Sound",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2037J",
+   "title": "Culture as a Collective Achievement",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2038J",
+   "title": "How to Build a City",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CCOL-UH 2039J",
+   "title": "The Shaping of Identity: Egyptological Collections",
+   "tags": [
+    "ccol-field"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1001Q",
+   "title": "Data",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1002Q",
+   "title": "Space",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1004E",
+   "title": "Microbes",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1005EQ",
+   "title": "Forensic Science: Guilty or Not Guilty?",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1007EQ",
+   "title": "The Mind",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1008EQ",
+   "title": "Seven Wonders of the Invisible World",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1010EQ",
+   "title": "Diversity",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1016EQ",
+   "title": "Where the City Meets the Sea",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1017EQ",
+   "title": "Symmetry",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1019Q",
+   "title": "Heat and the Universe",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1024Q",
+   "title": "Reading Like a Computer",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1027E",
+   "title": "5000 Years of Notable Lives",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1032Q",
+   "title": "Stability",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1033EQ",
+   "title": "Data and Human Space",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1034Q",
+   "title": "Numbers, Models, and Chaos",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1037",
+   "title": "Cyberwarfare",
+   "tags": [
+    "core-CADT",
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1039EQ",
+   "title": "Search",
+   "tags": [
+    "core-CDAD",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1040",
+   "title": "Artificial Intelligence and Human Decisions",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1041EQ",
+   "title": "Decisions and the Brain",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1043EQ",
+   "title": "Data and Society",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1044Q",
+   "title": "Human-Centered Data Science",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1045EQ",
+   "title": "Science of Food & Cooking",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1046EQ",
+   "title": "Infectious Diseases",
+   "tags": [
+    "core-CDAD",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1048Q",
+   "title": "Microbial Self: Microbes and Identity",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1049EQ",
+   "title": "Random Walks in Science",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1063",
+   "title": "Digital Archive",
+   "tags": [
+    "core-CADT",
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1064",
+   "title": "Sustainable Supply Chains",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1065E",
+   "title": "What is Life?",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1067Q",
+   "title": "Epidemiology for Global Health",
+   "tags": [
+    "core-CDAD",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1069EQ",
+   "title": "Climate Change",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1071EQ",
+   "title": "Stereotyping",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1072Q",
+   "title": "Nothing",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1073Q",
+   "title": "Science of Complexity",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1074EQ",
+   "title": "Science of Martial Arts",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1075EQ",
+   "title": "Quantum Computing for Everyone",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1077",
+   "title": "Chemophobia",
+   "tags": [
+    "core-CDAD"
+   ]
+  },
+  {
    "code": "CDAD-UH 1078EQ",
    "title": "Inclusive Data Literacy",
    "tags": [
-    "methods"
+    "methods",
+    "core-CDAD"
+   ]
+  },
+  {
+   "code": "CDAD-UH 1079EQ",
+   "title": "The Science of Making Music",
+   "tags": [
+    "core-CDAD"
    ]
   },
   {
@@ -44,10 +1930,183 @@
    ]
   },
   {
+   "code": "CSTS-UH 1006",
+   "title": "Thinking",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1007Q",
+   "title": "Chance",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1008",
+   "title": "Birth of Science and AI",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1009",
+   "title": "Theory of Everything",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1010",
+   "title": "Astronomy & Cosmology",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1012",
+   "title": "Wealth of Nations",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
    "code": "CSTS-UH 1015",
    "title": "Legitimacy",
    "tags": [
-    "area-old"
+    "area-old",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1016",
+   "title": "Ideas of the Sacred",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1017",
+   "title": "Revolutions and Social Change",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1021EQ",
+   "title": "Boundaries",
+   "tags": [
+    "core-CDAD",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1031",
+   "title": "Why Is It So Hard to Do Good?",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1036",
+   "title": "Progress in Science",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1043",
+   "title": "Great Divergence",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1049",
+   "title": "Concepts and Categories",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1052X",
+   "title": "History and the Environment: The Middle East",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1053",
+   "title": "Understanding Urbanization",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1059X",
+   "title": "Urban Violence: The Middle East",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1060",
+   "title": "Beyond Belief",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1061",
+   "title": "Global Ethics",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1067",
+   "title": "Moving Target",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1074",
+   "title": "Refugees, Law and Crises",
+   "tags": [
+    "core-CSTS",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1076",
+   "title": "What's Property (For?)",
+   "tags": [
+    "core-CSTS",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1077",
+   "title": "Law and Politics",
+   "tags": [
+    "core-CSTS",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1087",
+   "title": "Future of Education",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1088",
+   "title": "Thinking Big About the Ancient World",
+   "tags": [
+    "core-CSTS"
    ]
   },
   {
@@ -55,7 +2114,89 @@
    "title": "Space Diplomacy",
    "tags": [
     "area-old",
-    "iafp"
+    "iafp",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1097",
+   "title": "Justice",
+   "tags": [
+    "core-CSTS",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1098",
+   "title": "High Performance: Mindset and Habits",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1099",
+   "title": "Global Media Seminar: Latin America",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1101",
+   "title": "Cultures & Contexts: The Black Atlantic",
+   "tags": [
+    "core-CCEA",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1102Q",
+   "title": "Health & Society in a Global Context",
+   "tags": [
+    "core-CDAD",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1103",
+   "title": "What Is Technology?",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1104",
+   "title": "Organizations",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1125X",
+   "title": "Law and Empire",
+   "tags": [
+    "core-CSTS",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1126",
+   "title": "Gender, Violence, and Political Participation",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1127",
+   "title": "Responsible Capitalism",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1128",
+   "title": "AI, Automation, and the Future of Work",
+   "tags": [
+    "core-CSTS"
    ]
   },
   {
@@ -63,14 +2204,45 @@
    "title": "Environment & Politics",
    "tags": [
     "area-old",
-    "iafp"
+    "iafp",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1130",
+   "title": "Nuclear Energy",
+   "tags": [
+    "core-CSTS"
    ]
   },
   {
    "code": "CSTS-UH 1131",
    "title": "Gender & Governance",
    "tags": [
-    "area-old"
+    "area-old",
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1149",
+   "title": "International Business, Law, and Sustainability",
+   "tags": [
+    "core-CSTS",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1150",
+   "title": "Status",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "CSTS-UH 1151",
+   "title": "Settler Colonialism",
+   "tags": [
+    "core-CSTS"
    ]
   },
   {
@@ -159,7 +2331,8 @@
    "code": "ECON-UH 2512",
    "title": "FinTech Innovation: Finance, Technology, Regulation",
    "tags": [
-    "econ-elective"
+    "econ-elective",
+    "law-elec"
    ]
   },
   {
@@ -244,7 +2417,8 @@
    "code": "ECON-UH 3511X",
    "title": "Islamic Economics and Finance",
    "tags": [
-    "econ-elective"
+    "econ-elective",
+    "law-elec"
    ]
   },
   {
@@ -348,6 +2522,42 @@
    ]
   },
   {
+   "code": "ENGR-UH 2010Q",
+   "title": "Probability and Statistics for Engineers",
+   "tags": []
+  },
+  {
+   "code": "ENVR-UH 1312",
+   "title": "Global Debate on Green Growth",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "FILMM-UH 1013X",
+   "title": "Understanding MENASA Film and New Media",
+   "tags": []
+  },
+  {
+   "code": "HERST-UH 1100",
+   "title": "World Heritage Sites & Universal Collections",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "HERST-UH 1101X",
+   "title": "Heritage Management in the Arabian World",
+   "tags": []
+  },
+  {
+   "code": "HERST-UH 1502",
+   "title": "Judging Heritage",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
    "code": "HIST-UH 1105",
    "title": "Africa in the World",
    "tags": [
@@ -362,6 +2572,16 @@
    ]
   },
   {
+   "code": "HIST-UH 1125X",
+   "title": "South Asia in the Indian Ocean World",
+   "tags": []
+  },
+  {
+   "code": "HIST-UH 1126X",
+   "title": "Digital History",
+   "tags": []
+  },
+  {
    "code": "HIST-UH 1131",
    "title": "Southeast Asia in the World",
    "tags": [
@@ -372,7 +2592,9 @@
    "code": "HIST-UH 2010",
    "title": "History and Globalization",
    "tags": [
-    "speh"
+    "speh",
+    "core-CSTS",
+    "hist-req"
    ]
   },
   {
@@ -380,7 +2602,120 @@
    "title": "Genocide in a Global Perspective",
    "tags": [
     "area-old",
-    "breadth-old"
+    "breadth-old",
+    "core-CSTS",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "HIST-UH 2123",
+   "title": "Women in World History",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "HIST-UH 3112",
+   "title": "Asian Borderlands",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "HIST-UH 3510X",
+   "title": "Muslim Societies in African History",
+   "tags": []
+  },
+  {
+   "code": "HIST-UH 3513X",
+   "title": "Religion and Material Culture in the Indian Ocean World",
+   "tags": []
+  },
+  {
+   "code": "HIST-UH 3710X",
+   "title": "Central Asia and the Middle East",
+   "tags": []
+  },
+  {
+   "code": "IM-UH 1010",
+   "title": "Introduction to Interactive Media",
+   "tags": [
+    "im-req"
+   ]
+  },
+  {
+   "code": "IM-UH 1011",
+   "title": "Communications Lab",
+   "tags": [
+    "im-req"
+   ]
+  },
+  {
+   "code": "IM-UH 1012",
+   "title": "Communication and Technology",
+   "tags": [
+    "core-CADT"
+   ]
+  },
+  {
+   "code": "IM-UH 2514E",
+   "title": "Bioart Practices",
+   "tags": []
+  },
+  {
+   "code": "LAW-UH 1010",
+   "title": "What is Law? Comparative Global Jurisprudence",
+   "tags": [
+    "law-req"
+   ]
+  },
+  {
+   "code": "LAW-UH 1011",
+   "title": "Legal Writing and Research",
+   "tags": [
+    "law-req"
+   ]
+  },
+  {
+   "code": "LAW-UH 1012",
+   "title": "Legal System and Method",
+   "tags": [
+    "law-req"
+   ]
+  },
+  {
+   "code": "LAW-UH 1013",
+   "title": "Business Law",
+   "tags": [
+    "law-req"
+   ]
+  },
+  {
+   "code": "LAW-UH 1014",
+   "title": "Commercial Law",
+   "tags": [
+    "law-req"
+   ]
+  },
+  {
+   "code": "LAW-UH 1110",
+   "title": "Contracts",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 1114",
+   "title": "Alternative Dispute Resolution",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2010",
+   "title": "Legal Institutions",
+   "tags": [
+    "law-req"
    ]
   },
   {
@@ -388,14 +2723,42 @@
    "title": "Constitutional and Administrative Law",
    "tags": [
     "area-old",
-    "breadth-old"
+    "breadth-old",
+    "law-req"
+   ]
+  },
+  {
+   "code": "LAW-UH 2112",
+   "title": "Gender in Law",
+   "tags": [
+    "law-elec"
    ]
   },
   {
    "code": "LAW-UH 2114",
    "title": "Climate Change Law and Policy",
    "tags": [
-    "area-old"
+    "area-old",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2115X",
+   "title": "Comparative Legal Systems: United States and UAE",
+   "tags": []
+  },
+  {
+   "code": "LAW-UH 2122X",
+   "title": "Introduction to Islamic Law",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2123",
+   "title": "Public International Law",
+   "tags": [
+    "law-req"
    ]
   },
   {
@@ -403,7 +2766,29 @@
    "title": "Human Rights Law",
    "tags": [
     "area-old",
-    "breadth-old"
+    "breadth-old",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2126X",
+   "title": "International Commercial Arbitration",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2127",
+   "title": "International Business and Sustainability",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2128",
+   "title": "Theory of Property Law",
+   "tags": [
+    "law-elec"
    ]
   },
   {
@@ -411,7 +2796,15 @@
    "title": "Mooting",
    "tags": [
     "area-old",
-    "breadth-old"
+    "breadth-old",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2131",
+   "title": "Law and the Arts",
+   "tags": [
+    "law-elec"
    ]
   },
   {
@@ -430,12 +2823,180 @@
    ]
   },
   {
+   "code": "LAW-UH 2134",
+   "title": "Animal Law & Policy",
+   "tags": [
+    "core-CSTS",
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2135",
+   "title": "Disability Law and Policy",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2136",
+   "title": "Refugee Protection in International Law",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2137",
+   "title": "Environmental Rights & Access to Justice in the Global South",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2138",
+   "title": "International Law and Israel-Palestine",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2500",
+   "title": "Criminal Law",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 2501",
+   "title": "Torts",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 3010",
+   "title": "Legal Ethics and Professional Responsibility",
+   "tags": [
+    "law-req"
+   ]
+  },
+  {
+   "code": "LAW-UH 3103",
+   "title": "Constitutional Courts",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 3500",
+   "title": "Property - Land Law",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "LAW-UH 3501",
+   "title": "Equity and Trusts",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
    "code": "LAW-UH 3503",
    "title": "European Union Law",
    "tags": [
     "area-old",
-    "breadth-old"
+    "breadth-old",
+    "law-elec"
    ]
+  },
+  {
+   "code": "LITCW-UH 1105",
+   "title": "Politics of Writing",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "LITCW-UH 1160X",
+   "title": "Global Women Writing",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "LITCW-UH 1506",
+   "title": "Today We Wrote Nothing",
+   "tags": [
+    "core-CADT",
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "LITCW-UH 1508",
+   "title": "Shame and Shamelessness",
+   "tags": [
+    "core-CADT",
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "LITCW-UH 1509",
+   "title": "The City and the Writer",
+   "tags": [
+    "core-CADT",
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "LITCW-UH 2312X",
+   "title": "Masterpieces of Pre-Modern Arabic Literature in Translation",
+   "tags": []
+  },
+  {
+   "code": "LITCW-UH 2315X",
+   "title": "Postcolonial Turn",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "LITCW-UH 2333",
+   "title": "Translation and Colonization",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
+   "code": "LITCW-UH 2341",
+   "title": "Asian and Arab Diaspora in the Arts",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "LITCW-UH 3350X",
+   "title": "Literatures of the Middle East and the Maghreb",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 1000AQ",
+   "title": "Mathematics for Statistics and Calculus Part I",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 1000BQ",
+   "title": "Mathematics for Statistics and Calculus Part II",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 1010Q",
+   "title": "Foundations of Mathematics",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 1012Q",
+   "title": "Calculus with Applications to Science and Engineering",
+   "tags": []
   },
   {
    "code": "MATH-UH 1013Q",
@@ -445,11 +3006,120 @@
    ]
   },
   {
+   "code": "MATH-UH 1020Q",
+   "title": "Multivariable Calculus (Science & Engineering)",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 1021Q",
+   "title": "Multivariable Calculus with Applications to Economics",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 1022Q",
+   "title": "Linear Algebra",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 1023Q",
+   "title": "Fundamentals of Linear Algebra",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 1024Q",
+   "title": "Fundamentals of Ordinary Differential Equations",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 2010Q",
+   "title": "Ordinary Differential Equations",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 2011Q",
+   "title": "Probability and Statistics",
+   "tags": []
+  },
+  {
+   "code": "MATH-UH 2410Q",
+   "title": "Mathematical Modeling",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 1611X",
+   "title": "Arab Music Cultures",
+   "tags": []
+  },
+  {
+   "code": "MUSIC-UH 1617X",
+   "title": "Popular Music in the Arab World",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "MUSIC-UH 1618X",
+   "title": "Music and Identity in Trade",
+   "tags": [
+    "core-CADT",
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "MUSIC-UH 2662",
+   "title": "Music and Copyright",
+   "tags": [
+    "law-elec"
+   ]
+  },
+  {
+   "code": "MUSIC-UH 2665",
+   "title": "Global Jazz",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
    "code": "PEACE-UH 1011",
    "title": "Foundations of Peace: Economic and Political Perspectives",
    "tags": [
     "breadth-old",
     "iafp"
+   ]
+  },
+  {
+   "code": "PHIL-UH 1101",
+   "title": "Central Problems in Philosophy",
+   "tags": [
+    "phil-intro"
+   ]
+  },
+  {
+   "code": "PHIL-UH 1110",
+   "title": "The Meaning of Life",
+   "tags": [
+    "core-CSTS",
+    "phil-intro"
+   ]
+  },
+  {
+   "code": "PHIL-UH 1115",
+   "title": "Fear of Knowledge",
+   "tags": [
+    "core-CSTS",
+    "phil-intro"
+   ]
+  },
+  {
+   "code": "PHIL-UH 2211X",
+   "title": "Classical Arabic Philosophy",
+   "tags": []
+  },
+  {
+   "code": "PHIL-UH 2614",
+   "title": "Political Philosophy",
+   "tags": [
+    "law-elec"
    ]
   },
   {
@@ -502,7 +3172,8 @@
    "code": "POLSC-UH 1114",
    "title": "War on Terrorism",
    "tags": [
-    "area-old"
+    "area-old",
+    "core-CSTS"
    ]
   },
   {
@@ -555,7 +3226,8 @@
    "code": "POLSC-UH 2317",
    "title": "Identity and Culture in Politics",
    "tags": [
-    "area-old"
+    "area-old",
+    "core-CSTS"
    ]
   },
   {
@@ -758,12 +3430,62 @@
    "level": 3000
   },
   {
+   "code": "PSYCH-UH 1002EQ",
+   "title": "Research Methods in Psychology",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 1003E",
+   "title": "Biopsychology",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 1004Q",
+   "title": "Statistics for Psychology",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 3613EQ",
+   "title": "Lab in Early Childhood Education",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 3614EQ",
+   "title": "Lab in Multisensory Perception and Action",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 3616EQ",
+   "title": "Lab in Data Analysis for the Psychological Sciences",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 3617EQ",
+   "title": "Lab in Visual Neuroscience",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 3618EQ",
+   "title": "Lab in Psychology of Gender Images",
+   "tags": []
+  },
+  {
    "code": "PSYCH-UH 3619EQ",
    "title": "Lab in Psychology of Economic Inequality",
    "tags": [
     "area-old",
     "breadth-old"
    ]
+  },
+  {
+   "code": "PSYCH-UH 3620EQ",
+   "title": "Lab in Clinical Neuropsychology",
+   "tags": []
+  },
+  {
+   "code": "PSYCH-UH 3621EQ",
+   "title": "Lab in Language Science",
+   "tags": []
   },
   {
    "code": "SOCSC-UH 1010Q",
@@ -799,6 +3521,13 @@
    "title": "Foundations of Modern Social Thought",
    "tags": [
     "spet"
+   ]
+  },
+  {
+   "code": "SOCSC-UH 1313",
+   "title": "Perspectives on Democracy",
+   "tags": [
+    "core-CSTS"
    ]
   },
   {
@@ -854,6 +3583,13 @@
    ]
   },
   {
+   "code": "SRPP-UH 1413X",
+   "title": "Social Change and Development in the Arab World",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
    "code": "SRPP-UH 1818",
    "title": "Gender, Policy and Politics",
    "tags": [
@@ -875,10 +3611,24 @@
    ]
   },
   {
+   "code": "SRPP-UH 2410",
+   "title": "Gender and Society",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
    "code": "SRPP-UH 2412X",
    "title": "Islamist Social Movements in the Middle East",
    "tags": [
     "breadth-old"
+   ]
+  },
+  {
+   "code": "SRPP-UH 2414",
+   "title": "Global Family Policies and Laws",
+   "tags": [
+    "law-elec"
    ]
   },
   {
@@ -910,6 +3660,13 @@
    ]
   },
   {
+   "code": "SRPP-UH 2618",
+   "title": "Welfare States in Comparative Perspective",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
    "code": "SRPP-UH 2619",
    "title": "Leadership and Diplomacy",
    "tags": [
@@ -917,10 +3674,213 @@
    ]
   },
   {
+   "code": "SRPP-UH 2620",
+   "title": "Education and Society",
+   "tags": [
+    "core-CSTS"
+   ]
+  },
+  {
    "code": "SRPP-UH 3214",
    "title": "Social Networks",
    "tags": [
     "methods"
+   ]
+  },
+  {
+   "code": "THEAT-UH 1521",
+   "title": "Women Who Kill",
+   "tags": [
+    "core-CCEA"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1100",
+   "title": "FYWS: Taste, Culture & the Self",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1108",
+   "title": "FYWS: Writers on Writing",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1110",
+   "title": "FYWS: Power and Ethics in Photography",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1113",
+   "title": "FYWS: Saving Strangers",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1116",
+   "title": "FYWS: The Politics of Spectacle",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1119",
+   "title": "FYWS: Living Cities",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1123",
+   "title": "FYWS: Scientific Knowledge",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1124",
+   "title": "FYWS: Slavery After Slavery",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1125",
+   "title": "FYWS: Graphic Violence",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1126X",
+   "title": "FYWS: Understanding Postcolonial Feminisms",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1127",
+   "title": "FYWS: Real and Imagined",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1128",
+   "title": "FYWS: Memory, History, and Forgetting",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1129",
+   "title": "FYWS: The World of Babel",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1131",
+   "title": "FYWS: Writing About the Languages We Speak",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1132",
+   "title": "FYWS: Protest Art",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1134",
+   "title": "FYWS: The Last Straw",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1135",
+   "title": "FYWS: Non-Violence",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1136",
+   "title": "FYWS: Movement & Meaning",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1137",
+   "title": "FYWS: Resilience at the Margins",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1138",
+   "title": "FYWS: Elsewhere",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1139",
+   "title": "FYWS: Exploring Our Linguistic Identities",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1140",
+   "title": "FYWS: Racisms and Race",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1141",
+   "title": "FYWS: Understanding Photography",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1142",
+   "title": "FYWS: Genders and Falconry",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1143",
+   "title": "FYWS: Reacting to the Past",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1144",
+   "title": "FYWS: Nonsense",
+   "tags": [
+    "fyws"
+   ]
+  },
+  {
+   "code": "WRIT-UH 1145",
+   "title": "FYWS: Pirates, Traffickers and Enslavers",
+   "tags": [
+    "fyws"
    ]
   }
  ]

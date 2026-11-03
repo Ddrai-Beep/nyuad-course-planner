@@ -1,5 +1,5 @@
-import { parsePlan, pickPlanSheet, termLabel } from './parser.js';
-import { buildCatalog, enrich, solve, eligibleCourses, stats, normKey } from './engine.js';
+import { parsePlan, pickPlanSheet } from './parser.js';
+import { buildCatalog, enrich, solve, eligibleCourses, stats, normKey, reqMatches, isPassFail } from './engine.js';
 import { readFile, readGoogleSheet, readSample } from './io.js';
 import { Votes, LS } from './votes.js';
 import { DEFAULT_PLAN, DEFAULT_PLAN_LABEL } from '../config.js';
@@ -10,16 +10,22 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 const S = {
   programs: null, catalog: null, offerings: null, votes: null,
   plan: null, courses: [], source: null,
-  track: LS.get('track', null),
-  overrides: LS.get('overrides', {}),   // { 'major:new': {courseId: reqId|'none'}, minor: {...} }
-  manual: LS.get('manual', {}),         // { 'core': {reqId: n} }
-  open: new Set(),                      // expanded requirement keys
+  track: LS.get('track', null), trackOpen: false,
+  minorId: LS.get('minorId', null),
+  extraMinors: LS.get('extraMinors', []),
+  checkMinor: null,
+  overrides: LS.get('overrides', {}),
+  manual: LS.get('manual', {}),
+  open: new Set(), editRow: null,
   error: null, loading: false,
 };
 const listKey = () => `list:${S.programs.registrationTerm}`;
 const getList = () => LS.get(listKey(), []);
 const setList = (l) => LS.set(listKey(), l);
-const save = () => { LS.set('overrides', S.overrides); LS.set('manual', S.manual); LS.set('track', S.track); };
+const save = () => {
+  LS.set('overrides', S.overrides); LS.set('manual', S.manual); LS.set('track', S.track);
+  LS.set('minorId', S.minorId); LS.set('extraMinors', S.extraMinors);
+};
 
 async function boot() {
   const [programs, catalog, offerings] = await Promise.all(
@@ -34,7 +40,7 @@ async function boot() {
   const cached = LS.get('lastPlan', null);
   if (cached) { try { loadSheets(cached.sheets, cached.source, false); } catch { /* ignore */ } }
   else if (DEFAULT_PLAN && !LS.get('skipDefault', false)) {
-    try { loadSheets(await readSample(DEFAULT_PLAN), DEFAULT_PLAN_LABEL, false); } catch { /* fall back to upload screen */ }
+    try { loadSheets(await readSample(DEFAULT_PLAN), DEFAULT_PLAN_LABEL, false); } catch { /* upload screen */ }
   }
   render();
 }
@@ -56,37 +62,69 @@ async function withLoad(fn, source) {
 }
 
 // ---------- analysis ----------
+const COMPETENCIES = ['cadt', 'ccea', 'cdad', 'csts'];
+const GENERIC = (c) => c.status === 'slot' && !c.hint;
+
+function minorById(id) { return S.programs.minors.find((m) => m.id === id); }
+function defaultMinor() {
+  const txt = (S.plan.meta.minors || '').toLowerCase();
+  return S.programs.minors.find((m) => txt.includes(m.match)) || S.programs.minors[0];
+}
+
 function analyse() {
   const P = S.programs;
   const ov = (k) => S.overrides[k] || {};
   const mn = (k) => S.manual[k] || {};
+  const minorDef = minorById(S.minorId) || defaultMinor();
+  const chosen = P.major.tracks.find((t) => t.id === S.track);
+
+  // Core first, steering away from courses the major/minor could use.
+  const majorish = new Set(S.courses.filter((c) =>
+    [...(chosen || P.major.tracks[0]).requirements, ...minorDef.requirements].some((r) => reqMatches(c, r))).map((c) => c.id));
+  const core = solve(P.core.requirements, S.courses, ov('core'), mn('core'), { avoid: majorish });
+  // Policy: a Core competency course can't also count toward a major or minor.
+  const coreComp = new Set(core.reqs.filter((r) => COMPETENCIES.includes(r.req.id)).flatMap((r) => r.slots.map((s) => s.course?.id)).filter(Boolean));
+
   const tracks = P.major.tracks.map((t) => {
-    const r = solve(t.requirements, S.courses, ov(`major:${t.id}`), mn(`major:${t.id}`));
-    return { track: t, result: r, left: r.summary.needed, };
+    const r = solve(t.requirements, S.courses, ov(`major:${t.id}`), mn(`major:${t.id}`), { exclude: coreComp });
+    return { track: t, result: r, left: r.summary.needed };
   });
   const best = [...tracks].sort((a, b) => a.left - b.left || a.result.summary.planned - b.result.summary.planned)[0];
-  const trackId = S.track && tracks.find((t) => t.track.id === S.track) ? S.track : best.track.id;
+  const trackId = chosen ? chosen.id : best.track.id;
   const major = tracks.find((t) => t.track.id === trackId);
-  const minor = solve(P.minor.requirements, S.courses, ov('minor'), mn('minor'));
-  const core = solve(P.core.requirements, S.courses, ov('core'), mn('core'));
+  const minor = solve(minorDef.requirements, S.courses, ov(`minor:${minorDef.id}`), mn(`minor:${minorDef.id}`), { exclude: coreComp, avoid: major.result.used });
   const gened = solve(P.gened.requirements, S.courses, ov('gened'), mn('gened'));
+  const extras = S.extraMinors.map(minorById).filter((m) => m && m.id !== minorDef.id).map((m) => ({
+    def: m, result: solve(m.requirements, S.courses, ov(`minor:${m.id}`), mn(`minor:${m.id}`), { exclude: coreComp, avoid: new Set([...major.result.used, ...minor.used]) }),
+  }));
   const st = stats(S.courses, P.graduation.credits);
-  return { tracks, best, major, trackId, minor, core, gened, st, flags: flags(major, minor) };
+  // Electives: credits the plan still needs once every requirement slot is counted
+  const genericSlots = S.courses.filter((c) => GENERIC(c) && c.term.order > 0);
+  const projected = st.earned + st.inprog + st.planned + st.slots - genericSlots.reduce((a, c) => a + c.credits, 0);
+  const electiveCredits = Math.max(0, P.graduation.credits - projected);
+  const electives = { left: Math.ceil(electiveCredits / 4), credits: electiveCredits, openSlots: genericSlots.length };
+  const ctx = { tracks, best, major, trackId, minorDef, minor, core, gened, extras, st, electives, coreComp };
+  ctx.flags = flags(ctx);
+  return ctx;
 }
 
-function flags(major, minor) {
+function uniqueCount(minorRes, majorUsed) {
+  return minorRes.reqs.flatMap((r) => r.slots).filter((s) => (s.course && !majorUsed.has(s.course.id)) || (!s.course && !s.manual)).length;
+}
+
+function flags({ major, minor, minorDef, coreComp }) {
   const out = [...S.plan.warnings];
   const term = S.programs.registrationTerm;
   for (const c of S.courses) {
+    if (c.status === 'slot') continue;
     const name = `<b>${esc(c.displayCode || c.raw)}</b>`;
     const inMajor = major.result.used.has(c.id), inMinor = minor.used.has(c.id);
-    if (c.status === 'slot') continue;
-    if (/minor/i.test(c.reqText) && !inMinor && c.subject !== 'ECON')
-      out.push({ level: 'warn', text: `${name} is marked "Minor" in your plan, but only ECON-subject courses count toward the Economics minor.` });
-    if (/major/i.test(c.reqText) && !inMajor)
-      out.push({ level: 'warn', text: `${name} is marked "Major Req" but doesn't fill any Political Science requirement on the <i>${esc(major.track.short)}</i> track. If an advisor approved it, set it under "Your plan" below.` });
-    if (/^P$/i.test(c.grade) && (inMajor || inMinor))
-      out.push({ level: 'warn', text: `${name} was taken Pass/Fail and is counting toward your ${inMajor ? 'major' : 'minor'}. Check that Pass/Fail is allowed for it.` });
+    if (isPassFail(c) && (/major|minor|core/i.test(c.reqText) || c.tags.size))
+      out.push({ level: 'warn', text: `${name} was taken Pass/Fail. NYUAD policy: Pass/Fail courses don't count toward the Core, a major or a minor, so I haven't counted it. If you were granted an exception, set it under "Your plan".` });
+    if (/minor/i.test(c.reqText) && !inMinor && !(minorDef.id === 'econ' && c.subject === 'ECON'))
+      out.push({ level: 'warn', text: `${name} is marked "Minor" in your plan but doesn't fill a ${esc(minorDef.name)} requirement.${minorDef.id === 'econ' ? ' Only ECON-subject courses count as Economics electives.' : ''}` });
+    if (/major/i.test(c.reqText) && !inMajor && !isPassFail(c))
+      out.push({ level: 'warn', text: `${name} is marked "Major Req" but doesn't fill any Political Science requirement on the <i>${esc(major.track.short)}</i> track${coreComp.has(c.id) ? ' (it counts for a Core competency, which can\'t double-count)' : ''}.` });
     if (c.tags.has('study-away-equiv') && inMajor)
       out.push({ level: 'info', text: `${name} is counted as Intro to International Politics (study-away equivalent). Confirm it on the PS study-away pathway.` });
     if (c.noGrade && c.status === 'done')
@@ -96,6 +134,9 @@ function flags(major, minor) {
     if (c.term.label === term && S.offerings.notOffered[normKey(c.displayCode)])
       out.push({ level: 'warn', text: `${name}: ${esc(S.offerings.notOffered[normKey(c.displayCode)])}` });
   }
+  const uniq = uniqueCount(minor, major.result.used);
+  if (uniq < S.programs.policy.minorUnique)
+    out.push({ level: 'warn', text: `Your ${esc(minorDef.name)} needs at least ${S.programs.policy.minorUnique} courses that don't also count toward your major. Right now only ${uniq} would be unique.` });
   return out;
 }
 
@@ -109,11 +150,10 @@ function renderLoad() {
   return `
   <section class="hero">
     <h1>See exactly what you still need to graduate.</h1>
-    <p class="lead">Load your ARC 4-year plan. You'll see what's left for your Political Science major, Economics minor, Core and 128 credits, which courses fill each gap in ${esc(S.programs.registrationTerm)}, and a checklist to work through in Albert.</p>
+    <p class="lead">Load your ARC 4-year plan to see what's left for your major, minor, Core and 128 credits, which courses fill each gap in ${esc(S.programs.registrationTerm)}, and a checklist for Albert.</p>
     ${S.error ? `<div class="alert alert-error">${esc(S.error)}</div>` : ''}
     <div class="load-grid">
       <div class="card load-card">
-        <div class="step">A</div>
         <h3>Google Sheets link</h3>
         <p class="muted small">Set sharing to <b>Anyone with the link → Viewer</b>.</p>
         <form id="gsheet-form" class="row">
@@ -122,70 +162,98 @@ function renderLoad() {
         </form>
       </div>
       <div class="card load-card">
-        <div class="step">B</div>
         <h3>Upload a file</h3>
         <p class="muted small">.xlsx or .csv of the ARC template.</p>
         <label class="btn btn-secondary file-btn">Choose file<input id="file" type="file" accept=".xlsx,.xls,.csv" hidden></label>
       </div>
       <div class="card load-card">
-        <div class="step">C</div>
         <h3>Just looking?</h3>
-        <p class="muted small">Try it with a made-up student's plan${DEFAULT_PLAN ? ` or ${esc(DEFAULT_PLAN_LABEL)}` : ''}.</p>
-        <button class="btn btn-secondary" data-action="sample">Try sample plan</button>
-        ${DEFAULT_PLAN ? `<button class="btn btn-ghost" data-action="default">${esc(DEFAULT_PLAN_LABEL)}</button>` : ''}
+        <p class="muted small">Open an example plan.</p>
+        <div class="row-wrap">
+          ${DEFAULT_PLAN ? `<button class="btn btn-secondary" data-action="default">${esc(DEFAULT_PLAN_LABEL)}</button>` : ''}
+          <button class="btn btn-ghost" data-action="sample">Sample plan</button>
+        </div>
       </div>
     </div>
-    <p class="muted small privacy">🔒 Your plan stays in this browser. It's never uploaded or stored on a server.</p>
+    <p class="muted small privacy">Your plan stays in this browser.</p>
     ${S.loading ? '<p class="muted">Reading your plan…</p>' : ''}
   </section>`;
 }
 
 const STATUS = {
   done: ['Done', 'ok'], inprogress: ['In progress', 'prog'], planned: ['Planned', 'plan'],
-  slot: ['Slot in plan', 'slot'], needed: ['Needed', 'need'],
+  slot: ['Planned', 'plan'], needed: ['Needed', 'need'],
 };
 const pill = (s) => `<span class="pill pill-${STATUS[s][1]}">${STATUS[s][0]}</span>`;
 
 function renderDash() {
   const A = analyse();
   const P = S.programs;
-  const st = A.st;
-  const pct = (x) => Math.min(100, (x / st.gradCredits) * 100);
+  const st = A.st, el = A.electives;
+  const G = st.gradCredits;
+  const pct = (x) => Math.min(100, (x / G) * 100);
   const left = A.major.result.summary.needed + A.minor.summary.needed + A.core.summary.needed + A.gened.summary.needed;
+  const plannedReq = st.planned + st.slots - el.openSlots * 4;
   const m = S.plan.meta;
   const warn = A.flags.filter((f) => f.level !== 'info'), info = A.flags.filter((f) => f.level === 'info');
 
   return `
   <section class="summary card">
     <div class="summary-head">
-      <div>
-        <h1 class="h2">${esc(m.majors || 'Political Science')}${m.minors ? ` <span class="muted">+ ${esc(m.minors)} minor</span>` : ''}</h1>
-        <p class="muted small">${[m.admitted && `Admitted ${esc(m.admitted)}`, m.standing && esc(m.standing), `${S.courses.length} courses read from ${esc(S.source)}`].filter(Boolean).join(' · ')}</p>
-      </div>
+      <h1 class="h2">${esc(m.majors || 'Political Science')}${m.minors ? ` <span class="muted">+ ${esc(m.minors)} minor</span>` : ''}</h1>
       <button class="btn btn-ghost small" data-action="reset">Load a different plan</button>
     </div>
     <div class="stats">
       <div class="stat"><div class="stat-num">${left}</div><div class="stat-label">requirements left</div></div>
-      <div class="stat"><div class="stat-num">${st.earned}<span class="muted">/${st.gradCredits}</span></div><div class="stat-label">credits earned</div></div>
-      <div class="stat"><div class="stat-num">${st.earned + st.inprog + st.planned + st.slots}</div><div class="stat-label">credits if your plan holds</div></div>
-      ${st.gpa ? `<div class="stat"><div class="stat-num">${st.gpa.toFixed(2)}</div><div class="stat-label">GPA (from grades listed)</div></div>` : ''}
+      <div class="stat"><div class="stat-num">${el.left}</div><div class="stat-label">general electives left <span class="muted">(${el.credits} cr)</span></div></div>
+      <div class="stat"><div class="stat-num">${st.earned}<span class="muted">/${G}</span></div><div class="stat-label">credits earned</div></div>
+      ${st.gpa ? `<div class="stat"><div class="stat-num">${st.gpa.toFixed(2)}</div><div class="stat-label">GPA</div></div>` : ''}
     </div>
-    <div class="bar" title="Earned · in progress · planned">
-      <span class="bar-ok" style="width:${pct(st.earned)}%"></span><span class="bar-prog" style="width:${pct(st.inprog)}%"></span><span class="bar-plan" style="width:${pct(st.planned + st.slots)}%"></span>
+    <div class="bar">
+      <span class="bar-ok" style="width:${pct(st.earned)}%"></span><span class="bar-prog" style="width:${pct(st.inprog)}%"></span><span class="bar-plan" style="width:${pct(Math.max(0, plannedReq))}%"></span><span class="bar-elec" style="width:${pct(el.credits)}%"></span>
     </div>
-    <div class="legend small muted"><span><i class="dot dot-ok"></i>Earned ${st.earned}</span><span><i class="dot dot-prog"></i>In progress ${st.inprog}</span><span><i class="dot dot-plan"></i>Planned ${st.planned + st.slots}</span><span>Need ${st.gradCredits}</span></div>
+    <div class="legend small"><span><i class="dot dot-ok"></i>Earned ${st.earned}</span><span><i class="dot dot-prog"></i>In progress ${st.inprog}</span><span><i class="dot dot-plan"></i>Planned requirements ${Math.max(0, plannedReq)}</span><span><i class="dot dot-elec"></i>Electives left ${el.credits}${el.openSlots ? ` · ${el.openSlots} open elective slot${el.openSlots > 1 ? 's' : ''} in your plan` : ''}</span></div>
   </section>
 
   ${warn.length || info.length ? `
   <section class="card flags">
     <h2 class="h3">${warn.length} thing${warn.length === 1 ? '' : 's'} to check</h2>
-    <ul class="flag-list">${warn.map((f) => `<li class="flag-warn">${f.text}</li>`).join('')}</ul>
+    <ul class="flag-list">${warn.map((f) => `<li>${f.text}</li>`).join('')}</ul>
     ${info.length ? `<details><summary class="small muted">${info.length} assumption${info.length === 1 ? '' : 's'} I made</summary><ul class="flag-list">${info.map((f) => `<li>${f.text}</li>`).join('')}</ul></details>` : ''}
   </section>` : ''}
 
+  ${renderTracks(A)}
+
+  <div class="cols">
+    <section class="col-main">
+      <h2 class="section-title"><span class="num">2</span> What you still need</h2>
+      ${renderProgram(`major:${A.trackId}`, `${P.major.name} · ${A.major.track.short}`, A.major.result)}
+      ${renderProgram(`minor:${A.minorDef.id}`, A.minorDef.name, A.minor)}
+      ${A.extras.map((x) => renderProgram(`minor:${x.def.id}`, x.def.name, x.result, `<button class="link small" data-action="dropminor" data-id="${x.def.id}">Remove</button>`)).join('')}
+      ${renderProgram('core', P.core.name, A.core)}
+      ${renderProgram('gened', P.gened.name, A.gened)}
+      ${renderBoth(A)}
+      ${renderMinorCheck(A)}
+    </section>
+    <aside class="col-side">${renderList()}</aside>
+  </div>
+  ${renderPlan(A)}`;
+}
+
+function renderTracks(A) {
+  const P = S.programs;
+  if (S.track && !S.trackOpen) {
+    const t = A.major;
+    return `<section class="card track-collapsed">
+      <span class="num">1</span>
+      <div><div class="small muted">Bulletin track</div><b>${esc(t.track.name)} · ${esc(t.track.short)}</b> <span class="muted">· ${t.left} left</span></div>
+      <button class="btn btn-ghost btn-small" data-action="trackopen">Change</button>
+    </section>`;
+  }
+  return `
   <section>
     <h2 class="section-title"><span class="num">1</span> Pick your bulletin track</h2>
-    <p class="muted small section-sub">The PS major changed this year. 2nd and 3rd years can graduate under either bulletin. Here's what you'd have left on each.</p>
+    <p class="muted small section-sub">The PS major changed this year. 2nd and 3rd years can graduate under either bulletin. Questions: ${esc(P.major.contact)}</p>
     <div class="tracks">
       ${A.tracks.map((t) => `
         <button class="track ${t.track.id === A.trackId ? 'track-on' : ''}" data-action="track" data-id="${t.track.id}">
@@ -196,101 +264,165 @@ function renderDash() {
           <span class="track-sub">${t.result.summary.done} done · ${t.result.summary.inprogress + t.result.summary.planned} in progress/planned</span>
         </button>`).join('')}
     </div>
-    <p class="muted small">Questions about tracks: ${esc(P.major.contact)}</p>
-  </section>
-
-  <div class="cols">
-    <section class="col-main">
-      <h2 class="section-title"><span class="num">2</span> What you still need</h2>
-      <p class="muted small section-sub">Open a requirement to see courses that fill it. <b>Offered ${esc(P.registrationTerm)}</b> marks courses on the department's list. Add the ones you want to your registration list.</p>
-      ${renderProgram(`major:${A.trackId}`, `${P.major.name} · ${A.major.track.short}`, A.major.result)}
-      ${renderProgram('minor', P.minor.name, A.minor)}
-      ${renderProgram('core', P.core.name, A.core)}
-      ${renderProgram('gened', P.gened.name, A.gened)}
-      ${renderPlan(A)}
-    </section>
-    <aside class="col-side">${renderList()}</aside>
-  </div>`;
+  </section>`;
 }
 
-function renderProgram(key, title, res) {
+function renderProgram(key, title, res, extra = '') {
   const s = res.summary;
-  const needed = res.reqs.filter((r) => r.status !== 'done').length;
+  const complete = !res.reqs.some((r) => r.status !== 'done');
+  const rows = res.reqs.flatMap((r) => r.slots.map((slot, i) => renderSlot(key, r, slot, i)));
   return `
   <div class="card program">
     <div class="program-head">
       <h3>${esc(title)}</h3>
-      <span class="small muted">${needed ? `${s.needed} to go` : '✅ Complete'} · ${s.done}/${res.total} done</span>
+      <span class="small muted">${complete ? 'Complete' : `${s.needed} needed · ${s.planned + s.inprogress} planned/in progress`} · ${s.done}/${res.total} done ${extra}</span>
     </div>
     <div class="progress"><span style="width:${(s.done / res.total) * 100}%"></span><span class="p2" style="width:${((s.inprogress + s.planned) / res.total) * 100}%"></span></div>
-    <ul class="reqs">${res.reqs.map((r) => renderReq(key, r)).join('')}</ul>
+    <ul class="reqs">${rows.join('')}</ul>
   </div>`;
 }
 
-function renderReq(pkey, r) {
-  const key = `${pkey}|${r.req.id}`;
+function renderSlot(pkey, r, slot, i) {
+  const status = slot.manual ? 'done' : slot.course ? (slot.course.status === 'slot' ? 'planned' : slot.course.status) : 'needed';
+  const label = r.req.count > 1 ? `${r.req.label} ${i + 1}` : r.req.label;
+  const key = `${pkey}|${r.req.id}|${i}`;
   const open = S.open.has(key);
-  const fills = r.slots.map((s) => {
-    if (s.manual) return `<span class="chip chip-ok">Marked done <button class="link" data-action="unmanual" data-p="${pkey}" data-r="${r.req.id}">undo</button></span>`;
-    if (!s.course) return '';
-    const c = s.course;
-    return `<span class="chip chip-${STATUS[c.status][1]}" title="${esc(c.raw)} · ${esc(c.term.label)}">${esc(c.displayCode || c.raw)}${c.status === 'slot' ? ' (no course yet)' : ''} <span class="muted">· ${esc(c.term.label)}</span></span>`;
-  }).join('');
-  const missing = r.slots.filter((s) => !s.manual && (!s.course || s.course.status === 'slot')).length;
-  const countTag = r.req.count > 1 ? `<span class="muted small"> · ${r.filled}/${r.req.count}</span>` : '';
+  const c = slot.course;
+  let fill = '';
+  if (slot.manual) fill = `<div class="fill">Marked done · <button class="link" data-action="unmanual" data-p="${pkey}" data-r="${r.req.id}">undo</button></div>`;
+  else if (c && c.status === 'slot') fill = `<div class="fill muted">${esc(c.raw)} · ${esc(c.term.label)} · course not chosen yet</div>`;
+  else if (c) fill = `<div class="fill"><span class="fill-code">${esc(c.displayCode || c.raw)}</span>${c.displayCode && c.title && c.title !== c.raw ? ` ${esc(c.title)}` : ''} <span class="muted">· ${esc(c.term.label)}</span></div>`;
+  const canFind = !slot.manual && (!c || c.status === 'slot');
   return `
-  <li class="req req-${STATUS[r.status][1]}">
+  <li class="req req-${STATUS[status][1]}">
     <div class="req-row">
-      <span class="req-icon">${r.status === 'done' ? '✓' : r.status === 'needed' || r.status === 'slot' ? '' : '◐'}</span>
+      <span class="req-icon">${status === 'done' ? '✓' : status === 'needed' ? '' : '◐'}</span>
       <div class="req-body">
-        <div class="req-label">${esc(r.req.label)}${countTag}</div>
-        <div class="chips">${fills}</div>
-        ${r.req.note ? `<div class="small muted">${esc(r.req.note)}</div>` : ''}
+        <div class="req-label">${esc(label)}</div>
+        ${fill}
+        ${r.req.note && i === 0 && status !== 'done' ? `<div class="small muted">${esc(r.req.note)}</div>` : ''}
       </div>
       <div class="req-actions">
-        ${pill(r.status)}
-        ${missing ? `<button class="btn btn-small ${open ? 'btn-secondary' : 'btn-primary'}" data-action="toggle" data-key="${esc(key)}">${open ? 'Hide' : 'Find courses'}</button>` : ''}
+        ${status === 'done' ? '' : pill(status)}
+        ${canFind ? `<button class="btn btn-small ${open ? 'btn-secondary' : 'btn-primary'}" data-action="toggle" data-key="${esc(key)}">${open ? 'Hide' : 'Find courses'}</button>` : ''}
       </div>
     </div>
-    ${open && missing ? renderOptions(pkey, r) : ''}
+    ${open && canFind ? renderOptions(pkey, r, key) : ''}
   </li>`;
 }
 
-const ALBERT_HINT = {
-  cadt: 'CADT-UH', ccea: 'CCEA-UH', cdad: 'CDAD-UH', csts: 'CSTS-UH', ccol: 'CCOL-UH (14-week)', field: 'CCOL-UH …J (J-Term)',
-  fyws: 'FYWS', x: 'courses ending in X', e: 'courses ending in E', q: 'courses ending in Q', pe: 'PHYED-UH',
-};
+function optionRows(list, label) {
+  const inList = new Set(getList().map((i) => i.code));
+  const term = S.programs.registrationTerm;
+  return list.map(({ e, offered, notOffered }) => {
+    const v = S.votes.status(e.code);
+    return `<tr>
+      <td class="opt-code"><code>${esc(e.code)}</code></td>
+      <td>${esc(e.title)}${notOffered ? `<div class="small warn-text">${esc(notOffered)}</div>` : ''}</td>
+      <td>${offered ? `<span class="tag tag-offered">Offered ${esc(term)}</span>` : '<span class="tag">Check Albert</span>'}${voteBadge(v)}</td>
+      <td class="opt-act">${inList.has(e.code) ? '<span class="small muted">On your list</span>' : `<button class="btn btn-small btn-secondary" data-action="add" data-code="${esc(e.code)}" data-title="${esc(e.title)}" data-label="${esc(label)}">+ Add</button>`}</td>
+    </tr>`;
+  }).join('');
+}
 
-function renderOptions(pkey, r) {
+function renderOptions(pkey, r, key) {
   const opts = eligibleCourses(r.req, S.catalog)
     .map((e) => ({ e, offered: S.offeredKeys.has(normKey(e.code)), notOffered: S.offerings.notOffered[normKey(e.code)] }))
     .sort((a, b) => b.offered - a.offered || a.e.code.localeCompare(b.e.code));
-  const inList = new Set(getList().map((i) => i.code));
-  const term = S.programs.registrationTerm;
   const manualBtn = `<button class="btn btn-ghost btn-small" data-action="manual" data-p="${pkey}" data-r="${r.req.id}">I've already done this</button>`;
   if (!opts.length) {
-    return `<div class="options"><p class="small">Search Albert for <b>${esc(ALBERT_HINT[r.req.id] || r.req.label)}</b>, then add the course to your list by code.</p>
-      <form class="row add-custom" data-label="${esc(r.req.label)}"><input name="code" placeholder="e.g. CADT-UH 1018" required><button class="btn btn-secondary btn-small">Add to list</button></form>
-      <div class="options-foot">${manualBtn}</div></div>`;
+    return `<div class="options"><p class="small">Search Albert for this requirement, then add the course by code.</p>
+      <form class="row add-custom" data-label="${esc(r.req.label)}"><input name="code" placeholder="e.g. PHIL-UH 2614" required><button class="btn btn-secondary btn-small">Add to list</button></form>
+      <div class="options-foot"><span></span>${manualBtn}</div></div>`;
   }
-  const showAll = S.open.has(`${pkey}|${r.req.id}|all`);
+  const showAll = S.open.has(`${key}|all`);
   const shown = showAll ? opts : opts.slice(0, 8);
   return `
   <div class="options">
-    <table class="opt-table">
-      ${shown.map(({ e, offered, notOffered }) => {
-        const v = S.votes.status(e.code);
-        return `<tr>
-          <td class="opt-code"><code>${esc(e.code)}</code></td>
-          <td>${esc(e.title)}${notOffered ? `<div class="small warn-text">${esc(notOffered)}</div>` : ''}</td>
-          <td>${offered ? `<span class="tag tag-offered">Offered ${esc(term)}</span>` : '<span class="tag">Check Albert</span>'}${voteBadge(v)}</td>
-          <td class="opt-act">${inList.has(e.code) ? '<span class="small muted">On your list</span>' : `<button class="btn btn-small btn-secondary" data-action="add" data-code="${esc(e.code)}" data-title="${esc(e.title)}" data-label="${esc(r.req.label)}">+ Add</button>`}</td>
-        </tr>`;
-      }).join('')}
-    </table>
+    <table class="opt-table">${optionRows(shown, r.req.label)}</table>
     <div class="options-foot">
-      ${opts.length > 8 ? `<button class="link small" data-action="toggle" data-key="${esc(`${pkey}|${r.req.id}|all`)}">${showAll ? 'Show fewer' : `Show all ${opts.length}`}</button>` : '<span></span>'}
+      ${opts.length > 8 ? `<button class="link small" data-action="toggle" data-key="${esc(`${key}|all`)}">${showAll ? 'Show fewer' : `Show all ${opts.length}`}</button>` : '<span></span>'}
       ${manualBtn}
+    </div>
+  </div>`;
+}
+
+// Courses that fill an open major requirement AND an open minor requirement
+function renderBoth(A) {
+  const openReqs = (res) => res.reqs.filter((r) => r.slots.some((s) => !s.manual && (!s.course || s.course.status === 'slot'))).map((r) => r.req);
+  const majOpen = openReqs(A.major.result), minOpen = openReqs(A.minor);
+  const current = S.courses.filter((c) => A.major.result.used.has(c.id) && A.minor.used.has(c.id));
+  const cands = [];
+  for (const e of S.catalog.values()) {
+    if (e.alias_of) continue;
+    const mj = majOpen.filter((r) => eligibleCourses(r, new Map([[e.key, e]])).length);
+    const mi = minOpen.filter((r) => eligibleCourses(r, new Map([[e.key, e]])).length);
+    if (mj.length && mi.length) cands.push({ e, offered: S.offeredKeys.has(normKey(e.code)), notOffered: S.offerings.notOffered[normKey(e.code)], mj, mi });
+  }
+  let general = false;
+  if (!cands.length) {
+    // Nothing fills an open slot in both: show courses that count toward both programs at all
+    general = true;
+    for (const e of S.catalog.values()) {
+      if (e.alias_of) continue;
+      const one = new Map([[e.key, e]]);
+      if (A.major.track.requirements.some((r) => eligibleCourses(r, one).length) && A.minorDef.requirements.some((r) => eligibleCourses(r, one).length))
+        cands.push({ e, offered: S.offeredKeys.has(normKey(e.code)), notOffered: S.offerings.notOffered[normKey(e.code)] });
+    }
+  }
+  cands.sort((a, b) => b.offered - a.offered || a.e.code.localeCompare(b.e.code));
+  const uniq = uniqueCount(A.minor, A.major.result.used);
+  const need = S.programs.policy.minorUnique;
+  const open = S.open.has('both');
+  return `
+  <div class="card program">
+    <div class="program-head"><h3>Counts for both: ${esc(A.major.track.short)} major + ${esc(A.minorDef.name.replace(' (Minor)', ''))} minor</h3>
+      <button class="btn btn-small btn-secondary" data-action="toggle" data-key="both">${open ? 'Hide' : 'Show'}</button></div>
+    ${open ? `<div class="both-body">
+      <p class="small">Already double-counting: ${current.length ? current.map((c) => `<b>${esc(c.displayCode || c.raw)}</b>`).join(', ') : 'none'}.
+      NYUAD lets a course count for a major and a minor, but each minor needs at least ${need} courses of its own. You have <b>${uniq}</b>${uniq < need ? ', so be careful adding more overlap.' : '.'}</p>
+      ${cands.length ? `<p class="small muted">${general ? 'None of your open requirements overlap. These courses can count toward both programs in general:' : 'Courses that would fill an open requirement in both:'}</p>
+      <table class="opt-table">${optionRows(cands.slice(0, 12).map((x) => ({ ...x })), 'Major + minor')}
+      </table>${cands.length > 12 ? `<p class="small muted">+${cands.length - 12} more</p>` : ''}` : '<p class="small muted">No catalog course fills an open requirement in both right now.</p>'}
+    </div>` : ''}
+  </div>`;
+}
+
+// Check whether another minor fits
+function renderMinorCheck(A) {
+  const opts = S.programs.minors.filter((m) => m.id !== A.minorDef.id && !S.extraMinors.includes(m.id));
+  const m = minorById(S.checkMinor);
+  let body = '';
+  if (m) {
+    const used = new Set([...A.major.result.used, ...A.minor.used]);
+    const r = solve(m.requirements, S.courses, S.overrides[`minor:${m.id}`] || {}, {}, { exclude: A.coreComp, avoid: used });
+    const needed = r.summary.needed;
+    const uniq = uniqueCount(r, used);
+    const free = A.electives.openSlots;
+    const fits = needed <= free;
+    const overload = Math.max(0, needed - free);
+    body = `<div class="minor-result">
+      <ul class="small plain">
+        ${r.reqs.flatMap((x) => x.slots.map((s, i) => {
+          const st = s.course ? (s.course.status === 'slot' ? 'planned' : s.course.status) : 'needed';
+          return `<li>${st === 'done' ? '✓' : st === 'needed' ? '○' : '◐'} ${esc(x.req.count > 1 ? `${x.req.label} ${i + 1}` : x.req.label)}${s.course ? ` · <span class="muted">${esc(s.course.displayCode || s.course.raw)}</span>` : ''}</li>`;
+        })).join('')}
+      </ul>
+      <div class="verdict ${fits ? 'verdict-ok' : 'verdict-no'}">
+        ${fits ? `<b>Fits.</b> You need ${needed} more course${needed === 1 ? '' : 's'} and have ${free} open elective slot${free === 1 ? '' : 's'} in your plan.`
+               : `<b>Doesn't fit as planned.</b> You need ${needed} more course${needed === 1 ? '' : 's'} but only have ${free} open elective slot${free === 1 ? '' : 's'}, so ${overload} course${overload === 1 ? '' : 's'} (${overload * 4} credits) would go on top of a full load.`}
+        ${uniq < S.programs.policy.minorUnique ? `<div class="small">It also needs ${S.programs.policy.minorUnique} courses that don't count elsewhere. It has ${uniq}.</div>` : ''}
+      </div>
+      <button class="btn btn-small btn-primary" data-action="addminor" data-id="${m.id}">Track this minor too</button>
+    </div>`;
+  }
+  return `
+  <div class="card program">
+    <div class="program-head"><h3>Add a minor?</h3></div>
+    <div class="both-body">
+      <div class="row"><select data-action="checkminor"><option value="">Choose a minor to check…</option>
+        ${opts.map((o) => `<option value="${o.id}" ${S.checkMinor === o.id ? 'selected' : ''}>${esc(o.name.replace(' (Minor)', ''))}</option>`).join('')}</select></div>
+      ${body}
     </div>
   </div>`;
 }
@@ -298,7 +430,7 @@ function renderOptions(pkey, r) {
 function voteBadge(v) {
   if (v.verdict === 'open') return `<span class="tag tag-open" title="${v.yes} said open, ${v.no} said not running">✓ Open in Albert (${v.yes})</span>`;
   if (v.verdict === 'closed') return `<span class="tag tag-closed" title="${v.yes} said open, ${v.no} said not running">✗ Not running (${v.no})</span>`;
-  if (v.verdict === 'split') return `<span class="tag" title="Reports are tied">Reports split ${v.yes}–${v.no}</span>`;
+  if (v.verdict === 'split') return `<span class="tag">Reports split ${v.yes}–${v.no}</span>`;
   return '';
 }
 
@@ -312,7 +444,7 @@ function renderList() {
     <h2 class="section-title"><span class="num">3</span> Your ${esc(term)} list</h2>
     <ol class="how small">
       <li>Search each code in <b>Albert</b>.</li>
-      <li>Report whether it's running. This helps everyone else.</li>
+      <li>Report whether it's running.</li>
       <li>Tick it once you're registered.</li>
     </ol>
     ${list.length ? `<div class="list-progress small"><b>${done}/${list.length}</b> registered</div>` : ''}
@@ -330,21 +462,25 @@ function renderList() {
               <button class="vote ${v.mine === true ? 'vote-on-yes' : ''}" data-action="vote" data-code="${esc(i.code)}" data-v="1">Open</button>
               <button class="vote ${v.mine === false ? 'vote-on-no' : ''}" data-action="vote" data-code="${esc(i.code)}" data-v="0">Not running</button>
             </div>
-            <div class="small">${S.votes.online ? (v.yes + v.no ? `${voteBadge(v)} <span class="muted">${v.yes} open · ${v.no} not running</span>` : '<span class="muted">No reports yet. Be the first.</span>') : ''}</div>
+            ${S.votes.online && v.yes + v.no ? `<div class="small">${voteBadge(v)} <span class="muted">${v.yes} open · ${v.no} not running</span></div>` : ''}
           </div>
         </li>`;
       }).join('') || '<li class="muted small empty">Nothing yet. Use <b>Find courses</b> to add some.</li>'}
     </ul>
-    ${planned.length ? `<button class="btn btn-secondary btn-small full" data-action="addplanned">+ Add the ${planned.length} course${planned.length > 1 ? 's' : ''} already in your plan for ${esc(term)}</button>` : ''}
-    ${S.votes.online ? '' : '<p class="small muted offline">Shared availability reports are offline, so your reports are saved on this device only.</p>'}
+    ${planned.length ? `<button class="btn btn-secondary btn-small full" data-action="addplanned">+ Add the ${planned.length} course${planned.length > 1 ? 's' : ''} in your plan for ${esc(term)}</button>` : ''}
+    ${S.votes.online ? '' : '<p class="small muted offline">Shared reports are offline, so yours are saved on this device only.</p>'}
   </div>`;
 }
 
+// The plan, laid out like the ARC template: one band per academic year, Fall | Spring | J-Term + Summer
 function renderPlan(A) {
-  const terms = [];
-  for (const c of S.courses) { let t = terms.find((x) => x.label === c.term.label); if (!t) terms.push(t = { label: c.term.label, items: [] }); t.items.push(c); }
-  const majorKey = `major:${A.trackId}`;
-  const mreqs = A.major.track.requirements, nreqs = S.programs.minor.requirements;
+  const years = new Map();
+  for (const c of S.courses) {
+    const ay = c.term.season === 'fall' ? c.term.year : c.term.year - 1;
+    if (!years.has(ay)) years.set(ay, {});
+    (years.get(ay)[c.term.label] ||= []).push(c);
+  }
+  const majorKey = `major:${A.trackId}`, minorKey = `minor:${A.minorDef.id}`;
   const assigned = (res, c) => res.reqs.find((r) => r.slots.some((s) => s.course?.id === c.id))?.req.label;
   const sel = (key, reqs, c, cur) => {
     const v = (S.overrides[key] || {})[c.id] || '';
@@ -353,21 +489,33 @@ function renderPlan(A) {
       ${reqs.map((r) => `<option value="${r.id}" ${v === r.id ? 'selected' : ''}>${esc(r.label)}</option>`).join('')}
       <option value="none" ${v === 'none' ? 'selected' : ''}>Doesn’t count</option></select>`;
   };
+  const block = (label, items) => {
+    const rows = (items || []).map((c) => {
+      const st = c.status === 'slot' ? 'plan' : STATUS[c.status === 'dropped' ? 'needed' : c.status][1];
+      const editing = S.editRow === c.id;
+      return `<tr class="prow prow-${st}" data-action="editrow" data-id="${esc(c.id)}" title="Click to change what this counts toward">
+          <td>${esc(c.raw)}</td><td>${esc(c.prereq)}</td><td>${esc(c.reqText)}</td><td>${esc(c.grade)}</td><td class="num-cell">${esc(c.creditsRaw)}</td></tr>
+        ${editing && c.status !== 'slot' ? `<tr class="prow-edit"><td colspan="5">
+          <label class="small">Major ${sel(majorKey, A.major.track.requirements, c, assigned(A.major.result, c))}</label>
+          <label class="small">Minor ${sel(minorKey, A.minorDef.requirements, c, assigned(A.minor, c))}</label></td></tr>` : ''}`;
+    }).join('');
+    return `<div class="tblock"><div class="tblock-head">${esc(label)}</div>
+      <table class="tmpl"><thead><tr><th>Course</th><th>Prerequisite</th><th>Requirement</th><th>Grade</th><th>Credit Hr</th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="5" class="muted">—</td></tr>'}</tbody></table></div>`;
+  };
+  const bands = [...years.keys()].sort().map((ay) => {
+    const t = years.get(ay);
+    return `<div class="year">
+      ${block(`Fall ${ay}`, t[`Fall ${ay}`])}
+      ${block(`Spring ${ay + 1}`, t[`Spring ${ay + 1}`])}
+      <div class="tstack">${block(`J-Term ${ay + 1}`, t[`J-Term ${ay + 1}`])}${t[`Summer ${ay + 1}`] ? block(`Summer ${ay + 1}`, t[`Summer ${ay + 1}`]) : ''}</div>
+    </div>`;
+  }).join('');
   return `
   <details class="card plan" ${S.open.has('plan') ? 'open' : ''}>
-    <summary data-action="plantoggle"><h3>Your plan, as I read it</h3><span class="small muted">Wrong match? Set what each course counts toward.</span></summary>
-    ${terms.map((t) => `
-      <div class="term"><h4>${esc(t.label)}</h4>
-      <table class="plan-table">
-        <tr><th>Course</th><th>Status</th><th>Counts toward major</th><th>Counts toward minor</th></tr>
-        ${t.items.map((c) => `<tr>
-          <td><div>${c.displayCode ? `<code>${esc(c.displayCode)}</code> ` : ''}${esc(c.displayCode ? (c.title || '') : c.raw)}</div>
-            <div class="small muted">${[c.grade && `Grade ${esc(c.grade)}`, `${c.credits} cr${c.creditsAssumed ? ' (assumed)' : ''}`, c.reqText && `Plan says: ${esc(c.reqText)}`].filter(Boolean).join(' · ')}</div></td>
-          <td>${pill(c.status === 'dropped' ? 'needed' : c.status)}</td>
-          <td>${c.status === 'slot' ? '<span class="small muted">placeholder</span>' : sel(majorKey, mreqs, c, assigned(A.major.result, c))}</td>
-          <td>${c.status === 'slot' ? '' : sel('minor', nreqs, c, assigned(A.minor, c))}</td>
-        </tr>`).join('')}
-      </table></div>`).join('')}
+    <summary data-action="plantoggle"><h3>Your plan, as I read it</h3><span class="small muted">Click a row to change what it counts toward.</span></summary>
+    <div class="plan-legend small"><span><i class="dot dot-ok"></i>Done</span><span><i class="dot dot-prog"></i>In progress</span><span><i class="dot dot-plan"></i>Planned</span></div>
+    ${bands}
   </details>`;
 }
 
@@ -387,15 +535,19 @@ function addToList(code, title, label) {
 
 document.addEventListener('click', async (ev) => {
   const el = ev.target.closest('[data-action]');
-  if (!el || el.tagName === 'SELECT' || (el.tagName === 'INPUT' && el.type !== 'checkbox')) return;
+  if (!el || el.tagName === 'SELECT' || ev.target.tagName === 'SELECT' || (el.tagName === 'INPUT' && el.type !== 'checkbox')) return;
   const a = el.dataset.action;
   if (a === 'plantoggle') { ev.preventDefault(); S.open.has('plan') ? S.open.delete('plan') : S.open.add('plan'); return render(); }
   if (a === 'sample') return withLoad(() => readSample(), 'the sample plan');
   if (a === 'default') return withLoad(() => readSample(DEFAULT_PLAN), DEFAULT_PLAN_LABEL);
   if (a === 'reset') { S.plan = null; LS.set('lastPlan', null); LS.set('skipDefault', true); return render(); }
-  if (a === 'track') { S.track = el.dataset.id; save(); return render(); }
+  if (a === 'track') { S.track = el.dataset.id; S.trackOpen = false; save(); return render(); }
+  if (a === 'trackopen') { S.trackOpen = true; return render(); }
   if (a === 'toggle') { const k = el.dataset.key; S.open.has(k) ? S.open.delete(k) : S.open.add(k); return render(); }
+  if (a === 'editrow') { S.editRow = S.editRow === el.dataset.id ? null : el.dataset.id; return render(); }
   if (a === 'add') { addToList(el.dataset.code, el.dataset.title, el.dataset.label); return render(); }
+  if (a === 'addminor') { S.extraMinors.push(el.dataset.id); S.checkMinor = null; save(); return render(); }
+  if (a === 'dropminor') { S.extraMinors = S.extraMinors.filter((x) => x !== el.dataset.id); save(); return render(); }
   if (a === 'addplanned') {
     for (const c of S.courses) if (c.term.label === S.programs.registrationTerm && c.displayCode) addToList(c.displayCode, c.cat?.title || c.title, c.reqText);
     return render();
@@ -412,7 +564,7 @@ document.addEventListener('click', async (ev) => {
   }
 });
 
-document.addEventListener('change', async (ev) => {
+document.addEventListener('change', (ev) => {
   const el = ev.target;
   if (el.id === 'file' && el.files[0]) { const f = el.files[0]; return withLoad(() => readFile(f), f.name); }
   if (el.dataset.action === 'override') {
@@ -420,6 +572,7 @@ document.addEventListener('change', async (ev) => {
     if (el.value) o[el.dataset.id] = el.value; else delete o[el.dataset.id];
     save(); S.open.add('plan'); render();
   }
+  if (el.dataset.action === 'checkminor') { S.checkMinor = el.value || null; render(); }
 });
 
 document.addEventListener('submit', (ev) => {

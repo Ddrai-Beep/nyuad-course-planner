@@ -94,6 +94,44 @@ add('POLSC-UH NEW-CHP', 'Chinese Politics (NEW, 2000-level)', 'area-old', 'new',
 for c in ['POLSC-UH 3413', 'POLSC-UH 3510', 'CSTS-UH 1094', 'CSTS-UH 1129', 'PEACE-UH 1011']:
     add(c, '', 'iafp')
 
+# Core Curriculum & Gen Ed tables (bulletin)
+import os
+CORE_TAG = {'ccol': 'ccol-term', 'field': 'ccol-field', 'fyws': 'fyws', 'CADT': 'core-CADT', 'CCEA': 'core-CCEA', 'CDAD': 'core-CDAD', 'CSTS': 'core-CSTS', 'gened': None}
+for line in open(os.path.join(os.path.dirname(__file__), 'core.txt')):
+    if not line.strip() or line.startswith('#'): continue
+    h, code, title = line.rstrip('\n').split('|')
+    tag = CORE_TAG[h]
+    add(code, title, *( [tag] if tag else [] ))
+    e = cat[norm(code)]
+    sfx = re.match(r'.*\d{4}([A-Z]*)$', norm(code))[1]
+    if len(sfx) > len(e['code'].split(' ')[-1].lstrip('0123456789')):
+        e['code'] = norm(code)  # keep the attribute-bearing suffix (e.g. 1000AQ)
+
+# Other minors (bulletin)
+for c, t in [('IM-UH 1010', 'Introduction to Interactive Media'), ('IM-UH 1011', 'Communications Lab')]: add(c, t, 'im-req')
+for c, t in [('ACS-UH 1010X', 'Anthropology and the Arab World'), ('ACS-UH 1011X', 'Introduction to Modern Arabic Literature'), ('ACS-UH 1012X', 'Emergence of the Modern Middle East')]: add(c, t, 'acs-req')
+add('HIST-UH 2010', 'History and Globalization', 'hist-req')
+add('PHIL-UH 1101', 'Central Problems in Philosophy', 'phil-intro')
+add('PHIL-UH 1110', 'The Meaning of Life', 'phil-intro')
+add('PHIL-UH 1115', 'Fear of Knowledge', 'phil-intro')
+add('PHIL-UH 2614', 'Political Philosophy', 'law-elec')
+for c, t in [('LAW-UH 1010', 'What is Law? Comparative Global Jurisprudence'), ('LAW-UH 1011', 'Legal Writing and Research'), ('LAW-UH 1012', 'Legal System and Method'),
+             ('LAW-UH 1013', 'Business Law'), ('LAW-UH 1014', 'Commercial Law'), ('LAW-UH 2010', 'Legal Institutions'), ('LAW-UH 2011', 'Constitutional and Administrative Law'),
+             ('LAW-UH 2123', 'Public International Law'), ('LAW-UH 3010', 'Legal Ethics and Professional Responsibility')]:
+    add(c, t, 'law-req')
+for c, t in [('CCEA-UH 1011', 'Law and the Imagination'), ('CSTS-UH 1061', 'Global Ethics'), ('CSTS-UH 1074', 'Refugees, Law and Crises'), ('CSTS-UH 1076', "What's Property (For?)"),
+             ('CSTS-UH 1077', 'Law and Politics'), ('CSTS-UH 1097', 'Justice'), ('CSTS-UH 1125X', 'Law and Empire'), ('CSTS-UH 1149', 'International Business, Law, and Sustainability'),
+             ('ECON-UH 2512', 'FinTech Innovation: Finance, Technology, Regulation'), ('ECON-UH 3511X', 'Islamic Economics and Finance'), ('ENVR-UH 1312', 'Global Debate on Green Growth'),
+             ('HERST-UH 1502', 'Judging Heritage'), ('HIST-UH 2121', 'Genocide in a Global Perspective'), ('LAW-UH 1110', 'Contracts'), ('LAW-UH 1114', 'Alternative Dispute Resolution'),
+             ('LAW-UH 2112', 'Gender in Law'), ('LAW-UH 2114', 'Climate Change Law and Policy'), ('LAW-UH 2122X', 'Introduction to Islamic Law'), ('LAW-UH 2124', 'Human Rights Law'),
+             ('LAW-UH 2126X', 'International Commercial Arbitration'), ('LAW-UH 2127', 'International Business and Sustainability'), ('LAW-UH 2128', 'Theory of Property Law'),
+             ('LAW-UH 2129', 'Mooting'), ('LAW-UH 2131', 'Law and the Arts'), ('LAW-UH 2134', 'Animal Law & Policy'), ('LAW-UH 2135', 'Disability Law and Policy'),
+             ('LAW-UH 2136', 'Refugee Protection in International Law'), ('LAW-UH 2137', 'Environmental Rights & Access to Justice in the Global South'),
+             ('LAW-UH 2138', 'International Law and Israel-Palestine'), ('LAW-UH 2500', 'Criminal Law'), ('LAW-UH 2501', 'Torts'), ('LAW-UH 3103', 'Constitutional Courts'),
+             ('LAW-UH 3500', 'Property - Land Law'), ('LAW-UH 3501', 'Equity and Trusts'), ('LAW-UH 3503', 'European Union Law'), ('MUSIC-UH 2662', 'Music and Copyright'),
+             ('SRPP-UH 2414', 'Global Family Policies and Laws')]:
+    add(c, t, 'law-elec')
+
 json.dump({"_source": "NYUAD Bulletin (most recent) + Political Science Courses — Spring 2027 (J. Jensen, 26 Oct 2026)",
            "courses": sorted(cat.values(), key=lambda e: e['code'])},
           open(out_path, 'w'), indent=1)

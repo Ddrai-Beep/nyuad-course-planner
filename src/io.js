@@ -21,11 +21,16 @@ export function parseCSV(text) {
 
 function workbookToSheets(buf) {
   if (!window.XLSX) throw new Error('Spreadsheet reader failed to load. Check your connection and refresh.');
-  const wb = window.XLSX.read(buf, { type: 'array' });
-  return wb.SheetNames.map((name) => ({
-    name,
-    grid: window.XLSX.utils.sheet_to_json(wb.Sheets[name], { header: 1, raw: false, defval: '' }),
-  }));
+  const wb = window.XLSX.read(buf, { type: 'array', cellStyles: true });
+  return wb.SheetNames.filter((n) => !(wb.Workbook?.Sheets?.find((s) => s.name === n)?.Hidden)).map((name) => {
+    const ws = wb.Sheets[name];
+    const grid = window.XLSX.utils.sheet_to_json(ws, { header: 1, raw: false, defval: '', blankrows: true });
+    // Hidden rows/columns aren't part of the plan the student sees, so blank them out
+    (ws['!rows'] || []).forEach((r, i) => { if (r && r.hidden && grid[i]) grid[i] = grid[i].map(() => ''); });
+    const hiddenCols = (ws['!cols'] || []).map((c, i) => (c && c.hidden ? i : -1)).filter((i) => i >= 0);
+    if (hiddenCols.length) grid.forEach((row) => hiddenCols.forEach((i) => { if (i < row.length) row[i] = ''; }));
+    return { name, grid };
+  });
 }
 
 export async function readFile(file) {

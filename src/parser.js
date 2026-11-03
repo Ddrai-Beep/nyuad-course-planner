@@ -145,12 +145,15 @@ export function parsePlan(grid, today = new Date()) {
       if (!name) { if (++blank >= 3) break; continue; }
       blank = 0;
       const reqText = cols.req != null ? cell(r, cols.req) : '';
+      const prereq = cols.prereq != null ? cell(r, cols.prereq) : '';
       const grade = cols.grade != null ? cell(r, cols.grade) : '';
       const credRaw = cols.credits != null ? cell(r, cols.credits) : '';
       const c = classify(name, reqText);
       if (c.audit) continue;
       c.raw = name;
       c.reqText = reqText;
+      c.prereq = prereq;
+      c.creditsRaw = credRaw;
       c.grade = grade;
       c.term = { ...a.t, label: termLabel(a.t), order };
       c.id = `${c.term.label}|${name}`;

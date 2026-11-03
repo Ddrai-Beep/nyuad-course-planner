@@ -1,0 +1,439 @@
+# NYUAD Bulletin — Core Curriculum & General Education course tables (fetched 3 Nov 2026)
+ccol|CCOL-UH 1000|Mortal and Immortal Questions
+ccol|CCOL-UH 1002|Indigeneity
+ccol|CCOL-UH 1003X|Faith in Science, Reason in Revelation
+ccol|CCOL-UH 1006E|Conserving Our Global Heritage through Science
+ccol|CCOL-UH 1008|Reading the Earth
+ccol|CCOL-UH 1010|Future of Medicine
+ccol|CCOL-UH 1013|Colonialism and Postcolonialism
+ccol|CCOL-UH 1015Q|Labor
+ccol|CCOL-UH 1016Q|Cooperation
+ccol|CCOL-UH 1019|Extinction
+ccol|CCOL-UH 1020|Water
+ccol|CCOL-UH 1021|The Desert
+ccol|CCOL-UH 1024Q|Life in the Universe
+ccol|CCOL-UH 1025|Human Body
+ccol|CCOL-UH 1026|Migration
+ccol|CCOL-UH 1030|War
+ccol|CCOL-UH 1031|Nature and Human Nature
+ccol|CCOL-UH 1032|Communication: from bacteria to humans
+ccol|CCOL-UH 1034|Gender
+ccol|CCOL-UH 1035|Inequality
+ccol|CCOL-UH 1038|Prejudice
+ccol|CCOL-UH 1040|Disability
+ccol|CCOL-UH 1042|Multi-ethnic Democracy
+ccol|CCOL-UH 1045|Axes of Evil
+ccol|CCOL-UH 1046|Women and Leadership
+ccol|CCOL-UH 1048|Statehood
+ccol|CCOL-UH 1049|State of the Nation
+ccol|CCOL-UH 1052X|Art of Revolution
+ccol|CCOL-UH 1053|Calamity and Creation
+ccol|CCOL-UH 1055|Oil
+ccol|CCOL-UH 1056EQ|Fairness
+ccol|CCOL-UH 1058|Journeys
+ccol|CCOL-UH 1059Q|Quantified Self
+ccol|CCOL-UH 1060|What Is Secularism?
+ccol|CCOL-UH 1061|Water for Life
+ccol|CCOL-UH 1065Q|Resentment and Politics
+ccol|CCOL-UH 1069|Global Language
+ccol|CCOL-UH 1070|Hindsight
+ccol|CCOL-UH 1071|Price of Luxury
+ccol|CCOL-UH 1072|Tolerance
+ccol|CCOL-UH 1074|Industrial Revolutions and the Future of Work
+ccol|CCOL-UH 1075|Body Politics
+ccol|CCOL-UH 1077|Food and Human Population
+ccol|CCOL-UH 1079|Justice in Times of Transition
+ccol|CCOL-UH 1080|Learning Languages in a Global Society
+ccol|CCOL-UH 1081|Migration and Belonging
+ccol|CCOL-UH 1082|Multispecies Living and the Environmental Crisis
+ccol|CCOL-UH 1086|Corruption
+ccol|CCOL-UH 1088|Panacea
+ccol|CCOL-UH 1089|Drama of Science
+ccol|CCOL-UH 1093|Caste and Race
+ccol|CCOL-UH 1094|Fire
+ccol|CCOL-UH 1095|Emotions
+ccol|CCOL-UH 1096|Ghosts, Magic, and the Mystical
+ccol|CCOL-UH 1097|The Sacred
+ccol|CCOL-UH 1099|The Science of Human Connection
+ccol|CCOL-UH 1100|Negotiation and Consensus Building
+ccol|CCOL-UH 1101|Incarceration
+ccol|CCOL-UH 1102|Language and Identity
+ccol|CCOL-UH 1103|Exclusionary Foundations of Knowledge Production
+ccol|CCOL-UH 1104|Globalization and its Discontents
+ccol|CCOL-UH 1105|Nudges and Well-Being
+ccol|CCOL-UH 1106|Mind, Matter, and Machine
+ccol|CCOL-UH 1107|Shelter
+ccol|CCOL-UH 1108|Infinity
+ccol|CCOL-UH 1109|Identity
+ccol|CCOL-UH 1110|Poverty and Inequality
+ccol|CCOL-UH 1111|24 Hours in Our Brain
+ccol|CCOL-UH 1112|Climate and Humanity
+ccol|CCOL-UH 1113|Encompassing Nature
+ccol|CCOL-UH 1114|Problem of the Self
+ccol|CCOL-UH 1115|Beyond Nature-Culture
+ccol|CCOL-UH 1116|Wireless Revolution
+ccol|CCOL-UH 1117|Slavery and Freedom
+ccol|CCOL-UH 1118|(In)Fertility
+ccol|CCOL-UH 1119|Techruption
+ccol|CCOL-UH 1120|Cyborgs
+ccol|CCOL-UH 1121|Violence
+ccol|CCOL-UH 1123|Choose Your Journey
+ccol|CCOL-UH 1124|Linguistic Diversity
+ccol|CCOL-UH 1125|Beauty
+field|CCOL-UH 2016J|Sensing (Sensitive) Archives
+field|CCOL-UH 2001EJ|An Ocean Voyage
+field|CCOL-UH 2002J|Just Cash: The Politics, Economics, and Philosophy of Cash Transfer Programs
+field|CCOL-UH 2003J|Mande Music and the Black Experience
+field|CCOL-UH 2004J|Sand
+field|CCOL-UH 2005J|Art / Environment / Attention
+field|CCOL-UH 2006J|Common Sense
+field|CCOL-UH 2007J|The Science of Color and Art
+field|CCOL-UH 2008J|The Puzzle of Life
+field|CCOL-UH 2009J|The Sensorial City: Food Studies and Urban Ethnography
+field|CCOL-UH 2010J|Disability and Development
+field|CCOL-UH 2011J|Commercial Determinants of Health
+field|CCOL-UH 2012J|Wayfinding: Graphic Design in the Built Environment
+field|CCOL-UH 2013J|Debt and Society
+field|CCOL-UH 2014J|Being Here
+field|CCOL-UH 2015J|Colorism Across Global Lines: Focus Study in Ghana
+field|CCOL-UH 2017J|African Perspectives on Data and Technology
+field|CCOL-UH 2018J|Message in a Bottle
+field|CCOL-UH 2019J|Network Theory and Social Interactions
+field|CCOL-UH 2020J|Ribbons of Blue: Urbanization on the Coastal Fringe
+field|CCOL-UH 2021J|The Silk Road: Ancient and Modern Globalizations
+field|CCOL-UH 2022J|New Capitals of Contemporary Art: Sharjah, Abu Dhabi and Amman
+field|CCOL-UH 2023J|Endangered Languages
+field|CCOL-UH 2024J|Global Africa and China
+field|CCOL-UH 2025J|Social Media and Governance of Speech
+field|CCOL-UH 2026J|Technology for Sustainable Development
+field|CCOL-UH 2027J|Unequal Childhoods
+field|CCOL-UH 2028J|Music, Migration, and Memory
+field|CCOL-UH 2029J|Californian Ideology
+field|CCOL-UH 2030J|What is Fair in University Admissions?
+field|CCOL-UH 2031J|Strategies for Civic Inclusion
+field|CCOL-UH 2032J|Tropical Forests and the Climate Crisis
+field|CCOL-UH 2033J|Immersive Experiences
+field|CCOL-UH 2034J|Falconry: A Global History
+field|CCOL-UH 2035J|Creative Robotics & Tech
+field|CCOL-UH 2036J|Tone Meister: The Pursuit of Perfect Sound
+field|CCOL-UH 2037J|Culture as a Collective Achievement
+field|CCOL-UH 2038J|How to Build a City
+field|CCOL-UH 2039J|The Shaping of Identity: Egyptological Collections
+CADT|ANTH-UH 2113|Memoir and Ethnography
+CADT|ARTH-UH 2721|Art and Architecture: Reinventing the City
+CADT|ARTH-UH 2726|City to Studio: Transforming Urban Research
+CADT|ARTH-UH 2825|Advanced Lighting and Production Techniques
+CADT|CADT-UH 1001|Manus et Machina
+CADT|CADT-UH 1005|Creativity and Innovation
+CADT|CADT-UH 1008EQ|Touch
+CADT|CADT-UH 1013EQ|Language of Computers
+CADT|CADT-UH 1016E|Utilitas, Venustas, Firmitas
+CADT|CADT-UH 1020|Wayfinding: Graphic Design in the Built Environment
+CADT|CADT-UH 1021|Art of Narrative Science
+CADT|CADT-UH 1024|What Is Music?
+CADT|CADT-UH 1026|Human Value
+CADT|CADT-UH 1027|Memoir and Anti-Memoir
+CADT|CADT-UH 1029|Inspiration, Art, and the Examined Life
+CADT|CADT-UH 1033|Bioinspiration
+CADT|CADT-UH 1037X|Machines in Islamic Civilization
+CADT|CADT-UH 1038|Autonomous and Social Robots
+CADT|CADT-UH 1039|Photo Album
+CADT|CADT-UH 1040|Ethics of the Image
+CADT|CADT-UH 1045E|Plastic Fantastic
+CADT|CADT-UH 1048|Reinventing the Wheel
+CADT|CADT-UH 1049E|Material World
+CADT|CADT-UH 1051|Performing Online
+CADT|CADT-UH 1052|Silence
+CADT|CADT-UH 1053|Designing Health
+CADT|CADT-UH 1061|The Body Archive
+CADT|CADT-UH 1062|Contextual Innovation in Society
+CADT|CADT-UH 1063|Foodways for the Anthropocene
+CADT|CADT-UH 1074|Creative Robotics and Tech
+CADT|CADT-UH 1077|Site Specificity
+CADT|CADT-UH 1078|Voice
+CADT|CADT-UH 1079E|Have a Seat
+CADT|CADT-UH 1091|The Photographic Essay
+CADT|CADT-UH 1092|Starting With Self
+CADT|CADT-UH 1093|Gamified Learning
+CADT|CADT-UH 1094|Music, the Mind, and Artificial Intelligence
+CADT|CCEA-UH 1092|Reaching for the Stars
+CADT|CCEA-UH 1138|Eco-Art and Ecomedia
+CADT|CDAD-UH 1037|Cyberwarfare
+CADT|CDAD-UH 1063|Digital Archive
+CADT|IM-UH 1012|Communication and Technology
+CADT|LITCW-UH 1506|Today We Wrote Nothing
+CADT|LITCW-UH 1508|Shame and Shamelessness
+CADT|LITCW-UH 1509|The City and the Writer
+CADT|MUSIC-UH 1618X|Music and Identity in Trade
+CCEA|ACS-UH 2410X|Paradise Lost: Muslims, Christians and Jews in Al-Andalus
+CCEA|ANTH-UH 1102X|Anthropology of and as Media
+CCEA|ANTH-UH 1103|Sense and Senses
+CCEA|ANTH-UH 2113|Memoir and Ethnography
+CCEA|ANTH-UH 2114X|Listening to Islam
+CCEA|AW-UH 1118|Archaeology, Arabia and the Bible
+CCEA|CADT-UH 1026|Human Value
+CCEA|CCEA-UH 1001|Ritual and Play
+CCEA|CCEA-UH 1003|Collecting
+CCEA|CCEA-UH 1004|Identity and Object
+CCEA|CCEA-UH 1007|Abstraction
+CCEA|CCEA-UH 1009X|A Thousand and One Nights
+CCEA|CCEA-UH 1010|Imagined Cities
+CCEA|CCEA-UH 1011|Law and the Imagination
+CCEA|CCEA-UH 1014|Money and the Good Life
+CCEA|CCEA-UH 1015|Gender and Representation
+CCEA|CCEA-UH 1017|On Violence
+CCEA|CCEA-UH 1023|Dis/Abilities in Musical Contexts
+CCEA|CCEA-UH 1037|Listening
+CCEA|CCEA-UH 1046|Rogue Fictions
+CCEA|CCEA-UH 1053|The Hero
+CCEA|CCEA-UH 1055|Global Shakespeare
+CCEA|CCEA-UH 1056|Tragedy
+CCEA|CCEA-UH 1061|Memory
+CCEA|CCEA-UH 1062|Everything Is a Remix
+CCEA|CCEA-UH 1063|Literary Translation
+CCEA|CCEA-UH 1069|Cultural Appropriation
+CCEA|CCEA-UH 1074|Race, Racialization and Narration
+CCEA|CCEA-UH 1077X|Islamism, Islamophobia, and Muslim Popular Culture
+CCEA|CCEA-UH 1078X|Representing the Middle East
+CCEA|CCEA-UH 1082|Literature of Migration
+CCEA|CCEA-UH 1083|Cultural History of Falconry
+CCEA|CCEA-UH 1085|Cinematic Imagination
+CCEA|CCEA-UH 1090|Un/Making History
+CCEA|CCEA-UH 1092|Reaching for the Stars
+CCEA|CCEA-UH 1094X|Orientalisms
+CCEA|CCEA-UH 1095X|Arabia Felix
+CCEA|CCEA-UH 1096|Global Scents: All the Perfumes of Arabia
+CCEA|CCEA-UH 1097|Music: Conflict, Protest, and Peace
+CCEA|CCEA-UH 1098|Immersive Experiences
+CCEA|CCEA-UH 1102|Culture and Citizenship
+CCEA|CCEA-UH 1107|Once Upon a Time: Folk and Fairy Tales Reconsidered
+CCEA|CCEA-UH 1110|Faith and Finance
+CCEA|CCEA-UH 1112|Fashion, Culture & the Body
+CCEA|CCEA-UH 1113|Expressive Culture: Film
+CCEA|CCEA-UH 1114X|Sexualities of the Middle East
+CCEA|CCEA-UH 1115|Languages of Israel
+CCEA|CCEA-UH 1123|Noise in Literature
+CCEA|CCEA-UH 1124|The Age of Images
+CCEA|CCEA-UH 1125|Nation and Narration
+CCEA|CCEA-UH 1136|Encountering the Other
+CCEA|CCEA-UH 1137|Stories of Our Bodies
+CCEA|CCEA-UH 1138|Eco-Art and Ecomedia
+CCEA|CCEA-UH 1139|The Image in Question
+CCEA|CSTS-UH 1101|Cultures & Contexts: The Black Atlantic
+CCEA|HERST-UH 1100|World Heritage Sites & Universal Collections
+CCEA|LITCW-UH 1105|Politics of Writing
+CCEA|LITCW-UH 1160X|Global Women Writing
+CCEA|LITCW-UH 1506|Today We Wrote Nothing
+CCEA|LITCW-UH 1508|Shame and Shamelessness
+CCEA|LITCW-UH 1509|The City and the Writer
+CCEA|LITCW-UH 2315X|Postcolonial Turn
+CCEA|LITCW-UH 2341|Asian and Arab Diaspora in the Arts
+CCEA|MUSIC-UH 1617X|Popular Music in the Arab World
+CCEA|MUSIC-UH 1618X|Music and Identity in Trade
+CCEA|MUSIC-UH 2665|Global Jazz
+CCEA|THEAT-UH 1521|Women Who Kill
+CDAD|CADT-UH 1013EQ|Language of Computers
+CDAD|CDAD-UH 1001Q|Data
+CDAD|CDAD-UH 1002Q|Space
+CDAD|CDAD-UH 1004E|Microbes
+CDAD|CDAD-UH 1005EQ|Forensic Science: Guilty or Not Guilty?
+CDAD|CDAD-UH 1007EQ|The Mind
+CDAD|CDAD-UH 1008EQ|Seven Wonders of the Invisible World
+CDAD|CDAD-UH 1010EQ|Diversity
+CDAD|CDAD-UH 1016EQ|Where the City Meets the Sea
+CDAD|CDAD-UH 1017EQ|Symmetry
+CDAD|CDAD-UH 1019Q|Heat and the Universe
+CDAD|CDAD-UH 1024Q|Reading Like a Computer
+CDAD|CDAD-UH 1027E|5000 Years of Notable Lives
+CDAD|CDAD-UH 1032Q|Stability
+CDAD|CDAD-UH 1033EQ|Data and Human Space
+CDAD|CDAD-UH 1034Q|Numbers, Models, and Chaos
+CDAD|CDAD-UH 1037|Cyberwarfare
+CDAD|CDAD-UH 1039EQ|Search
+CDAD|CDAD-UH 1040|Artificial Intelligence and Human Decisions
+CDAD|CDAD-UH 1041EQ|Decisions and the Brain
+CDAD|CDAD-UH 1043EQ|Data and Society
+CDAD|CDAD-UH 1044Q|Human-Centered Data Science
+CDAD|CDAD-UH 1045EQ|Science of Food & Cooking
+CDAD|CDAD-UH 1046EQ|Infectious Diseases
+CDAD|CDAD-UH 1048Q|Microbial Self: Microbes and Identity
+CDAD|CDAD-UH 1049EQ|Random Walks in Science
+CDAD|CDAD-UH 1063|Digital Archive
+CDAD|CDAD-UH 1064|Sustainable Supply Chains
+CDAD|CDAD-UH 1065E|What is Life?
+CDAD|CDAD-UH 1067Q|Epidemiology for Global Health
+CDAD|CDAD-UH 1069EQ|Climate Change
+CDAD|CDAD-UH 1071EQ|Stereotyping
+CDAD|CDAD-UH 1072Q|Nothing
+CDAD|CDAD-UH 1073Q|Science of Complexity
+CDAD|CDAD-UH 1074EQ|Science of Martial Arts
+CDAD|CDAD-UH 1075EQ|Quantum Computing for Everyone
+CDAD|CDAD-UH 1077|Chemophobia
+CDAD|CDAD-UH 1078EQ|Inclusive Data Literacy
+CDAD|CDAD-UH 1079EQ|The Science of Making Music
+CDAD|CSTS-UH 1021EQ|Boundaries
+CDAD|CSTS-UH 1102Q|Health & Society in a Global Context
+CSTS|ACS-UH 1412X|Race and Ethnicity in the Histories of the Middle East and Africa
+CSTS|ACS-UH 1612X|Energy and Society in the Gulf
+CSTS|ACS-UH 2615X|Arab Genders and Sexualities
+CSTS|ANTH-UH 1102X|Anthropology of and as Media
+CSTS|ANTH-UH 1103|Sense and Senses
+CSTS|ANTH-UH 1104|Merchants, Chiefs and Spirits
+CSTS|ANTH-UH 2116|Displacement and Dispossession in the Modern Middle East
+CSTS|CADT-UH 1026|Human Value
+CSTS|CADT-UH 1063|Foodways for the Anthropocene
+CSTS|CCEA-UH 1069|Cultural Appropriation
+CSTS|CCEA-UH 1090|Un/Making History
+CSTS|CDAD-UH 1039EQ|Search
+CSTS|CDAD-UH 1046EQ|Infectious Diseases
+CSTS|CDAD-UH 1067Q|Epidemiology for Global Health
+CSTS|CSTS-UH 1006|Thinking
+CSTS|CSTS-UH 1007Q|Chance
+CSTS|CSTS-UH 1008|Birth of Science and AI
+CSTS|CSTS-UH 1009|Theory of Everything
+CSTS|CSTS-UH 1010|Astronomy & Cosmology
+CSTS|CSTS-UH 1012|Wealth of Nations
+CSTS|CSTS-UH 1015|Legitimacy
+CSTS|CSTS-UH 1016|Ideas of the Sacred
+CSTS|CSTS-UH 1017|Revolutions and Social Change
+CSTS|CSTS-UH 1021EQ|Boundaries
+CSTS|CSTS-UH 1031|Why Is It So Hard to Do Good?
+CSTS|CSTS-UH 1036|Progress in Science
+CSTS|CSTS-UH 1043|Great Divergence
+CSTS|CSTS-UH 1049|Concepts and Categories
+CSTS|CSTS-UH 1052X|History and the Environment: The Middle East
+CSTS|CSTS-UH 1053|Understanding Urbanization
+CSTS|CSTS-UH 1059X|Urban Violence: The Middle East
+CSTS|CSTS-UH 1060|Beyond Belief
+CSTS|CSTS-UH 1067|Moving Target
+CSTS|CSTS-UH 1074|Refugees, Law and Crises
+CSTS|CSTS-UH 1076|What's Property (For?)
+CSTS|CSTS-UH 1077|Law and Politics
+CSTS|CSTS-UH 1087|Future of Education
+CSTS|CSTS-UH 1088|Thinking Big About the Ancient World
+CSTS|CSTS-UH 1094|Space Diplomacy
+CSTS|CSTS-UH 1097|Justice
+CSTS|CSTS-UH 1098|High Performance: Mindset and Habits
+CSTS|CSTS-UH 1099|Global Media Seminar: Latin America
+CSTS|CSTS-UH 1101|Cultures & Contexts: The Black Atlantic
+CSTS|CSTS-UH 1102Q|Health & Society in a Global Context
+CSTS|CSTS-UH 1103|What Is Technology?
+CSTS|CSTS-UH 1104|Organizations
+CSTS|CSTS-UH 1125X|Law and Empire
+CSTS|CSTS-UH 1126|Gender, Violence, and Political Participation
+CSTS|CSTS-UH 1127|Responsible Capitalism
+CSTS|CSTS-UH 1128|AI, Automation, and the Future of Work
+CSTS|CSTS-UH 1129|Environment & Politics
+CSTS|CSTS-UH 1130|Nuclear Energy
+CSTS|CSTS-UH 1131|Gender & Governance
+CSTS|CSTS-UH 1149|International Business, Law, and Sustainability
+CSTS|CSTS-UH 1150|Status
+CSTS|CSTS-UH 1151|Settler Colonialism
+CSTS|HIST-UH 2010|History and Globalization
+CSTS|HIST-UH 2121|Genocide in a Global Perspective
+CSTS|HIST-UH 2123|Women in World History
+CSTS|HIST-UH 3112|Asian Borderlands
+CSTS|LAW-UH 2134|Animal Law & Policy
+CSTS|LITCW-UH 2333|Translation and Colonization
+CSTS|PHIL-UH 1110|The Meaning of Life
+CSTS|PHIL-UH 1115|Fear of Knowledge
+CSTS|POLSC-UH 1114|War on Terrorism
+CSTS|POLSC-UH 2317|Identity and Culture in Politics
+CSTS|SOCSC-UH 1313|Perspectives on Democracy
+CSTS|SRPP-UH 1413X|Social Change and Development in the Arab World
+CSTS|SRPP-UH 2410|Gender and Society
+CSTS|SRPP-UH 2618|Welfare States in Comparative Perspective
+CSTS|SRPP-UH 2620|Education and Society
+fyws|WRIT-UH 1100|FYWS: Taste, Culture & the Self
+fyws|WRIT-UH 1108|FYWS: Writers on Writing
+fyws|WRIT-UH 1110|FYWS: Power and Ethics in Photography
+fyws|WRIT-UH 1113|FYWS: Saving Strangers
+fyws|WRIT-UH 1116|FYWS: The Politics of Spectacle
+fyws|WRIT-UH 1119|FYWS: Living Cities
+fyws|WRIT-UH 1123|FYWS: Scientific Knowledge
+fyws|WRIT-UH 1124|FYWS: Slavery After Slavery
+fyws|WRIT-UH 1125|FYWS: Graphic Violence
+fyws|WRIT-UH 1126X|FYWS: Understanding Postcolonial Feminisms
+fyws|WRIT-UH 1127|FYWS: Real and Imagined
+fyws|WRIT-UH 1128|FYWS: Memory, History, and Forgetting
+fyws|WRIT-UH 1129|FYWS: The World of Babel
+fyws|WRIT-UH 1131|FYWS: Writing About the Languages We Speak
+fyws|WRIT-UH 1132|FYWS: Protest Art
+fyws|WRIT-UH 1134|FYWS: The Last Straw
+fyws|WRIT-UH 1135|FYWS: Non-Violence
+fyws|WRIT-UH 1136|FYWS: Movement & Meaning
+fyws|WRIT-UH 1137|FYWS: Resilience at the Margins
+fyws|WRIT-UH 1138|FYWS: Elsewhere
+fyws|WRIT-UH 1139|FYWS: Exploring Our Linguistic Identities
+fyws|WRIT-UH 1140|FYWS: Racisms and Race
+fyws|WRIT-UH 1141|FYWS: Understanding Photography
+fyws|WRIT-UH 1142|FYWS: Genders and Falconry
+fyws|WRIT-UH 1143|FYWS: Reacting to the Past
+fyws|WRIT-UH 1144|FYWS: Nonsense
+fyws|WRIT-UH 1145|FYWS: Pirates, Traffickers and Enslavers
+gened|ACS-UH 1010X|Anthropology and the Arab World
+gened|ACS-UH 1011X|Introduction to Modern Arabic Literature
+gened|ACS-UH 1012X|Emergence of the Modern Middle East
+gened|ACS-UH 1214X|Quran as Literature
+gened|ACS-UH 1410X|Making of the Muslim Middle East
+gened|ACS-UH 1610X|Feminism and Islamism in the Middle East and North Africa
+gened|ACS-UH 2212X|Introduction to Islamic Texts
+gened|ACS-UH 2213X|Modern Arabic Short Stories
+gened|ACS-UH 2419X|Sufism
+gened|ACS-UH 2613X|Youth in the Middle East
+gened|ACS-UH 2614X|Colonization of Palestine
+gened|ANTH-UH 2121X|Gender/Religion/Violence
+gened|ARABL-UH 1132X|Elementary Qur'anic Arabic
+gened|ARABL-UH 3131X|Introduction to Qur'anic Arabic
+gened|ARABL-UH 4015X|Arabic Cultural Explorations
+gened|ARTH-UH 1120X|Art and Architecture of the Islamic World
+gened|ARTH-UH 1121X|Gulf and Indian Ocean World Art and Architecture
+gened|ARTH-UH 1715X|Arabic Typography
+gened|ARTH-UH 2118X|Contemporary Art and Politics in the Arab World
+gened|AW-UH 1113X|Alexander and the East
+gened|AW-UH 1115X|Political Past, Political Presents
+gened|AW-UH 1119X|Sacred Cities: Jerusalem and Mecca
+gened|AW-UH 1120X|Archaeology of the Gulf
+gened|FILMM-UH 1013X|Understanding MENASA Film and New Media
+gened|HERST-UH 1101X|Heritage Management in the Arabian World
+gened|HIST-UH 1125X|South Asia in the Indian Ocean World
+gened|HIST-UH 1126X|Digital History
+gened|HIST-UH 3510X|Muslim Societies in African History
+gened|HIST-UH 3513X|Religion and Material Culture in the Indian Ocean World
+gened|HIST-UH 3710X|Central Asia and the Middle East
+gened|LAW-UH 2115X|Comparative Legal Systems: United States and UAE
+gened|LAW-UH 2122X|Introduction to Islamic Law
+gened|LAW-UH 2126X|International Commercial Arbitration
+gened|LITCW-UH 2312X|Masterpieces of Pre-Modern Arabic Literature in Translation
+gened|LITCW-UH 3350X|Literatures of the Middle East and the Maghreb
+gened|MUSIC-UH 1611X|Arab Music Cultures
+gened|PHIL-UH 2211X|Classical Arabic Philosophy
+gened|POLSC-UH 2410X|Comparative Politics of the Middle East
+gened|POLSC-UH 2421X|Political Economy of the Middle East
+gened|CS-UH 2219E|Computational Social Science
+gened|IM-UH 2514E|Bioart Practices
+gened|PSYCH-UH 1002EQ|Research Methods in Psychology
+gened|PSYCH-UH 1003E|Biopsychology
+gened|PSYCH-UH 3613EQ|Lab in Early Childhood Education
+gened|PSYCH-UH 3614EQ|Lab in Multisensory Perception and Action
+gened|PSYCH-UH 3616EQ|Lab in Data Analysis for the Psychological Sciences
+gened|PSYCH-UH 3617EQ|Lab in Visual Neuroscience
+gened|PSYCH-UH 3618EQ|Lab in Psychology of Gender Images
+gened|PSYCH-UH 3619EQ|Lab in Psychology of Economic Inequality
+gened|PSYCH-UH 3620EQ|Lab in Clinical Neuropsychology
+gened|PSYCH-UH 3621EQ|Lab in Language Science
+gened|ENGR-UH 2010Q|Probability and Statistics for Engineers
+gened|MATH-UH 1000AQ|Mathematics for Statistics and Calculus Part I
+gened|MATH-UH 1000BQ|Mathematics for Statistics and Calculus Part II
+gened|MATH-UH 1010Q|Foundations of Mathematics
+gened|MATH-UH 1012Q|Calculus with Applications to Science and Engineering
+gened|MATH-UH 1013Q|Calculus with Applications to Economics
+gened|MATH-UH 1020Q|Multivariable Calculus (Science & Engineering)
+gened|MATH-UH 1021Q|Multivariable Calculus with Applications to Economics
+gened|MATH-UH 1022Q|Linear Algebra
+gened|MATH-UH 1023Q|Fundamentals of Linear Algebra
+gened|MATH-UH 1024Q|Fundamentals of Ordinary Differential Equations
+gened|MATH-UH 2010Q|Ordinary Differential Equations
+gened|MATH-UH 2011Q|Probability and Statistics
+gened|MATH-UH 2410Q|Mathematical Modeling
+gened|PSYCH-UH 1004Q|Statistics for Psychology
