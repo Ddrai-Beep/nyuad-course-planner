@@ -1,5 +1,5 @@
 import { parsePlan, pickPlanSheet } from './parser.js';
-import { buildCatalog, enrich, solve, eligibleCourses, stats, normKey, reqMatches, isPassFail } from './engine.js';
+import { buildCatalog, enrich, solve, eligibleCourses, stats, normKey, reqMatches, isPassFail, setPassFailTerms } from './engine.js';
 import { readFile, readGoogleSheet, readSample } from './io.js';
 import { Votes, LS } from './votes.js';
 import { DEFAULT_PLAN, DEFAULT_PLAN_LABEL } from '../config.js';
@@ -31,6 +31,7 @@ async function boot() {
   const [programs, catalog, offerings] = await Promise.all(
     ['data/programs.json', 'data/catalog.json', 'data/offerings.json'].map((u) => fetch(u).then((r) => r.json())));
   S.programs = programs;
+  setPassFailTerms(programs.policy?.passFailCounts?.terms);
   S.catalog = buildCatalog(catalog);
   S.offerings = offerings[programs.registrationTerm] || { courses: [], notOffered: {} };
   S.offeredKeys = new Set(S.offerings.courses.map(normKey));
@@ -98,11 +99,22 @@ function analyse() {
     def: m, result: solve(m.requirements, S.courses, ov(`minor:${m.id}`), mn(`minor:${m.id}`), { exclude: coreComp, avoid: new Set([...major.result.used, ...minor.used]) }),
   }));
   const st = stats(S.courses, P.graduation.credits);
-  // Electives: credits the plan still needs once every requirement slot is counted
+  // Electives per policy: 128 minus what you've taken/are taking, minus the credits your
+  // remaining major, minor and Core requirements will take. Ignores what the plan pencils in.
   const genericSlots = S.courses.filter((c) => GENERIC(c) && c.term.order > 0);
-  const projected = st.earned + st.inprog + st.planned + st.slots - genericSlots.reduce((a, c) => a + c.credits, 0);
-  const electiveCredits = Math.max(0, P.graduation.credits - projected);
-  const electives = { left: Math.ceil(electiveCredits / 4), credits: electiveCredits, openSlots: genericSlots.length };
+  const seen = new Set(); let reqCredits = 0, reqCount = 0;
+  for (const res of [major.result, minor, core, ...extras.map((x) => x.result)]) {
+    for (const r of res.reqs) for (const sl of r.slots) {
+      if (sl.manual) continue;
+      const c = sl.course;
+      if (c && (c.status === 'done' || c.status === 'inprogress')) continue;
+      if (c) { if (seen.has(c.id)) continue; seen.add(c.id); }
+      reqCredits += r.req.id === 'field' ? 3 : 4; reqCount++;
+    }
+  }
+  const electiveCredits = Math.max(0, P.graduation.credits - st.earned - st.inprog - reqCredits);
+  const needE = gened.reqs.some((r) => r.req.id === 'e' && r.status === 'needed');
+  const electives = { left: Math.ceil(electiveCredits / 4), credits: electiveCredits, openSlots: genericSlots.length, reqCredits, reqCount, needE };
   const ctx = { tracks, best, major, trackId, minorDef, minor, core, gened, extras, st, electives, coreComp };
   ctx.flags = flags(ctx);
   return ctx;
@@ -120,11 +132,15 @@ function flags({ major, minor, minorDef, coreComp }) {
     const name = `<b>${esc(c.displayCode || c.raw)}</b>`;
     const inMajor = major.result.used.has(c.id), inMinor = minor.used.has(c.id);
     if (isPassFail(c) && (/major|minor|core/i.test(c.reqText) || c.tags.size))
-      out.push({ level: 'warn', text: `${name} was taken Pass/Fail. NYUAD policy: Pass/Fail courses don't count toward the Core, a major or a minor, so I haven't counted it. If you were granted an exception, set it under "Your plan".` });
+      out.push({ level: 'warn', text: `${name} was taken Pass/Fail. NYUAD policy: Pass/Fail courses don't count toward the Core, a major or a minor (the Spring 2026 exception doesn't cover ${esc(c.term.label)}), so I haven't counted it. If you were granted an exception, set it under "Your plan".` });
     if (/minor/i.test(c.reqText) && !inMinor && !(minorDef.id === 'econ' && c.subject === 'ECON'))
       out.push({ level: 'warn', text: `${name} is marked "Minor" in your plan but doesn't fill a ${esc(minorDef.name)} requirement.${minorDef.id === 'econ' ? ' Only ECON-subject courses count as Economics electives.' : ''}` });
-    if (/major/i.test(c.reqText) && !inMajor && !isPassFail(c))
-      out.push({ level: 'warn', text: `${name} is marked "Major Req" but doesn't fill any Political Science requirement on the <i>${esc(major.track.short)}</i> track${coreComp.has(c.id) ? ' (it counts for a Core competency, which can\'t double-count)' : ''}.` });
+    if (/major/i.test(c.reqText) && !inMajor && !isPassFail(c)) {
+      const full = major.result.reqs.find((r) => reqMatches(c, r.req));
+      const why = coreComp.has(c.id) ? ' It counts for a Core competency, which can\'t double-count.'
+        : full ? ` It would count as "${esc(full.req.label)}", but that's already filled by ${full.slots.map((sl) => `<b>${esc(sl.course?.displayCode || sl.course?.raw || 'a course')}</b>`).join(', ')}.` : '';
+      out.push({ level: 'warn', text: `${name} is marked "Major Req" but doesn't fill a Political Science requirement on the <i>${esc(major.track.short)}</i> track.${why}` });
+    }
     if (c.tags.has('study-away-equiv') && inMajor)
       out.push({ level: 'info', text: `${name} is counted as Intro to International Politics (study-away equivalent). Confirm it on the PS study-away pathway.` });
     if (c.noGrade && c.status === 'done')
@@ -193,7 +209,7 @@ function renderDash() {
   const G = st.gradCredits;
   const pct = (x) => Math.min(100, (x / G) * 100);
   const left = A.major.result.summary.needed + A.minor.summary.needed + A.core.summary.needed + A.gened.summary.needed;
-  const plannedReq = st.planned + st.slots - el.openSlots * 4;
+  const plannedReq = el.reqCredits;
   const m = S.plan.meta;
   const warn = A.flags.filter((f) => f.level !== 'info'), info = A.flags.filter((f) => f.level === 'info');
 
@@ -205,14 +221,14 @@ function renderDash() {
     </div>
     <div class="stats">
       <div class="stat"><div class="stat-num">${left}</div><div class="stat-label">requirements left</div></div>
-      <div class="stat"><div class="stat-num">${el.left}</div><div class="stat-label">general electives left <span class="muted">(${el.credits} cr)</span></div></div>
+      <div class="stat"><div class="stat-num">${el.left}</div><div class="stat-label">electives left after major, minor &amp; Core <span class="muted">(${el.credits} cr${el.needE ? ', one must be an E course' : ''})</span></div></div>
       <div class="stat"><div class="stat-num">${st.earned}<span class="muted">/${G}</span></div><div class="stat-label">credits earned</div></div>
       ${st.gpa ? `<div class="stat"><div class="stat-num">${st.gpa.toFixed(2)}</div><div class="stat-label">GPA</div></div>` : ''}
     </div>
     <div class="bar">
       <span class="bar-ok" style="width:${pct(st.earned)}%"></span><span class="bar-prog" style="width:${pct(st.inprog)}%"></span><span class="bar-plan" style="width:${pct(Math.max(0, plannedReq))}%"></span><span class="bar-elec" style="width:${pct(el.credits)}%"></span>
     </div>
-    <div class="legend small"><span><i class="dot dot-ok"></i>Earned ${st.earned}</span><span><i class="dot dot-prog"></i>In progress ${st.inprog}</span><span><i class="dot dot-plan"></i>Planned requirements ${Math.max(0, plannedReq)}</span><span><i class="dot dot-elec"></i>Electives left ${el.credits}${el.openSlots ? ` · ${el.openSlots} open elective slot${el.openSlots > 1 ? 's' : ''} in your plan` : ''}</span></div>
+    <div class="legend small"><span><i class="dot dot-ok"></i>Earned ${st.earned}</span><span><i class="dot dot-prog"></i>In progress ${st.inprog}</span><span><i class="dot dot-plan"></i>Requirements still to take ${plannedReq} (${el.reqCount} courses)</span><span><i class="dot dot-elec"></i>Electives left ${el.credits}</span><span>Total ${G}</span></div>
   </section>
 
   ${warn.length || info.length ? `
@@ -388,42 +404,41 @@ function renderBoth(A) {
   </div>`;
 }
 
-// Check whether another minor fits
+// Every other minor, ranked by how much of it you've already done
 function renderMinorCheck(A) {
-  const opts = S.programs.minors.filter((m) => m.id !== A.minorDef.id && !S.extraMinors.includes(m.id));
-  const m = minorById(S.checkMinor);
-  let body = '';
-  if (m) {
-    const used = new Set([...A.major.result.used, ...A.minor.used]);
+  const used = new Set([...A.major.result.used, ...A.minor.used]);
+  const free = A.electives.left;
+  const ranked = S.programs.minors.filter((m) => m.id !== A.minorDef.id && !S.extraMinors.includes(m.id)).map((m) => {
     const r = solve(m.requirements, S.courses, S.overrides[`minor:${m.id}`] || {}, {}, { exclude: A.coreComp, avoid: used });
-    const needed = r.summary.needed;
-    const uniq = uniqueCount(r, used);
-    const free = A.electives.openSlots;
-    const fits = needed <= free;
-    const overload = Math.max(0, needed - free);
-    body = `<div class="minor-result">
-      <ul class="small plain">
-        ${r.reqs.flatMap((x) => x.slots.map((s, i) => {
-          const st = s.course ? (s.course.status === 'slot' ? 'planned' : s.course.status) : 'needed';
-          return `<li>${st === 'done' ? '✓' : st === 'needed' ? '○' : '◐'} ${esc(x.req.count > 1 ? `${x.req.label} ${i + 1}` : x.req.label)}${s.course ? ` · <span class="muted">${esc(s.course.displayCode || s.course.raw)}</span>` : ''}</li>`;
-        })).join('')}
-      </ul>
-      <div class="verdict ${fits ? 'verdict-ok' : 'verdict-no'}">
-        ${fits ? `<b>Fits.</b> You need ${needed} more course${needed === 1 ? '' : 's'} and have ${free} open elective slot${free === 1 ? '' : 's'} in your plan.`
-               : `<b>Doesn't fit as planned.</b> You need ${needed} more course${needed === 1 ? '' : 's'} but only have ${free} open elective slot${free === 1 ? '' : 's'}, so ${overload} course${overload === 1 ? '' : 's'} (${overload * 4} credits) would go on top of a full load.`}
-        ${uniq < S.programs.policy.minorUnique ? `<div class="small">It also needs ${S.programs.policy.minorUnique} courses that don't count elsewhere. It has ${uniq}.</div>` : ''}
-      </div>
-      <button class="btn btn-small btn-primary" data-action="addminor" data-id="${m.id}">Track this minor too</button>
-    </div>`;
-  }
+    const done = r.summary.done + r.summary.inprogress;
+    return { m, r, done, total: r.total, needed: r.total - done, uniq: uniqueCount(r, used) };
+  }).sort((a, b) => b.done / b.total - a.done / a.total || (b.r.summary.planned) - (a.r.summary.planned) || a.needed - b.needed);
   return `
   <div class="card program">
-    <div class="program-head"><h3>Add a minor?</h3></div>
-    <div class="both-body">
-      <div class="row"><select data-action="checkminor"><option value="">Choose a minor to check…</option>
-        ${opts.map((o) => `<option value="${o.id}" ${S.checkMinor === o.id ? 'selected' : ''}>${esc(o.name.replace(' (Minor)', ''))}</option>`).join('')}</select></div>
-      ${body}
-    </div>
+    <div class="program-head"><h3>Add a minor?</h3><span class="small muted">Ranked by how much you've already completed</span></div>
+    <ul class="reqs">${ranked.map((x) => {
+      const open = S.checkMinor === x.m.id;
+      const fits = x.needed <= free;
+      return `<li class="req">
+        <div class="req-row minor-row" data-action="checkminor" data-id="${x.m.id}">
+          <div class="req-body"><div class="req-label">${esc(x.m.name.replace(' (Minor)', ''))}</div>
+            <div class="mini-bar"><span style="width:${(x.done / x.total) * 100}%"></span></div></div>
+          <div class="req-actions"><span class="small"><b>${x.done}/${x.total}</b> done</span>${fits ? '<span class="pill pill-ok">Fits</span>' : '<span class="pill pill-need">Overload</span>'}</div>
+        </div>
+        ${open ? `<div class="options">
+          <ul class="small plain">${x.r.reqs.flatMap((q) => q.slots.map((s, i) => {
+            const st = s.course ? (s.course.status === 'slot' ? 'planned' : s.course.status) : 'needed';
+            return `<li>${st === 'done' || st === 'inprogress' ? '✓' : '○'} ${esc(q.req.count > 1 ? `${q.req.label} ${i + 1}` : q.req.label)}${s.course && st !== 'planned' ? ` · <span class="muted">${esc(s.course.displayCode || s.course.raw)}</span>` : ''}</li>`;
+          })).join('')}</ul>
+          <div class="verdict ${fits ? 'verdict-ok' : 'verdict-no'}">
+            ${fits ? `<b>Fits.</b> ${x.needed} more course${x.needed === 1 ? '' : 's'}, and you have room for ${free} elective${free === 1 ? '' : 's'} after your major, minor and Core.`
+                   : `<b>Doesn't fit in 128 credits.</b> ${x.needed} more courses, but you only have room for ${free} elective${free === 1 ? '' : 's'}, so ${x.needed - free} course${x.needed - free === 1 ? '' : 's'} (${(x.needed - free) * 4} credits) would go on top.`}
+            ${x.uniq < S.programs.policy.minorUnique ? `<div class="small">It also needs ${S.programs.policy.minorUnique} courses that don't count elsewhere. It has ${x.uniq}.</div>` : ''}
+          </div>
+          <button class="btn btn-small btn-primary" data-action="addminor" data-id="${x.m.id}">Track this minor too</button>
+        </div>` : ''}
+      </li>`;
+    }).join('')}</ul>
   </div>`;
 }
 
@@ -546,6 +561,7 @@ document.addEventListener('click', async (ev) => {
   if (a === 'toggle') { const k = el.dataset.key; S.open.has(k) ? S.open.delete(k) : S.open.add(k); return render(); }
   if (a === 'editrow') { S.editRow = S.editRow === el.dataset.id ? null : el.dataset.id; return render(); }
   if (a === 'add') { addToList(el.dataset.code, el.dataset.title, el.dataset.label); return render(); }
+  if (a === 'checkminor') { S.checkMinor = S.checkMinor === el.dataset.id ? null : el.dataset.id; return render(); }
   if (a === 'addminor') { S.extraMinors.push(el.dataset.id); S.checkMinor = null; save(); return render(); }
   if (a === 'dropminor') { S.extraMinors = S.extraMinors.filter((x) => x !== el.dataset.id); save(); return render(); }
   if (a === 'addplanned') {
@@ -572,7 +588,6 @@ document.addEventListener('change', (ev) => {
     if (el.value) o[el.dataset.id] = el.value; else delete o[el.dataset.id];
     save(); S.open.add('plan'); render();
   }
-  if (el.dataset.action === 'checkminor') { S.checkMinor = el.value || null; render(); }
 });
 
 document.addEventListener('submit', (ev) => {

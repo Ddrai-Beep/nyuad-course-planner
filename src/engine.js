@@ -82,7 +82,10 @@ const RANK = { done: 0, inprogress: 1, planned: 2, slot: 3 };
 
 // Bipartite matching (Kuhn) of courses → requirement slots.
 // overrides: { [courseId]: reqId | 'none' }, manual: { [reqId]: n } slots marked done by hand
-export const isPassFail = (c) => /^P$/i.test(String(c.grade || '').trim()) && !c.pe;
+let PF_OK_TERMS = new Set();
+export function setPassFailTerms(terms) { PF_OK_TERMS = new Set(terms || []); }
+// Pass/Fail courses don't count toward Core/major/minor, except in terms with a P/F exception (e.g. Spring 2026)
+export const isPassFail = (c) => /^P$/i.test(String(c.grade || '').trim()) && !c.pe && !PF_OK_TERMS.has(c.term?.label);
 
 // opts.exclude: Set of course ids that can't be used (e.g. used by a Core competency)
 // opts.avoid: Set of course ids to use only as a last resort (minor-uniqueness rule)

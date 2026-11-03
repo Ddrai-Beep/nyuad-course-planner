@@ -191,3 +191,5 @@ input, select { border-width: var(--bw) !important; }
 @media (max-width: 960px) { .year { grid-template-columns: 1fr; } }
 
 .req-ok .pill-ok { display: none; }
+.minor-row { cursor: pointer; } .minor-row:hover { background: #faf6e8; }
+.mini-bar { height: 5px; background: #ece6d2; border-radius: 99px; margin-top: 6px; max-width: 260px; overflow: hidden; } .mini-bar span { display: block; height: 100%; background: var(--ok); }

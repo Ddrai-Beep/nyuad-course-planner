@@ -1135,6 +1135,12 @@
  ],
  "policy": {
   "minorUnique": 2,
-  "source": "NYUAD Academic Policies (bulletin)"
+  "source": "NYUAD Academic Policies (bulletin)",
+  "passFailCounts": {
+   "terms": [
+    "Spring 2026"
+   ],
+   "note": "Spring 2026 policy (Student Portal): Pass/Fail courses that term count toward the major and minor."
+  }
  }
 }
